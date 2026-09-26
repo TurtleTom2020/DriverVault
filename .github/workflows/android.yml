@@ -1,0 +1,58 @@
+name: Build DriverVault APK
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find latest DriverVault source
+        shell: bash
+        run: |
+          latest_zip="$(ls -1 DriverVault-source-v*.zip 2>/dev/null | sort -V | tail -n 1)"
+          if [[ -z "$latest_zip" ]]; then
+            echo "No DriverVault source ZIP found." >&2
+            exit 1
+          fi
+          echo "DRIVERVAULT_ZIP=$latest_zip" >> "$GITHUB_ENV"
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Prepare Flutter project
+        shell: bash
+        run: |
+          rm -rf build-project
+          mkdir build-project
+          unzip -q "$DRIVERVAULT_ZIP" -d build-project
+          cd build-project
+          flutter create . --platforms=android,ios --org com.drivervault.app
+          flutter pub get
+
+      - name: Analyze
+        shell: bash
+        run: |
+          cd build-project
+          flutter analyze
+
+      - name: Build debug APK
+        shell: bash
+        run: |
+          cd build-project
+          flutter build apk --debug
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DriverVault-v0.1-debug
+          path: build-project/build/app/outputs/flutter-apk/app-debug.apk
+          if-no-files-found: error
