@@ -37,6 +37,7 @@ jobs:
           unzip -q "$DRIVERVAULT_ZIP" -d build-project
           cd build-project
           flutter create . --platforms=android,ios --org com.drivervault.app
+          rm -f test/widget_test.dart
           flutter pub get
 
       - name: Analyze
