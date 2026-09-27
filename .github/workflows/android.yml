@@ -2,9 +2,10 @@ name: DriverVault Android Build
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+
+permissions:
+  contents: write
+  actions: read
 
 jobs:
   build:
@@ -14,13 +15,46 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Restore real DriverVault source from verified v2.0 checkpoint
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euxo pipefail
+          curl -L             -H "Authorization: Bearer $GH_TOKEN"             -H "Accept: application/vnd.github+json"             -H "X-GitHub-Api-Version: 2022-11-28"             "https://api.github.com/repos/${{ github.repository }}/actions/artifacts/10940192619/zip"             -o /tmp/checkpoint.zip
+          mkdir -p /tmp/checkpoint
+          unzip -q /tmp/checkpoint.zip -d /tmp/checkpoint
+          unzip -q -o /tmp/checkpoint/DriverVault-source-v2.0-enriched.zip -d /tmp/source
+
+          rm -rf lib assets scripts
+          cp -a /tmp/source/lib .
+          cp -a /tmp/source/assets .
+          if [ -d /tmp/source/scripts ]; then cp -a /tmp/source/scripts .; fi
+          cp /tmp/source/pubspec.yaml .
+          cp /tmp/source/analysis_options.yaml .
+
+          echo "Restored source:"
+          test -s lib/main.dart
+          test -s assets/catalog/catalog.json
+          grep -q "DriverVault" lib/main.dart
+          wc -c lib/main.dart assets/catalog/catalog.json
+
+      - name: Commit restored source to repository
+        run: |
+          git config user.name "ChatGPT DriverVault"
+          git config user.email "actions@users.noreply.github.com"
+          git add lib assets scripts pubspec.yaml analysis_options.yaml || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Restore real DriverVault application source"
+            git push origin HEAD:main
+          fi
+
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
           cache: true
 
-      - name: Create Flutter platform files
+      - name: Create missing Flutter platform files
         run: flutter create --project-name drivervault --platforms=android,ios .
 
       - name: Get dependencies
@@ -32,16 +66,26 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
+      - name: Verify APK is DriverVault, not Flutter demo
+        run: |
+          test -s build/app/outputs/flutter-apk/app-release.apk
+          grep -q "DriverVault" lib/main.dart
+          if grep -q "Flutter Demo Home Page" lib/main.dart; then
+            echo "Refusing to publish Flutter demo APK"
+            exit 1
+          fi
+          ls -lh build/app/outputs/flutter-apk/app-release.apk
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v2.1-APK
+          name: DriverVault-real-APK
           path: build/app/outputs/flutter-apk/app-release.apk
 
-      - name: Upload source
+      - name: Upload editable source
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v2.1-source
+          name: DriverVault-real-source
           path: |
             lib/**
             assets/**
