@@ -4,38 +4,65 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'DriverVault-source-v*.zip'
-      - '.github/workflows/android.yml'
+      - 'DriverVault-source-v1.7.zip'
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
           cache: true
-      - name: Prepare Flutter project
+      - name: Prepare DriverVault v1.7
         run: |
-          ZIP=$(ls DriverVault-source-v*.zip | sort -V | tail -n 1)
-          echo "Building $ZIP"
-          rm -rf build-project
-          mkdir build-project
+          set -euo pipefail
+          ZIP="DriverVault-source-v1.7.zip"
+          test -f "$ZIP" || { echo "ERROR: $ZIP not found"; exit 1; }
+          rm -rf build-project && mkdir build-project
           unzip -q "$ZIP" -d build-project
           cd build-project
+          python3 -m py_compile scripts/update_catalogues.py
+          python3 -m json.tool assets/catalog/game_schemas.json >/dev/null
+          python3 scripts/update_catalogues.py
+          python3 - <<'PY'
+          import json
+          c=json.load(open('assets/catalog/catalog.json'))
+          s=json.load(open('assets/catalog/game_schemas.json'))
+          games={g['id']:g for g in c['games']}
+          assert len(games['fh5']['vehicles'])==902
+          assert len(games['gt7']['vehicles'])>=570
+          required=['fh5','carx','beamng','gt7','snowrunner','mudrunner','ets2','ats','assetto','wrc','alaskan']
+          for gid in required:
+              assert gid in s, f'Missing configuration schema: {gid}'
+              schema=s[gid]
+              if 'copy' in schema: schema=s[schema['copy']]
+              assert schema.get('sections'), f'Empty configuration schema: {gid}'
+          fh=games['fh5']['vehicles']
+          mapped=sum(bool(v.get('image')) for v in fh)
+          assert mapped>=600, f'FH5 image coverage too low: {mapped}/902'
+          print(f'FH5 image mapping gate: {mapped}/902')
+          print('Per-game configuration schemas:', ', '.join(required))
+          PY
           flutter create . --platforms=android,ios --org com.drivervault.app
           rm -f test/widget_test.dart
-          flutter pub get
-          dart run flutter_launcher_icons
           python3 - <<'PY'
           from pathlib import Path
-          p=Path("android/app/src/main/AndroidManifest.xml")
-          s=p.read_text()
           import re
-          s=re.sub(r'android:label="[^"]*"', 'android:label="DriverVault"', s, count=1)
-          p.write_text(s)
-          print("Android label:", re.search(r'android:label="[^"]*"', s).group(0))
+          p=Path('android/app/src/main/AndroidManifest.xml'); x=p.read_text()
+          x=re.sub(r'android:label="[^"]*"','android:label="DriverVault"',x,count=1)
+          if 'android.permission.INTERNET' not in x:
+              x=x.replace('<manifest xmlns:android="http://schemas.android.com/apk/res/android">','<manifest xmlns:android="http://schemas.android.com/apk/res/android">\n    <uses-permission android:name="android.permission.INTERNET"/>')
+          p.write_text(x)
           PY
+          flutter pub get
+          dart run flutter_launcher_icons
       - name: Analyze
         working-directory: build-project
         run: flutter analyze --no-fatal-infos
@@ -45,5 +72,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v0.6-debug
+          name: DriverVault-v1.7-debug
           path: build-project/build/app/outputs/flutter-apk/app-debug.apk
