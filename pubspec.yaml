@@ -1,0 +1,27 @@
+name: drivervault
+description: DriverVault
+publish_to: 'none'
+version: 2.0.0+21
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  shared_preferences: ^2.3.2
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.4
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/branding/
+    - assets/games/
+    - assets/catalog/
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/branding/drivervault_icon.png
+  adaptive_icon_background: "#07060B"
+  adaptive_icon_foreground: assets/branding/drivervault_icon.png

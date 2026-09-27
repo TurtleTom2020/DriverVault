@@ -1,0 +1,570 @@
+{
+  "version": "0.7.0",
+  "manufacturers": [
+    {
+      "name": "Logitech G",
+      "devices": [
+        {
+          "name": "G25",
+          "type": "wheel",
+          "drive": "gear",
+          "torque_nm": null,
+          "platforms": [
+            "PC"
+          ]
+        },
+        {
+          "name": "G27",
+          "type": "wheel",
+          "drive": "gear",
+          "torque_nm": null,
+          "platforms": [
+            "PC",
+            "PS3"
+          ]
+        },
+        {
+          "name": "G29 Driving Force",
+          "type": "wheel",
+          "drive": "gear",
+          "torque_nm": 2.3,
+          "platforms": [
+            "PC",
+            "PS4",
+            "PS5"
+          ]
+        },
+        {
+          "name": "G920 Driving Force",
+          "type": "wheel",
+          "drive": "gear",
+          "torque_nm": 2.3,
+          "platforms": [
+            "PC",
+            "Xbox One",
+            "Xbox Series"
+          ]
+        },
+        {
+          "name": "G923 TRUEFORCE (PlayStation)",
+          "type": "wheel",
+          "drive": "gear",
+          "torque_nm": 2.3,
+          "platforms": [
+            "PC",
+            "PS4",
+            "PS5"
+          ]
+        },
+        {
+          "name": "G923 TRUEFORCE (Xbox)",
+          "type": "wheel",
+          "drive": "gear",
+          "torque_nm": 2.3,
+          "platforms": [
+            "PC",
+            "Xbox One",
+            "Xbox Series"
+          ]
+        },
+        {
+          "name": "PRO Racing Wheel",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 11.0,
+          "platforms": [
+            "PC",
+            "PS5 or Xbox variant"
+          ]
+        },
+        {
+          "name": "RS50 Base \u2013 PlayStation/PC",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 8.0,
+          "platforms": [
+            "PlayStation 5",
+            "PlayStation 4",
+            "PC"
+          ],
+          "variant": "playstation_pc"
+        },
+        {
+          "name": "RS50 Base \u2013 Xbox/PC",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 8.0,
+          "platforms": [
+            "Xbox Series X|S",
+            "Xbox One",
+            "PC"
+          ],
+          "variant": "xbox_pc"
+        },
+        {
+          "name": "RS Wheel Hub \u2013 PlayStation/PC",
+          "type": "wheel hub",
+          "drive": "",
+          "torque_nm": null,
+          "platforms": [
+            "PlayStation 5",
+            "PlayStation 4",
+            "PC"
+          ],
+          "variant": "playstation_pc"
+        },
+        {
+          "name": "RS Wheel Hub \u2013 Xbox/PC",
+          "type": "wheel hub",
+          "drive": "",
+          "torque_nm": null,
+          "platforms": [
+            "Xbox Series X|S",
+            "Xbox One",
+            "PC"
+          ],
+          "variant": "xbox_pc"
+        },
+        {
+          "name": "Racing Adapter",
+          "type": "adapter",
+          "drive": "",
+          "torque_nm": null,
+          "platforms": [
+            "G25",
+            "G27",
+            "G29",
+            "G920",
+            "G923",
+            "R Series"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Fanatec",
+      "devices": [
+        {
+          "name": "CSL DD QR2 5 Nm",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 5.0,
+          "platforms": [
+            "PC",
+            "Xbox with licensed wheel"
+          ]
+        },
+        {
+          "name": "CSL DD QR2 8 Nm",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 8.0,
+          "platforms": [
+            "PC",
+            "Xbox with licensed wheel"
+          ]
+        },
+        {
+          "name": "Gran Turismo DD Pro 5 Nm",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 5.0,
+          "platforms": [
+            "PC",
+            "PS4",
+            "PS5",
+            "Xbox with licensed wheel"
+          ]
+        },
+        {
+          "name": "Gran Turismo DD Pro 8 Nm",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 8.0,
+          "platforms": [
+            "PC",
+            "PS4",
+            "PS5",
+            "Xbox with licensed wheel"
+          ]
+        },
+        {
+          "name": "ClubSport DD",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 15.0,
+          "platforms": [
+            "PC",
+            "Xbox with licensed wheel"
+          ]
+        },
+        {
+          "name": "ClubSport DD+",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 18.0,
+          "platforms": [
+            "PC",
+            "PS4",
+            "PS5",
+            "Xbox with licensed wheel"
+          ]
+        },
+        {
+          "name": "Gran Turismo DD Extreme",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 18.0,
+          "platforms": [
+            "PC",
+            "PS5"
+          ]
+        },
+        {
+          "name": "Podium DD1",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 20.0,
+          "platforms": [
+            "PC"
+          ]
+        },
+        {
+          "name": "Podium DD2",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 25.0,
+          "platforms": [
+            "PC"
+          ]
+        },
+        {
+          "name": "Podium DD (2026)",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 25.0,
+          "platforms": [
+            "PC"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MOZA Racing",
+      "devices": [
+        {
+          "name": "R3",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 3.9,
+          "platforms": [
+            "PC",
+            "Xbox with ESX/bundle"
+          ]
+        },
+        {
+          "name": "R5",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 5.5,
+          "platforms": [
+            "PC",
+            "Xbox with ESX"
+          ]
+        },
+        {
+          "name": "R9 V2/V3",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 9.0,
+          "platforms": [
+            "PC",
+            "Xbox with ESX"
+          ]
+        },
+        {
+          "name": "R12 V1/V2",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 12.0,
+          "platforms": [
+            "PC",
+            "Xbox with ESX"
+          ]
+        },
+        {
+          "name": "R16",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 16.0,
+          "platforms": [
+            "PC",
+            "Xbox with ESX"
+          ]
+        },
+        {
+          "name": "R21",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 21.0,
+          "platforms": [
+            "PC",
+            "Xbox with ESX"
+          ]
+        },
+        {
+          "name": "R21 Ultra",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 21.0,
+          "platforms": [
+            "PC",
+            "Xbox with ESX"
+          ]
+        },
+        {
+          "name": "R25 Ultra",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 25.0,
+          "platforms": [
+            "PC",
+            "Xbox with ESX"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Thrustmaster",
+      "devices": [
+        {
+          "name": "T598 Servo Base",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": null,
+          "platforms": [
+            "PC",
+            "PS4",
+            "PS5"
+          ]
+        },
+        {
+          "name": "T300 Servo Base",
+          "type": "wheelbase",
+          "drive": "belt",
+          "torque_nm": null,
+          "platforms": [
+            "PC",
+            "PS4",
+            "PS5"
+          ]
+        },
+        {
+          "name": "TX Servo Base",
+          "type": "wheelbase",
+          "drive": "belt",
+          "torque_nm": null,
+          "platforms": [
+            "PC",
+            "Xbox One",
+            "Xbox Series"
+          ]
+        },
+        {
+          "name": "TS-PC Racer Servo Base",
+          "type": "wheelbase",
+          "drive": "belt",
+          "torque_nm": null,
+          "platforms": [
+            "PC"
+          ]
+        },
+        {
+          "name": "TS-XW Servo Base",
+          "type": "wheelbase",
+          "drive": "belt",
+          "torque_nm": null,
+          "platforms": [
+            "PC",
+            "Xbox One",
+            "Xbox Series"
+          ]
+        },
+        {
+          "name": "T818",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": null,
+          "platforms": [
+            "PC"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PXN",
+      "devices": [
+        {
+          "name": "VD4",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 4.0,
+          "platforms": [
+            "PC"
+          ]
+        },
+        {
+          "name": "VD6",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 6.0,
+          "platforms": [
+            "PC"
+          ]
+        },
+        {
+          "name": "VD10",
+          "type": "wheelbase",
+          "drive": "direct",
+          "torque_nm": 10.0,
+          "platforms": [
+            "PC"
+          ]
+        },
+        {
+          "name": "V10 Pro",
+          "type": "wheel",
+          "drive": "direct",
+          "torque_nm": 3.2,
+          "platforms": [
+            "PC"
+          ]
+        },
+        {
+          "name": "V10 Ultra",
+          "type": "wheel",
+          "drive": "force feedback",
+          "torque_nm": null,
+          "platforms": [
+            "PC"
+          ]
+        },
+        {
+          "name": "V99",
+          "type": "wheel",
+          "drive": "dual-motor",
+          "torque_nm": 3.0,
+          "platforms": [
+            "PC",
+            "console"
+          ]
+        },
+        {
+          "name": "V12",
+          "type": "wheel",
+          "drive": "direct",
+          "torque_nm": null,
+          "platforms": [
+            "PC"
+          ]
+        },
+        {
+          "name": "V12 Lite",
+          "type": "wheel",
+          "drive": "direct",
+          "torque_nm": null,
+          "platforms": [
+            "PC"
+          ]
+        },
+        {
+          "name": "V9 Gen2",
+          "type": "wheel",
+          "drive": "",
+          "torque_nm": null,
+          "platforms": [
+            "PC",
+            "console"
+          ]
+        },
+        {
+          "name": "V900 Gen2",
+          "type": "wheel",
+          "drive": "",
+          "torque_nm": null,
+          "platforms": [
+            "PC",
+            "console"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Turtle Beach",
+      "devices": [
+        {
+          "name": "VelocityOne Race",
+          "type": "wheel",
+          "drive": "direct",
+          "torque_nm": null,
+          "platforms": [
+            "PC",
+            "Xbox One",
+            "Xbox Series"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "HORI",
+      "devices": [
+        {
+          "name": "Racing Wheel Apex",
+          "type": "wheel",
+          "drive": "",
+          "torque_nm": null,
+          "platforms": [
+            "PC",
+            "PS4",
+            "PS5"
+          ]
+        },
+        {
+          "name": "Force Feedback Racing Wheel DLX",
+          "type": "wheel",
+          "drive": "force feedback",
+          "torque_nm": null,
+          "platforms": [
+            "PC",
+            "Xbox One",
+            "Xbox Series"
+          ]
+        }
+      ]
+    }
+  ],
+  "profile_fields": [
+    "Steering angle / rotation",
+    "Overall force feedback",
+    "Torque limit",
+    "TRUEFORCE / telemetry strength",
+    "Damping",
+    "Friction",
+    "Inertia",
+    "Spring",
+    "Road effects",
+    "Kerb effects",
+    "Off-road effects",
+    "Centre spring",
+    "Wheel sensitivity",
+    "Linearity",
+    "Deadzone inside",
+    "Deadzone outside",
+    "Brake saturation",
+    "Throttle saturation",
+    "Clutch saturation",
+    "ABS vibration",
+    "Firmware version",
+    "Notes"
+  ]
+}
