@@ -13398,7 +13398,10 @@
           "model": "500 Assetto Corse",
           "class": "",
           "drive": "",
-          "id": "assetto:abarth-500-assetto-corse"
+          "id": "assetto:abarth-500-assetto-corse",
+          "image": "https://www.igcd.net/thumbnail.php?pic=044-314.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=84059",
+          "imageMatch": "Same underlying car/official tuned variant; reused verified assetto:abarth-500-esseesse-step-1 image"
         },
         {
           "year": "",
@@ -13406,7 +13409,10 @@
           "model": "500 EsseEsse",
           "class": "",
           "drive": "",
-          "id": "assetto:abarth-500-esseesse"
+          "id": "assetto:abarth-500-esseesse",
+          "image": "https://www.igcd.net/thumbnail.php?pic=044-314.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=84059",
+          "imageMatch": "Same underlying car/official tuned variant; reused verified assetto:abarth-500-esseesse-step-1 image"
         },
         {
           "year": "",
@@ -13620,7 +13626,10 @@
           "model": "M3 E30",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-m3-e30"
+          "id": "assetto:bmw-m3-e30",
+          "image": "https://www.igcd.net/thumbnail.php?pic=071-325.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=48386",
+          "imageMatch": "Same underlying car/official tuned variant; reused verified assetto:bmw-m3-e30-step-1 image"
         },
         {
           "year": "",
@@ -13628,7 +13637,10 @@
           "model": "M3 E30 Drift",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-m3-e30-drift"
+          "id": "assetto:bmw-m3-e30-drift",
+          "image": "https://www.igcd.net/thumbnail.php?pic=071-325.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=48386",
+          "imageMatch": "Same underlying car/official tuned variant; reused verified assetto:bmw-m3-e30-step-1 image"
         },
         {
           "year": "",
@@ -13688,7 +13700,10 @@
           "model": "M3 E92 Drift",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-m3-e92-drift"
+          "id": "assetto:bmw-m3-e92-drift",
+          "image": "https://www.igcd.net/thumbnail.php?pic=080-421.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=80422",
+          "imageMatch": "Same underlying car/official tuned variant; reused verified assetto:bmw-m3-e92 image"
         },
         {
           "year": "",
@@ -13718,7 +13733,10 @@
           "model": "M4 Coupe Akrapovic Edition",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-m4-coupe-akrapovic-edition"
+          "id": "assetto:bmw-m4-coupe-akrapovic-edition",
+          "image": "https://www.igcd.net/thumbnail.php?pic=080-422.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=48387",
+          "imageMatch": "Same underlying car/official tuned variant; reused verified assetto:bmw-m4-coupe image"
         },
         {
           "year": "",
@@ -13943,7 +13961,10 @@
           "model": "F40 Stage 3",
           "class": "",
           "drive": "",
-          "id": "assetto:ferrari-f40-stage-3"
+          "id": "assetto:ferrari-f40-stage-3",
+          "image": "https://www.igcd.net/thumbnail.php?pic=127-643.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=56171",
+          "imageMatch": "Same underlying car/official tuned variant; reused verified assetto:ferrari-f40 image"
         },
         {
           "year": "",
@@ -14204,7 +14225,10 @@
           "model": "Elise SC Step 1",
           "class": "",
           "drive": "",
-          "id": "assetto:lotus-elise-sc-step-1"
+          "id": "assetto:lotus-elise-sc-step-1",
+          "image": "https://www.igcd.net/thumbnail.php?pic=053-150.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=46897",
+          "imageMatch": "Same underlying car/official tuned variant; reused verified assetto:lotus-elise-sc image"
         },
         {
           "year": "",
@@ -14212,7 +14236,10 @@
           "model": "Elise SC Step 2",
           "class": "",
           "drive": "",
-          "id": "assetto:lotus-elise-sc-step-2"
+          "id": "assetto:lotus-elise-sc-step-2",
+          "image": "https://www.igcd.net/thumbnail.php?pic=053-150.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=46897",
+          "imageMatch": "Same underlying car/official tuned variant; reused verified assetto:lotus-elise-sc image"
         },
         {
           "year": "",
@@ -15250,7 +15277,7 @@
         }
       ],
       "official_total": 178,
-      "imageCoverage": 144,
+      "imageCoverage": 153,
       "imageVerifiedAt": "2026-09-28"
     },
     {
