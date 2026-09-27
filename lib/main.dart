@@ -428,12 +428,12 @@ class _MySetupsState extends State<MySetups>{
 }
 class Hardware extends StatefulWidget{const Hardware({super.key});@override State<Hardware> createState()=>_Hardware();}
 class _Hardware extends State<Hardware>{
- List<dynamic> makers=[],profiles=[]; String q='';
+ List<dynamic> makers=[],profiles=[]; Map<String,dynamic> recommended={}; String q='';
  @override void initState(){super.initState();load();}
  Future<void> load()async{
   final raw=jsonDecode(await rootBundle.loadString('assets/catalog/hardware.json'));
   final p=await SharedPreferences.getInstance();
-  makers=raw['manufacturers']; profiles=jsonDecode(p.getString('hw_profiles')??'[]');
+  makers=raw['manufacturers']; recommended=Map<String,dynamic>.from(raw['recommended_profiles']??{}); profiles=jsonDecode(p.getString('hw_profiles')??'[]');
   if(mounted)setState((){});
  }
  Future<void> saveProfile(dynamic maker,dynamic dev)async{
@@ -455,6 +455,24 @@ class _Hardware extends State<Hardware>{
     if(!dev['name'].toString().contains('RS50')) _hwSlider('Brake Force / Load Cell',brakeForce,0,100,1,'%',(x)=>setD(()=>brakeForce=x)),
     SwitchListTile(contentPadding:EdgeInsets.zero,title:const Text('TRUEFORCE / High-frequency effects'),value:trueforce,onChanged:(x)=>setD(()=>trueforce=x)),
     if(!dev['name'].toString().contains('RS50')) SwitchListTile(contentPadding:EdgeInsets.zero,title:const Text('Centering spring in non-FFB games'),value:centering,onChanged:(x)=>setD(()=>centering=x)),
+    if(recommended[dev['name']] is Map)...[
+     const SizedBox(height:14),
+     const Divider(),
+     const Text('OFFICIAL GAME BASELINES',style:TextStyle(color:gold,fontWeight:FontWeight.w900,fontSize:12)),
+     const SizedBox(height:6),
+     ...(Map<String,dynamic>.from(recommended[dev['name']]['games']??{}).entries.map((e){
+       final p=Map<String,dynamic>.from(e.value);
+       final gameNames={'fh5':'Forza Horizon 5','carx':'CarX Drift Racing Online','wrc':'EA SPORTS WRC','gt7':'Gran Turismo 7','assetto':'Assetto Corsa'};
+       final rot=p['rotation']; final tf=p['audio'];
+       return Container(margin:const EdgeInsets.only(bottom:6),padding:const EdgeInsets.all(10),decoration:BoxDecoration(color:card2,borderRadius:BorderRadius.circular(9)),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
+        Text(gameNames[e.key]??e.key,style:const TextStyle(fontWeight:FontWeight.w800)),
+        const SizedBox(height:3),
+        Text('Mode: ${p['compatibilityMode']}  •  Filter: ${p['filter']}  •  Dampener: ${p['damping']}  •  Angle: $rot${rot is num?'°':''}${tf==null?'':'  •  TF Audio: $tf'}',style:const TextStyle(fontSize:11,color:Colors.white70)),
+        const SizedBox(height:6),
+        OutlinedButton.icon(onPressed:(){setD((){compatibilityMode=p['compatibilityMode'].toString();filter=(p['filter'] as num).toDouble();damper=(p['damping'] as num).toDouble();if(rot is num)rotation=rot.toDouble();if(tf is num)audio=tf.toDouble();});},icon:const Icon(Icons.download_rounded,size:16),label:const Text('Apply baseline'))
+       ]));
+     })),
+    ],
     TextField(controller:notes,maxLines:3,decoration:const InputDecoration(labelText:'Notes (optional)'))
    ]))),actions:[TextButton(onPressed:()=>Navigator.pop(dc),child:const Text('Cancel')),FilledButton(onPressed:(){
     profiles.add({'maker':maker['name'],'device':dev['name'],'platform':platform,'compatibilityMode':compatibilityMode,'rotation':rotation.round(),'strength':strength,'damping':damper.round(),'filter':filter.round(),'friction':friction.round(),'inertia':inertia.round(),'spring':spring.round(),'audio':audio.round(),'brakeForce':brakeForce.round(),'trueforce':trueforce,'centering':centering,'notes':notes.text});Navigator.pop(dc);},child:const Text('Save Profile'))])));
