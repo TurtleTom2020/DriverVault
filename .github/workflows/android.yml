@@ -1,4 +1,41 @@
 name: Build DriverVault APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths: ['DriverVault-source-v*.zip','.github/workflows/android.yml']
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Prepare Flutter project
+        run: |
+          ZIP=$(ls DriverVault-source-v*.zip | sort -V | tail -n 1)
+          echo "Building $ZIP"
+          mkdir build-project
+          unzip -q "$ZIP" -d build-project
+          cd build-project
+          flutter create . --platforms=android,ios --org com.drivervault.app
+          rm -f test/widget_test.dart
+          flutter pub get
+          dart run flutter_launcher_icons
+      - name: Analyze
+        working-directory: build-project
+        run: flutter analyze --no-fatal-infos
+      - name: Build debug APK
+        working-directory: build-project
+        run: flutter build apk --debug
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: DriverVault-v0.4-debug
+          path: build-project/build/app/outputs/flutter-apk/app-debug.apk
+name: Build DriverVault APK
 
 on:
   workflow_dispatch:
