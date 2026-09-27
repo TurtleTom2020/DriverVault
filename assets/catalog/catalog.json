@@ -13464,7 +13464,10 @@
           "model": "Romeo 155 TI V6",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-155-ti-v6"
+          "id": "assetto:alfa-romeo-155-ti-v6",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_alfa_romeo_155_v6",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID ks_alfa_romeo_155_v6"
         },
         {
           "year": "",
@@ -13472,7 +13475,10 @@
           "model": "Romeo 33 Stradale",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-33-stradale"
+          "id": "assetto:alfa-romeo-33-stradale",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_alfa_33_stradale",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID ks_alfa_33_stradale"
         },
         {
           "year": "",
@@ -13480,7 +13486,10 @@
           "model": "Romeo 4C",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-4c"
+          "id": "assetto:alfa-romeo-4c",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_alfa_romeo_4c",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID ks_alfa_romeo_4c"
         },
         {
           "year": "",
@@ -13488,7 +13497,10 @@
           "model": "Romeo GTA",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-gta"
+          "id": "assetto:alfa-romeo-gta",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/alfa_romeo_giulietta_sprint_gta",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID alfa_romeo_giulietta_sprint_gta"
         },
         {
           "year": "",
@@ -13496,7 +13508,10 @@
           "model": "Romeo Giulia Quadrifoglio",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-giulia-quadrifoglio"
+          "id": "assetto:alfa-romeo-giulia-quadrifoglio",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_alfa_giulia_qv",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID ks_alfa_giulia_qv"
         },
         {
           "year": "",
@@ -13504,7 +13519,10 @@
           "model": "Romeo MiTo QV",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-mito-qv"
+          "id": "assetto:alfa-romeo-mito-qv",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/alfa_mito_qv",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID alfa_mito_qv"
         },
         {
           "year": "",
@@ -13512,7 +13530,10 @@
           "model": "Romeo Giulietta QV",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-giulietta-qv"
+          "id": "assetto:alfa-romeo-giulietta-qv",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/alfa_romeo_giulietta_qv",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID alfa_romeo_giulietta_qv"
         },
         {
           "year": "",
@@ -13520,7 +13541,10 @@
           "model": "Romeo Giulietta QV Launch Edition 2014",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-giulietta-qv-launch-edition-2014"
+          "id": "assetto:alfa-romeo-giulietta-qv-launch-edition-2014",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/alfa_romeo_giulietta_qv_le",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID alfa_romeo_giulietta_qv_le"
         },
         {
           "year": "",
@@ -13528,7 +13552,10 @@
           "model": "R18 e-tron quattro 2014",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-r18-e-tron-quattro-2014"
+          "id": "assetto:audi-r18-e-tron-quattro-2014",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_audi_r18_etron_quattro",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID ks_audi_r18_etron_quattro"
         },
         {
           "year": "",
@@ -13536,7 +13563,10 @@
           "model": "R8 LMS 2016",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-r8-lms-2016"
+          "id": "assetto:audi-r8-lms-2016",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_audi_r8_lms_2016",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID ks_audi_r8_lms_2016"
         },
         {
           "year": "",
@@ -13544,7 +13574,10 @@
           "model": "R8 LMS Ultra",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-r8-lms-ultra"
+          "id": "assetto:audi-r8-lms-ultra",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/audi_r8_lms",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID audi_r8_lms"
         },
         {
           "year": "",
@@ -13563,7 +13596,10 @@
           "model": "S1",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-s1"
+          "id": "assetto:audi-s1",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_audi_s1",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID ks_audi_s1"
         },
         {
           "year": "",
@@ -13571,7 +13607,10 @@
           "model": "Sport quattro",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-sport-quattro"
+          "id": "assetto:audi-sport-quattro",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/audi_sport_quattro",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID audi_sport_quattro"
         },
         {
           "year": "",
@@ -13579,7 +13618,10 @@
           "model": "Sport quattro S1 E2",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-sport-quattro-s1-e2"
+          "id": "assetto:audi-sport-quattro-s1-e2",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_audi_sport_quattro_rally",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID ks_audi_sport_quattro_rally"
         },
         {
           "year": "",
@@ -13587,7 +13629,10 @@
           "model": "Sport quattro Step 1",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-sport-quattro-step-1"
+          "id": "assetto:audi-sport-quattro-step-1",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/audi_sport_quattro_s1",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID audi_sport_quattro_s1"
         },
         {
           "year": "",
@@ -13595,7 +13640,10 @@
           "model": "TT Cup",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-tt-cup"
+          "id": "assetto:audi-tt-cup",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_audi_tt_cup",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID ks_audi_tt_cup"
         },
         {
           "year": "",
@@ -13603,7 +13651,10 @@
           "model": "TT RS VLN",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-tt-rs-vln"
+          "id": "assetto:audi-tt-rs-vln",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_audi_tt_vln",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID ks_audi_tt_vln"
         },
         {
           "year": "",
@@ -13611,7 +13662,10 @@
           "model": "1 Series M Coupe",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-1-series-m-coupe"
+          "id": "assetto:bmw-1-series-m-coupe",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/bmw_1m",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID bmw_1m"
         },
         {
           "year": "",
@@ -13619,7 +13673,10 @@
           "model": "1 Series M Coupe Stage 3",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-1-series-m-coupe-stage-3"
+          "id": "assetto:bmw-1-series-m-coupe-stage-3",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/bmw_1m_s3",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID bmw_1m_s3"
         },
         {
           "year": "",
@@ -13627,7 +13684,10 @@
           "model": "M235i Racing",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-m235i-racing"
+          "id": "assetto:bmw-m235i-racing",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_bmw_m235i_racing",
+          "imageSource": "https://unitedcorsa.com/en/discover/assetto-corsa/cars",
+          "imageMatch": "Exact official Kunos roster mapping; Assetto game ID ks_bmw_m235i_racing"
         },
         {
           "year": "",
@@ -15292,7 +15352,7 @@
         }
       ],
       "official_total": 178,
-      "imageCoverage": 158,
+      "imageCoverage": 178,
       "imageVerifiedAt": "2026-09-28"
     },
     {
