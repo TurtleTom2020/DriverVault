@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'DriverVault-source-v1.4.zip'
+      - 'DriverVault-source-v1.5.zip'
       - '.github/workflows/android.yml'
 
 jobs:
@@ -21,10 +21,10 @@ jobs:
         with:
           channel: stable
           cache: true
-      - name: Prepare DriverVault v1.4
+      - name: Prepare DriverVault v1.5
         run: |
           set -euo pipefail
-          ZIP="DriverVault-source-v1.4.zip"
+          ZIP="DriverVault-source-v1.5.zip"
           test -f "$ZIP" || { echo "ERROR: $ZIP not found"; exit 1; }
           echo "Building EXACT source: $ZIP"
           rm -rf build-project && mkdir build-project
@@ -38,10 +38,12 @@ jobs:
           d=json.load(open('assets/catalog/catalog.json'))
           fh=next(g for g in d['games'] if g['id']=='fh5')
           assert len(fh['vehicles'])==902
-          first=fh[:4]
-          assert all(v.get('image','').startswith('https://') for v in first), 'First four FH5 image URLs missing'
+          first=fh['vehicles'][:6]
+          assert all(v.get('image','').startswith('https://') for v in first), 'First six FH5 image URLs missing'
+          mapped=sum(bool(v.get('image')) for v in fh['vehicles'])
+          assert mapped >= 600, f'FH5 image coverage too low: {mapped}/902'
           print('FH5 hard gate: 902/902')
-          print('First four image fields populated: 4/4')
+          print(f'FH5 image fields populated: {mapped}/902; first six: 6/6')
           PY
           flutter create . --platforms=android,ios --org com.drivervault.app
           rm -f test/widget_test.dart
@@ -69,5 +71,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v1.4-debug
+          name: DriverVault-v1.5-debug
           path: build-project/build/app/outputs/flutter-apk/app-debug.apk
