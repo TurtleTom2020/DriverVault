@@ -12429,16 +12429,15 @@
           "class": "",
           "drive": "",
           "id": "beamng:bruckell-moohawk",
-          "image": "https://static.wikia.nocookie.net/beamng/images/1/18/Bruckell_logoNew.png/revision/latest?cb=20251116204245",
-          "imageSource": "https://beamng.fandom.com/api.php",
-          "imageMatch": "Bruckell"
+          "image": ""
         },
         {
           "make": "Bruckell",
           "model": "Nine",
           "year": "1933–1934",
           "class": "Full-Size Car",
-          "image": ""
+          "image": "",
+          "id": "beamng:bruckell-nine"
         },
         {
           "year": "",
@@ -12610,7 +12609,8 @@
           "model": "MD-Series",
           "year": "1986–1998",
           "class": "Medium Truck",
-          "image": ""
+          "image": "",
+          "id": "beamng:gavril-md-series"
         },
         {
           "year": "",
@@ -12661,7 +12661,8 @@
           "model": "HT-55",
           "year": "1996–2007",
           "class": "Heavy Truck",
-          "image": ""
+          "image": "",
+          "id": "beamng:hirochi-ht-55"
         },
         {
           "year": "",
@@ -12690,7 +12691,8 @@
           "model": "WL-40",
           "year": "2000–2007",
           "class": "Wheel Loader",
-          "image": ""
+          "image": "",
+          "id": "beamng:hirochi-wl-40"
         },
         {
           "year": "",
@@ -12837,7 +12839,7 @@
         }
       ],
       "imageCoverage": {
-        "mapped": 39,
+        "mapped": 38,
         "total": 43
       },
       "imageVerifiedAt": "2026-09-27",
