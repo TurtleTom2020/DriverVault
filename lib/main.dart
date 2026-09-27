@@ -358,7 +358,7 @@ class VehicleImage extends StatelessWidget {
   @override Widget build(BuildContext context) {
     final url=VehicleImageResolver.url(v);
     if(url.isEmpty) return fallback();
-    return Container(decoration:const BoxDecoration(gradient:LinearGradient(begin:Alignment.topCenter,end:Alignment.bottomCenter,colors:[Color(0xff171622),Color(0xff09090f)])),padding:const EdgeInsets.all(8),alignment:Alignment.center,child:Image.network(url,fit:fit,alignment:Alignment.center,filterQuality:FilterQuality.high,loadingBuilder:(c,child,p)=>p==null?child:const Center(child:CircularProgressIndicator(strokeWidth:2)),errorBuilder:(_,__,___)=>fallback()));
+    return Container(decoration:const BoxDecoration(gradient:LinearGradient(begin:Alignment.topCenter,end:Alignment.bottomCenter,colors:[Color(0xff171622),Color(0xff09090f)])),alignment:Alignment.center,child:LayoutBuilder(builder:(c,b)=>Image.network(url,width:b.maxWidth,height:b.maxHeight,fit:fit,alignment:Alignment.center,filterQuality:FilterQuality.high,gaplessPlayback:true,frameBuilder:(c,child,frame,sync)=>AnimatedOpacity(opacity:sync||frame!=null?1:0,duration:const Duration(milliseconds:180),child:child),loadingBuilder:(c,child,p)=>p==null?child:Stack(fit:StackFit.expand,children:[child,const Center(child:CircularProgressIndicator(strokeWidth:2))]),errorBuilder:(_,__,___)=>fallback())));
   }
 }
 
@@ -375,9 +375,9 @@ class VehicleCard extends StatelessWidget {
     child:Container(
       clipBehavior:Clip.antiAlias,
       decoration:BoxDecoration(
-        color:card,
+        color:dvCard,
         borderRadius:BorderRadius.circular(14),
-        border:Border.all(color:Colors.white12)),
+        border:Border.all(color:dvAccent.withValues(alpha:.20))),
       child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
         Expanded(child:Stack(children:[Positioned.fill(child:VehicleImage(gameId:gameId,v:v)),Positioned(top:5,right:5,child:IconButton.filledTonal(onPressed:onFavourite,tooltip:favourite?'Remove favourite':'Add favourite',icon:Icon(favourite?Icons.star_rounded:Icons.star_border_rounded,color:favourite?gold:Colors.white70)))])),
         Padding(
