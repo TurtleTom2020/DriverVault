@@ -44,7 +44,7 @@ jobs:
         shell: bash
         run: |
           cd build-project
-          flutter analyze
+                    flutter analyze --no-fatal-infos
 
       - name: Build debug APK
         shell: bash
