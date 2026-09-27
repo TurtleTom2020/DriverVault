@@ -42,7 +42,7 @@ class _Shell extends State<Shell>{
  void add(Map<String,dynamic> s){final i=setups.indexWhere((x)=>x['id']==s['id']);if(i>=0){setups[i]=s;}else{setups.add(s);}persist();setState((){});}
  @override Widget build(BuildContext c)=>Scaffold(
   body:SafeArea(child:IndexedStack(index:tab,children:[
-   Home(games:games,setups:setups,onCatalogue:()=>setState(()=>tab=1),onSetups:()=>setState(()=>tab=2),onTheme:widget.onTheme),
+   Home(games:games,setups:setups,favourites:favourites,onCatalogue:()=>setState(()=>tab=1),onSetups:()=>setState(()=>tab=2),onTheme:widget.onTheme,onOpenFavourites:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>FavouriteVehicles(games:games,favourites:favourites,onFavourite:toggleFavourite,onSave:add))),),
    Catalogue(games:games,onSave:add,favourites:favourites,onFavourite:toggleFavourite),
    MySetups(items:setups,games:games,onSave:add,onDelete:(x){setups.remove(x);persist();setState((){});}),
    const Hardware(),
@@ -56,8 +56,8 @@ class _Shell extends State<Shell>{
 }
 
 class Home extends StatelessWidget{
- final List games,setups; final VoidCallback onCatalogue,onSetups,onTheme;
- const Home({super.key,required this.games,required this.setups,required this.onCatalogue,required this.onSetups,required this.onTheme});
+ final List games,setups; final Set<String> favourites; final VoidCallback onCatalogue,onSetups,onTheme,onOpenFavourites;
+ const Home({super.key,required this.games,required this.setups,required this.favourites,required this.onCatalogue,required this.onSetups,required this.onTheme,required this.onOpenFavourites});
  @override Widget build(BuildContext c)=>ListView(padding:const EdgeInsets.fromLTRB(18,12,18,28),children:[
   Row(children:[
    Image.asset('assets/branding/drivervault_icon.png',width:82,height:82),
@@ -81,7 +81,7 @@ class Home extends StatelessWidget{
    Expanded(child:Quick(icon:Icons.directions_car_filled_rounded,title:'Catalogue',sub:'Find vehicles',tap:onCatalogue)),
    const SizedBox(width:8),Expanded(child:Quick(icon:Icons.tune_rounded,title:'My Setups',sub:'View & manage',tap:onSetups)),
    const SizedBox(width:8),const Expanded(child:Quick(icon:Icons.sports_esports_rounded,title:'Hardware',sub:'Manage profiles')),
-   const SizedBox(width:8),const Expanded(child:Quick(icon:Icons.star_rounded,title:'Favourites',sub:'Your saved cars'))]),
+   const SizedBox(width:8),Expanded(child:Quick(icon:Icons.star_rounded,title:'Favourites',sub:'${favourites.length} saved',tap:onOpenFavourites))]),
  ]);
 }
 class GameArt extends StatelessWidget {
@@ -116,6 +116,21 @@ class GameTile extends StatelessWidget{final dynamic game;final VoidCallback onT
  @override Widget build(BuildContext c)=>InkWell(onTap:onTap,borderRadius:BorderRadius.circular(15),child:AspectRatio(aspectRatio:1.28,child:ClipRRect(borderRadius:BorderRadius.circular(15),child:GameArt(game:game))));}
 class Quick extends StatelessWidget{final IconData icon;final String title,sub;final VoidCallback? tap;const Quick({super.key,required this.icon,required this.title,required this.sub,this.tap});
  @override Widget build(BuildContext c)=>InkWell(onTap:tap,borderRadius:BorderRadius.circular(12),child:Container(height:88,padding:const EdgeInsets.all(10),decoration:BoxDecoration(color:card,borderRadius:BorderRadius.circular(12),border:Border.all(color:Colors.white10)),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Icon(icon,color:purple,size:25),const Spacer(),Text(title,maxLines:1,style:const TextStyle(fontWeight:FontWeight.w800,fontSize:12)),Text(sub,maxLines:1,style:const TextStyle(fontSize:9,color:Colors.white54))])));}
+class FavouriteVehicles extends StatefulWidget{
+ final List games;final Set<String> favourites;final ValueChanged<String> onFavourite;final ValueChanged<Map<String,dynamic>> onSave;
+ const FavouriteVehicles({super.key,required this.games,required this.favourites,required this.onFavourite,required this.onSave});
+ @override State<FavouriteVehicles> createState()=>_FavouriteVehiclesState();
+}
+class _FavouriteVehiclesState extends State<FavouriteVehicles>{
+ String keyFor(dynamic g,dynamic v)=>'${g['id']}|${v['make']}|${v['model']}|${v['year']}';
+ @override Widget build(BuildContext context){
+  final rows=<Map<String,dynamic>>[];
+  for(final g in widget.games){for(final v in (g['vehicles'] as List)){if(widget.favourites.contains(keyFor(g,v)))rows.add({'g':g,'v':v});}}
+  return Scaffold(appBar:AppBar(title:const Text('Favourites')),body:rows.isEmpty?const Center(child:Text('No favourite vehicles yet.',style:TextStyle(color:Colors.white60))):GridView.builder(
+   padding:const EdgeInsets.all(14),itemCount:rows.length,gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,childAspectRatio:.88,crossAxisSpacing:10,mainAxisSpacing:10),
+   itemBuilder:(c,i){final g=rows[i]['g'],v=rows[i]['v'],k=keyFor(g,v);return VehicleCard(gameId:g['id'].toString(),v:v,favourite:true,onFavourite:(){widget.onFavourite(k);setState((){});},tap:()=>Navigator.push(c,MaterialPageRoute(builder:(_)=>VehiclePage(game:g,v:v,onSave:widget.onSave))));}));
+ }
+}
 class Catalogue extends StatefulWidget{final List games;final ValueChanged<Map<String,dynamic>> onSave;final Set<String> favourites;final ValueChanged<String> onFavourite;const Catalogue({super.key,required this.games,required this.onSave,required this.favourites,required this.onFavourite});@override State<Catalogue> createState()=>_Catalogue();}
 class _Catalogue extends State<Catalogue>{
  String q='';
