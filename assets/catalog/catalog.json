@@ -12423,11 +12423,51 @@
           "image": null,
           "imageSource": null,
           "imageMatch": "Verified official CarX Drift Racing Online update roster"
+        },
+        {
+          "id": "carx:udm-4z",
+          "make": "",
+          "model": "UDM 4Z",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online official update roster"
+        },
+        {
+          "id": "carx:arcus",
+          "make": "",
+          "model": "Arcus",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online official update roster"
+        },
+        {
+          "id": "carx:loki-f9",
+          "make": "",
+          "model": "Loki F9",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online official update roster"
+        },
+        {
+          "id": "carx:flare-zr",
+          "make": "",
+          "model": "Flare ZR",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online official update roster"
+        },
+        {
+          "id": "carx:youkai",
+          "make": "",
+          "model": "Youkai",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online official update roster"
         }
       ],
       "imageCoverage": 27,
       "imageVerifiedAt": "2026-09-27",
-      "official_total": 87,
+      "official_total": 92,
       "catalogVerifiedAt": "2026-09-28"
     },
     {
