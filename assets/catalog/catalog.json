@@ -12367,10 +12367,68 @@
           "image": "https://static.wikia.nocookie.net/carx/images/a/ae/Miracle_stock.jpg/revision/latest?cb=20250217132227",
           "imageSource": "https://carx.fandom.com/api.php",
           "imageMatch": "CarX Rally"
+        },
+        {
+          "id": "carx:jet-kun-sayaka-special",
+          "make": "",
+          "model": "Jet-Kun Sayaka Special",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified official CarX Drift Racing Online update roster"
+        },
+        {
+          "id": "carx:spirax",
+          "make": "",
+          "model": "Spirax",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified official CarX Drift Racing Online update roster"
+        },
+        {
+          "id": "carx:raijin-x",
+          "make": "",
+          "model": "Raijin X",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified official CarX Drift Racing Online update roster"
+        },
+        {
+          "id": "carx:precision-gt",
+          "make": "",
+          "model": "Precision GT",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified official CarX Drift Racing Online update roster"
+        },
+        {
+          "id": "carx:dtm-39",
+          "make": "",
+          "model": "DTM 39",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified official CarX Drift Racing Online update roster"
+        },
+        {
+          "id": "carx:glider",
+          "make": "",
+          "model": "Glider",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified official CarX Drift Racing Online update roster"
+        },
+        {
+          "id": "carx:proton-gt",
+          "make": "",
+          "model": "Proton GT",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified official CarX Drift Racing Online update roster"
         }
       ],
       "imageCoverage": 27,
-      "imageVerifiedAt": "2026-09-27"
+      "imageVerifiedAt": "2026-09-27",
+      "official_total": 87,
+      "catalogVerifiedAt": "2026-09-28"
     },
     {
       "id": "beamng",
