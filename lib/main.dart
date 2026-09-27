@@ -42,7 +42,7 @@ class _Shell extends State<Shell>{
  void add(Map<String,dynamic> s){final i=setups.indexWhere((x)=>x['id']==s['id']);if(i>=0){setups[i]=s;}else{setups.add(s);}persist();setState((){});}
  @override Widget build(BuildContext c)=>Scaffold(
   body:SafeArea(child:IndexedStack(index:tab,children:[
-   Home(games:games,setups:setups,favourites:favourites,onCatalogue:()=>setState(()=>tab=1),onSetups:()=>setState(()=>tab=2),onTheme:widget.onTheme,onOpenFavourites:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>FavouriteVehicles(games:games,favourites:favourites,onFavourite:toggleFavourite,onSave:add))),),
+   Home(games:games,setups:setups,favourites:favourites,onCatalogue:()=>setState(()=>tab=1),onSetups:()=>setState(()=>tab=2),onHardware:()=>setState(()=>tab=3),onTheme:widget.onTheme,onOpenFavourites:()=>Navigator.push(context,MaterialPageRoute(builder:(_)=>FavouriteVehicles(games:games,favourites:favourites,onFavourite:toggleFavourite,onSave:add))),),
    Catalogue(games:games,onSave:add,favourites:favourites,onFavourite:toggleFavourite),
    MySetups(items:setups,games:games,onSave:add,onDelete:(x){setups.remove(x);persist();setState((){});}),
    const Hardware(),
@@ -56,8 +56,8 @@ class _Shell extends State<Shell>{
 }
 
 class Home extends StatelessWidget{
- final List games,setups; final Set<String> favourites; final VoidCallback onCatalogue,onSetups,onTheme,onOpenFavourites;
- const Home({super.key,required this.games,required this.setups,required this.favourites,required this.onCatalogue,required this.onSetups,required this.onTheme,required this.onOpenFavourites});
+ final List games,setups; final Set<String> favourites; final VoidCallback onCatalogue,onSetups,onHardware,onTheme,onOpenFavourites;
+ const Home({super.key,required this.games,required this.setups,required this.favourites,required this.onCatalogue,required this.onSetups,required this.onHardware,required this.onTheme,required this.onOpenFavourites});
  @override Widget build(BuildContext c)=>ListView(padding:const EdgeInsets.fromLTRB(18,12,18,28),children:[
   Row(children:[
    Image.asset('assets/branding/drivervault_icon.png',width:82,height:82),
@@ -80,7 +80,7 @@ class Home extends StatelessWidget{
   Row(children:[
    Expanded(child:Quick(icon:Icons.directions_car_filled_rounded,title:'Catalogue',sub:'Find vehicles',tap:onCatalogue)),
    const SizedBox(width:8),Expanded(child:Quick(icon:Icons.tune_rounded,title:'My Setups',sub:'View & manage',tap:onSetups)),
-   const SizedBox(width:8),const Expanded(child:Quick(icon:Icons.sports_esports_rounded,title:'Hardware',sub:'Manage profiles')),
+   const SizedBox(width:8),Expanded(child:Quick(icon:Icons.sports_esports_rounded,title:'Hardware',sub:'Manage profiles',tap:onHardware)),
    const SizedBox(width:8),Expanded(child:Quick(icon:Icons.star_rounded,title:'Favourites',sub:'${favourites.length} saved',tap:onOpenFavourites))]),
  ]);
 }
