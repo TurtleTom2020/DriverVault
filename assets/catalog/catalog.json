@@ -13648,7 +13648,10 @@
           "model": "M3 E30 Gr.A 92",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-m3-e30-gr-a-92"
+          "id": "assetto:bmw-m3-e30-gr-a-92",
+          "image": "https://www.igcd.net/thumbnail.php?pic=069-875.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=80421",
+          "imageMatch": "Verified official same-model variant; reused assetto:bmw-m3-e30-group-a vehicle image"
         },
         {
           "year": "",
@@ -13766,7 +13769,10 @@
           "model": "Z4 E89 Step 1",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-z4-e89-step-1"
+          "id": "assetto:bmw-z4-e89-step-1",
+          "image": "https://www.igcd.net/thumbnail.php?pic=080-422.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=48387",
+          "imageMatch": "Verified official same-model variant; reused assetto:bmw-z4-e89-drift vehicle image"
         },
         {
           "year": "",
@@ -15277,7 +15283,7 @@
         }
       ],
       "official_total": 178,
-      "imageCoverage": 153,
+      "imageCoverage": 155,
       "imageVerifiedAt": "2026-09-28"
     },
     {
