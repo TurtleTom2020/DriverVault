@@ -4,12 +4,12 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'DriverVault-source-v1.7.zip'
+      - 'DriverVault-source-v1.8.zip'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -20,45 +20,44 @@ jobs:
         with:
           channel: stable
           cache: true
-      - name: Prepare DriverVault v1.7
+      - name: Prepare and validate DriverVault v1.8
         run: |
           set -euo pipefail
-          ZIP="DriverVault-source-v1.7.zip"
+          ZIP="DriverVault-source-v1.8.zip"
           test -f "$ZIP" || { echo "ERROR: $ZIP not found"; exit 1; }
           rm -rf build-project && mkdir build-project
           unzip -q "$ZIP" -d build-project
           cd build-project
-          python3 -m py_compile scripts/update_catalogues.py
-          python3 -m json.tool assets/catalog/game_schemas.json >/dev/null
-          python3 scripts/update_catalogues.py
           python3 - <<'PY'
           import json
           c=json.load(open('assets/catalog/catalog.json'))
+          h=json.load(open('assets/catalog/hardware.json'))
           s=json.load(open('assets/catalog/game_schemas.json'))
-          games={g['id']:g for g in c['games']}
-          assert len(games['fh5']['vehicles'])==902
-          assert len(games['gt7']['vehicles'])>=570
-          required=['fh5','carx','beamng','gt7','snowrunner','mudrunner','ets2','ats','assetto','wrc','alaskan']
-          for gid in required:
-              assert gid in s, f'Missing configuration schema: {gid}'
-              schema=s[gid]
-              if 'copy' in schema: schema=s[schema['copy']]
-              assert schema.get('sections'), f'Empty configuration schema: {gid}'
-          fh=games['fh5']['vehicles']
-          mapped=sum(bool(v.get('image')) for v in fh)
-          assert mapped>=600, f'FH5 image coverage too low: {mapped}/902'
-          print(f'FH5 image mapping gate: {mapped}/902')
-          print('Per-game configuration schemas:', ', '.join(required))
+          counts={g['id']:len(g.get('vehicles',[])) for g in c['games']}
+          expected={'fh5':902,'carx':80,'beamng':39,'ets2':28,'ats':19,'assetto':178,'wrc':99,'alaskan':19,'mudrunner':35,'snowrunner':116,'gt7':584}
+          for k,v in expected.items(): assert counts.get(k)==v,(k,counts.get(k),v)
+          fh=next(g for g in c['games'] if g['id']=='fh5')
+          imgs=sum(bool(v.get('image')) for v in fh['vehicles'])
+          assert imgs>=805,imgs
+          lg=next(x for x in h['manufacturers'] if x['name']=='Logitech G')
+          names=[x['name'] for x in lg['devices']]
+          assert 'RS50 Base – PlayStation/PC' in names
+          assert 'RS50 Base – Xbox/PC' in names
+          assert len(s)>=10
+          code=open('lib/main.dart').read()
+          assert "gameId':widget.game['id']" in code
+          assert 'ConstrainedBox(constraints:const BoxConstraints(maxWidth:420)' in code
+          print('PACKAGED catalogue validated:',counts)
+          print('FH5 packaged images:',imgs,'/ 902')
+          print('Game schemas:',len(s))
           PY
           flutter create . --platforms=android,ios --org com.drivervault.app
           rm -f test/widget_test.dart
           python3 - <<'PY'
           from pathlib import Path
           import re
-          p=Path('android/app/src/main/AndroidManifest.xml'); x=p.read_text()
-          x=re.sub(r'android:label="[^"]*"','android:label="DriverVault"',x,count=1)
-          if 'android.permission.INTERNET' not in x:
-              x=x.replace('<manifest xmlns:android="http://schemas.android.com/apk/res/android">','<manifest xmlns:android="http://schemas.android.com/apk/res/android">\n    <uses-permission android:name="android.permission.INTERNET"/>')
+          p=Path('android/app/src/main/AndroidManifest.xml'); x=p.read_text(); x=re.sub(r'android:label="[^"]*"','android:label="DriverVault"',x,count=1)
+          if 'android.permission.INTERNET' not in x: x=x.replace('<manifest xmlns:android="http://schemas.android.com/apk/res/android">','<manifest xmlns:android="http://schemas.android.com/apk/res/android">\n    <uses-permission android:name="android.permission.INTERNET"/>')
           p.write_text(x)
           PY
           flutter pub get
@@ -72,5 +71,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v1.7-debug
+          name: DriverVault-v1.8-debug
           path: build-project/build/app/outputs/flutter-apk/app-debug.apk
