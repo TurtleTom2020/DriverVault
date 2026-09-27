@@ -12376,7 +12376,7 @@
       "id": "beamng",
       "name": "BeamNG.drive",
       "art": "assets/games/beamng.jpg",
-      "source": "BeamNG official content/release notes",
+      "source": "https://docs.beamng.com/official_content/vehicles/",
       "vehicles": [
         {
           "year": "",
@@ -12425,13 +12425,20 @@
         {
           "year": "",
           "make": "Bruckell",
-          "model": "Moohawk",
+          "model": "Moonhawk",
           "class": "",
           "drive": "",
           "id": "beamng:bruckell-moohawk",
           "image": "https://static.wikia.nocookie.net/beamng/images/1/18/Bruckell_logoNew.png/revision/latest?cb=20251116204245",
           "imageSource": "https://beamng.fandom.com/api.php",
           "imageMatch": "Bruckell"
+        },
+        {
+          "make": "Bruckell",
+          "model": "Nine",
+          "year": "1933–1934",
+          "class": "Full-Size Car",
+          "image": ""
         },
         {
           "year": "",
@@ -12447,13 +12454,13 @@
         {
           "year": "",
           "make": "Cherrier",
-          "model": "Vivace",
+          "model": "Ardente",
           "class": "",
           "drive": "",
-          "id": "beamng:cherrier-vivace",
-          "image": "https://static.wikia.nocookie.net/beamng/images/b/bc/Default_%282%29.jpg/revision/latest?cb=20251219012928",
+          "id": "beamng:cherrier-ardente",
+          "image": "https://static.wikia.nocookie.net/beamng/images/b/b8/Ccherrier_ardente_S_410Q_DCT.jpeg/revision/latest?cb=20260729161614",
           "imageSource": "https://beamng.fandom.com/api.php",
-          "imageMatch": "Cherrier Vivace"
+          "imageMatch": "Cherrier Ardente"
         },
         {
           "year": "",
@@ -12469,13 +12476,13 @@
         {
           "year": "",
           "make": "Cherrier",
-          "model": "Ardente",
+          "model": "Vivace",
           "class": "",
           "drive": "",
-          "id": "beamng:cherrier-ardente",
-          "image": "https://static.wikia.nocookie.net/beamng/images/b/b8/Ccherrier_ardente_S_410Q_DCT.jpeg/revision/latest?cb=20260729161614",
+          "id": "beamng:cherrier-vivace",
+          "image": "https://static.wikia.nocookie.net/beamng/images/b/bc/Default_%282%29.jpg/revision/latest?cb=20251219012928",
           "imageSource": "https://beamng.fandom.com/api.php",
-          "imageMatch": "Cherrier Ardente"
+          "imageMatch": "Cherrier Vivace"
         },
         {
           "year": "",
@@ -12599,6 +12606,13 @@
           "imageMatch": "Gavril H-Series"
         },
         {
+          "make": "Gavril",
+          "model": "MD-Series",
+          "year": "1986–1998",
+          "class": "Medium Truck",
+          "image": ""
+        },
+        {
           "year": "",
           "make": "Gavril",
           "model": "Roamer",
@@ -12623,13 +12637,13 @@
         {
           "year": "",
           "make": "Hirochi",
-          "model": "SBR4",
+          "model": "Aurata",
           "class": "",
           "drive": "",
-          "id": "beamng:hirochi-sbr4",
-          "image": "https://static.wikia.nocookie.net/beamng/images/0/0a/TT_AWD_S2_DCT.jpg/revision/latest?cb=20250921090643",
+          "id": "beamng:hirochi-aurata",
+          "image": "https://static.wikia.nocookie.net/beamng/images/f/f7/Hirochi_Aurata.jpg/revision/latest?cb=20230922035000",
           "imageSource": "https://beamng.fandom.com/api.php",
-          "imageMatch": "Hirochi SBR4"
+          "imageMatch": "Hirochi Aurata"
         },
         {
           "year": "",
@@ -12643,6 +12657,24 @@
           "imageMatch": "Hirochi eSBR"
         },
         {
+          "make": "Hirochi",
+          "model": "HT-55",
+          "year": "1996–2007",
+          "class": "Heavy Truck",
+          "image": ""
+        },
+        {
+          "year": "",
+          "make": "Hirochi",
+          "model": "SBR4",
+          "class": "",
+          "drive": "",
+          "id": "beamng:hirochi-sbr4",
+          "image": "https://static.wikia.nocookie.net/beamng/images/0/0a/TT_AWD_S2_DCT.jpg/revision/latest?cb=20250921090643",
+          "imageSource": "https://beamng.fandom.com/api.php",
+          "imageMatch": "Hirochi SBR4"
+        },
+        {
           "year": "",
           "make": "Hirochi",
           "model": "Sunburst",
@@ -12654,20 +12686,16 @@
           "imageMatch": "Hirochi Sunburst"
         },
         {
-          "year": "",
           "make": "Hirochi",
-          "model": "Aurata",
-          "class": "",
-          "drive": "",
-          "id": "beamng:hirochi-aurata",
-          "image": "https://static.wikia.nocookie.net/beamng/images/f/f7/Hirochi_Aurata.jpg/revision/latest?cb=20230922035000",
-          "imageSource": "https://beamng.fandom.com/api.php",
-          "imageMatch": "Hirochi Aurata"
+          "model": "WL-40",
+          "year": "2000–2007",
+          "class": "Wheel Loader",
+          "image": ""
         },
         {
           "year": "",
           "make": "Ibishu",
-          "model": "200BX",
+          "model": "BX-Series",
           "class": "",
           "drive": "",
           "id": "beamng:ibishu-200bx",
@@ -12754,28 +12782,6 @@
         },
         {
           "year": "",
-          "make": "SP",
-          "model": "Dunekicker",
-          "class": "",
-          "drive": "",
-          "id": "beamng:sp-dunekicker",
-          "image": "https://static.wikia.nocookie.net/beamng/images/c/c6/SP_Dunekicker.jpg/revision/latest?cb=20221213133549",
-          "imageSource": "https://beamng.fandom.com/api.php",
-          "imageMatch": "SP Dunekicker"
-        },
-        {
-          "year": "",
-          "make": "SP",
-          "model": "Rockbasher",
-          "class": "",
-          "drive": "",
-          "id": "beamng:sp-rockbasher",
-          "image": "https://static.wikia.nocookie.net/beamng/images/0/08/SP_Rockbasher.jpg/revision/latest?cb=20221213133601",
-          "imageSource": "https://beamng.fandom.com/api.php",
-          "imageMatch": "SP Rockbasher"
-        },
-        {
-          "year": "",
           "make": "Soliad",
           "model": "Lansdale",
           "class": "",
@@ -12798,6 +12804,28 @@
         },
         {
           "year": "",
+          "make": "SP",
+          "model": "Dunekicker",
+          "class": "",
+          "drive": "",
+          "id": "beamng:sp-dunekicker",
+          "image": "https://static.wikia.nocookie.net/beamng/images/c/c6/SP_Dunekicker.jpg/revision/latest?cb=20221213133549",
+          "imageSource": "https://beamng.fandom.com/api.php",
+          "imageMatch": "SP Dunekicker"
+        },
+        {
+          "year": "",
+          "make": "SP",
+          "model": "Rockbasher",
+          "class": "",
+          "drive": "",
+          "id": "beamng:sp-rockbasher",
+          "image": "https://static.wikia.nocookie.net/beamng/images/0/08/SP_Rockbasher.jpg/revision/latest?cb=20221213133601",
+          "imageSource": "https://beamng.fandom.com/api.php",
+          "imageMatch": "SP Rockbasher"
+        },
+        {
+          "year": "",
           "make": "Wentward",
           "model": "DT40L",
           "class": "",
@@ -12808,8 +12836,14 @@
           "imageMatch": "Wentward DT40L"
         }
       ],
-      "imageCoverage": 39,
-      "imageVerifiedAt": "2026-09-27"
+      "imageCoverage": {
+        "mapped": 39,
+        "total": 43
+      },
+      "imageVerifiedAt": "2026-09-27",
+      "official_total": 43,
+      "catalogVersion": "BeamNG.drive v0.39.1 official documentation",
+      "catalogVerifiedAt": "2026-09-27"
     },
     {
       "id": "ets2",
