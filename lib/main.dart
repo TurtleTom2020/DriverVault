@@ -23,7 +23,10 @@ class _DriverVaultState extends State<DriverVault>{
   const SizedBox(height:18),Container(height:72,width:double.infinity,decoration:BoxDecoration(borderRadius:BorderRadius.circular(14),gradient:LinearGradient(colors:[themePresets[draft]!,draftFinish=='Two-tone'?gold:themePresets[draft]!.withValues(alpha:.35)]),border:Border.all(color:gold.withValues(alpha:.7))),child:Center(child:Text('$draft • $draftFinish',style:const TextStyle(fontWeight:FontWeight.w900)))),
   const SizedBox(height:16),SizedBox(width:double.infinity,child:FilledButton(onPressed:()async{themeName=draft;finish=draftFinish;final p=await SharedPreferences.getInstance();await p.setString('theme_name',themeName);await p.setString('theme_finish',finish);if(mounted)setState((){});if(bc.mounted)Navigator.pop(bc);},child:const Text('Apply Theme')))
  ])))));if(mounted)setState((){});}
- @override Widget build(BuildContext c){final accent=themePresets[themeName]??purple;return MaterialApp(debugShowCheckedModeBanner:false,title:'DriverVault',theme:ThemeData.dark(useMaterial3:true).copyWith(scaffoldBackgroundColor:bg,colorScheme:ColorScheme.fromSeed(seedColor:accent,brightness:Brightness.dark),appBarTheme:const AppBarTheme(backgroundColor:bg,surfaceTintColor:Colors.transparent)),home:Shell(onTheme:_theme));}
+ @override Widget build(BuildContext c){final accent=themePresets[themeName]??purple;
+  dvAccent=accent;dvSecondary=themeName=='Purple + Gold'?gold:accent.withValues(alpha:.78);
+  switch(finish){case 'Matte':dvCard=Color.lerp(card,Colors.black,.22)!;dvNav=Color.lerp(const Color(0xff0b0910),Colors.black,.25)!;break;case 'Solid':dvCard=Color.lerp(card,accent,.08)!;dvNav=Color.lerp(const Color(0xff0b0910),accent,.06)!;break;case 'Pearlescent':dvCard=Color.lerp(card,accent,.16)!;dvNav=Color.lerp(const Color(0xff0b0910),accent,.12)!;break;case 'Two-tone':dvCard=Color.lerp(card,gold,.12)!;dvNav=Color.lerp(const Color(0xff0b0910),accent,.14)!;break;default:dvCard=Color.lerp(card,accent,.12)!;dvNav=Color.lerp(const Color(0xff0b0910),accent,.09)!;}
+  return MaterialApp(debugShowCheckedModeBanner:false,title:'DriverVault',theme:ThemeData.dark(useMaterial3:true).copyWith(scaffoldBackgroundColor:bg,colorScheme:ColorScheme.fromSeed(seedColor:accent,brightness:Brightness.dark).copyWith(secondary:dvSecondary,surface:dvCard),cardTheme:CardThemeData(color:dvCard),navigationBarTheme:NavigationBarThemeData(backgroundColor:dvNav,indicatorColor:accent.withValues(alpha:.42),iconTheme:WidgetStateProperty.resolveWith((states)=>IconThemeData(color:states.contains(WidgetState.selected)?accent:Colors.white70)),labelTextStyle:WidgetStateProperty.resolveWith((states)=>TextStyle(color:states.contains(WidgetState.selected)?accent:Colors.white70,fontWeight:states.contains(WidgetState.selected)?FontWeight.w800:FontWeight.w500))),inputDecorationTheme:InputDecorationTheme(focusedBorder:OutlineInputBorder(borderSide:BorderSide(color:accent,width:1.5)),labelStyle:TextStyle(color:accent)),chipTheme:ChipThemeData(selectedColor:accent.withValues(alpha:.35),side:BorderSide(color:accent.withValues(alpha:.45))),appBarTheme:const AppBarTheme(backgroundColor:bg,surfaceTintColor:Colors.transparent)),home:Shell(onTheme:_theme));}
 }
 
 
@@ -47,7 +50,7 @@ class _Shell extends State<Shell>{
    MySetups(items:setups,games:games,onSave:add,onDelete:(x){setups.remove(x);persist();setState((){});}),
    const Hardware(),
   ])),
-  bottomNavigationBar:NavigationBar(height:72,backgroundColor:const Color(0xff0b0910),indicatorColor:const Color(0xff65209a),
+  bottomNavigationBar:NavigationBar(height:72,
    selectedIndex:tab,onDestinationSelected:(v)=>setState(()=>tab=v),destinations:const[
     NavigationDestination(icon:Icon(Icons.home_rounded),label:'Home'),
     NavigationDestination(icon:Icon(Icons.directions_car_filled_rounded),label:'Catalogue'),
