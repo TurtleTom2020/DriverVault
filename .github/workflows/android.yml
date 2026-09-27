@@ -45,5 +45,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v0.7-debug
+          name: DriverVault-v0.7.1-debug
           path: build-project/build/app/outputs/flutter-apk/app-debug.apk
