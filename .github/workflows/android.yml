@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'DriverVault-source-v2.0-fix3.zip'
+      - 'DriverVault-source-v2.0-fix4.zip'
       - '.github/workflows/android.yml'
 jobs:
   build:
@@ -24,7 +24,7 @@ jobs:
         run: |
           set -euo pipefail
           rm -rf build-project && mkdir build-project
-          unzip -q DriverVault-source-v2.0-fix3.zip -d build-project
+          unzip -q DriverVault-source-v2.0-fix4.zip -d build-project
           test -f build-project/lib/main.dart
       - name: Deep-map and verify vehicle imagery
         working-directory: build-project
@@ -67,14 +67,14 @@ jobs:
         run: |
           if [ -d build-project ]; then
             cd build-project
-            zip -qr ../DriverVault-v2.0-fix3-checkpoint.zip . -x 'build/*' '.dart_tool/*' '.git/*'
+            zip -qr ../DriverVault-v2.0-fix4-checkpoint.zip . -x 'build/*' '.dart_tool/*' '.git/*'
           fi
       - name: Upload mapping checkpoint
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v2.0-fix3-checkpoint
-          path: DriverVault-v2.0-fix3-checkpoint.zip
+          name: DriverVault-v2.0-fix4-checkpoint
+          path: DriverVault-v2.0-fix4-checkpoint.zip
           if-no-files-found: ignore
       - name: Prepare Flutter project
         working-directory: build-project
