@@ -13398,10 +13398,7 @@
           "model": "500 Assetto Corse",
           "class": "",
           "drive": "",
-          "id": "assetto:abarth-500-assetto-corse",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=84059",
-          "imageMatch": "fa-ship\"> Sea Playable vehicle Unplayable vehicle Downloadable vehicle 2008 Abarth 500 2008 Abarth 500 Assetto Corse 1968 Abarth 595 SS <div"
+          "id": "assetto:abarth-500-assetto-corse"
         },
         {
           "year": "",
@@ -13409,10 +13406,7 @@
           "model": "500 EsseEsse",
           "class": "",
           "drive": "",
-          "id": "assetto:abarth-500-esseesse",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=84059",
-          "imageMatch": "fa-ship\"> Sea Playable vehicle Unplayable vehicle Downloadable vehicle 2008 Abarth 500 2008 Abarth 500 Assetto Corse 1968 Abarth 595 SS <div"
+          "id": "assetto:abarth-500-esseesse"
         },
         {
           "year": "",
@@ -13431,10 +13425,7 @@
           "model": "595 SS",
           "class": "",
           "drive": "",
-          "id": "assetto:abarth-595-ss",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=84059",
-          "imageMatch": "fa-ship\"> Sea Playable vehicle Unplayable vehicle Downloadable vehicle 2008 Abarth 500 2008 Abarth 500 Assetto Corse 1968 Abarth 595 SS <div"
+          "id": "assetto:abarth-595-ss"
         },
         {
           "year": "",
@@ -13442,10 +13433,7 @@
           "model": "595 SS Step 1",
           "class": "",
           "drive": "",
-          "id": "assetto:abarth-595-ss-step-1",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=84059",
-          "imageMatch": "fa-ship\"> Sea Playable vehicle Unplayable vehicle Downloadable vehicle 2008 Abarth 500 2008 Abarth 500 Assetto Corse 1968 Abarth 595 SS <div"
+          "id": "assetto:abarth-595-ss-step-1"
         },
         {
           "year": "",
@@ -13453,10 +13441,7 @@
           "model": "595 SS Step 2",
           "class": "",
           "drive": "",
-          "id": "assetto:abarth-595-ss-step-2",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=84059",
-          "imageMatch": "fa-ship\"> Sea Playable vehicle Unplayable vehicle Downloadable vehicle 2008 Abarth 500 2008 Abarth 500 Assetto Corse 1968 Abarth 595 SS <div"
+          "id": "assetto:abarth-595-ss-step-2"
         },
         {
           "year": "",
@@ -13464,10 +13449,7 @@
           "model": "Romeo 155 TI V6",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-155-ti-v6",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=66249",
-          "imageMatch": "\"> 1993 Alfa Romeo 155 V6 TI 1968 Alfa Romeo 33 Stradale 2013 Alfa Romeo 4C 2017 Alfa Romeo Giulia Quadrifoglio </h5"
+          "id": "assetto:alfa-romeo-155-ti-v6"
         },
         {
           "year": "",
@@ -13475,10 +13457,7 @@
           "model": "Romeo 33 Stradale",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-33-stradale",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=66249",
-          "imageMatch": "\"> 1993 Alfa Romeo 155 V6 TI 1968 Alfa Romeo 33 Stradale 2013 Alfa Romeo 4C 2017 Alfa Romeo Giulia Quadrifoglio </h5"
+          "id": "assetto:alfa-romeo-33-stradale"
         },
         {
           "year": "",
@@ -13486,10 +13465,7 @@
           "model": "Romeo 4C",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-4c",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=71323",
-          "imageMatch": "2013 Alfa Romeo 4C 2017 Alfa Romeo Giulia Quadrifoglio 1966 Alfa Romeo Giulia Sprint 2011 Alfa Romeo Giulietta"
+          "id": "assetto:alfa-romeo-4c"
         },
         {
           "year": "",
@@ -13497,10 +13473,7 @@
           "model": "Romeo GTA",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-gta",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=71323",
-          "imageMatch": "2013 Alfa Romeo 4C 2017 Alfa Romeo Giulia Quadrifoglio 1966 Alfa Romeo Giulia Sprint 2011 Alfa Romeo Giulietta"
+          "id": "assetto:alfa-romeo-gta"
         },
         {
           "year": "",
@@ -13508,10 +13481,7 @@
           "model": "Romeo Giulia Quadrifoglio",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-giulia-quadrifoglio",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=71323",
-          "imageMatch": "2013 Alfa Romeo 4C 2017 Alfa Romeo Giulia Quadrifoglio 1966 Alfa Romeo Giulia Sprint 2011 Alfa Romeo Giulietta"
+          "id": "assetto:alfa-romeo-giulia-quadrifoglio"
         },
         {
           "year": "",
@@ -13519,10 +13489,7 @@
           "model": "Romeo MiTo QV",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-mito-qv",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=109088",
-          "imageMatch": "2011 Alfa Romeo Giulietta 2012 Alfa Romeo MiTo 2014 Audi R18 2013 Audi R8"
+          "id": "assetto:alfa-romeo-mito-qv"
         },
         {
           "year": "",
@@ -13530,10 +13497,7 @@
           "model": "Romeo Giulietta QV",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-giulietta-qv",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=71323",
-          "imageMatch": "2013 Alfa Romeo 4C 2017 Alfa Romeo Giulia Quadrifoglio 1966 Alfa Romeo Giulia Sprint 2011 Alfa Romeo Giulietta"
+          "id": "assetto:alfa-romeo-giulietta-qv"
         },
         {
           "year": "",
@@ -13541,10 +13505,7 @@
           "model": "Romeo Giulietta QV Launch Edition 2014",
           "class": "",
           "drive": "",
-          "id": "assetto:alfa-romeo-giulietta-qv-launch-edition-2014",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=109088",
-          "imageMatch": "2011 Alfa Romeo Giulietta 2012 Alfa Romeo MiTo 2014 Audi R18 2013 Audi R8"
+          "id": "assetto:alfa-romeo-giulietta-qv-launch-edition-2014"
         },
         {
           "year": "",
@@ -13552,10 +13513,7 @@
           "model": "R18 e-tron quattro 2014",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-r18-e-tron-quattro-2014",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=109088",
-          "imageMatch": "2011 Alfa Romeo Giulietta 2012 Alfa Romeo MiTo 2014 Audi R18 2013 Audi R8"
+          "id": "assetto:audi-r18-e-tron-quattro-2014"
         },
         {
           "year": "",
@@ -13563,10 +13521,7 @@
           "model": "R8 LMS 2016",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-r8-lms-2016",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=74569",
-          "imageMatch": "\"font-size: 0.9rem;\"> 2015 Audi R8 LMS 2015 Audi S1 1983 Audi Sport quattro 1986 Audi Sport quattro S1 <"
+          "id": "assetto:audi-r8-lms-2016"
         },
         {
           "year": "",
@@ -13574,10 +13529,7 @@
           "model": "R8 LMS Ultra",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-r8-lms-ultra",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=74569",
-          "imageMatch": "\"font-size: 0.9rem;\"> 2015 Audi R8 LMS 2015 Audi S1 1983 Audi Sport quattro 1986 Audi Sport quattro S1 <"
+          "id": "assetto:audi-r8-lms-ultra"
         },
         {
           "year": "",
@@ -13593,10 +13545,7 @@
           "model": "S1",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-s1",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=74569",
-          "imageMatch": "\"font-size: 0.9rem;\"> 2015 Audi R8 LMS 2015 Audi S1 1983 Audi Sport quattro 1986 Audi Sport quattro S1 <"
+          "id": "assetto:audi-s1"
         },
         {
           "year": "",
@@ -13604,10 +13553,7 @@
           "model": "Sport quattro",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-sport-quattro",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=74569",
-          "imageMatch": "\"font-size: 0.9rem;\"> 2015 Audi R8 LMS 2015 Audi S1 1983 Audi Sport quattro 1986 Audi Sport quattro S1 <"
+          "id": "assetto:audi-sport-quattro"
         },
         {
           "year": "",
@@ -13615,10 +13561,7 @@
           "model": "Sport quattro S1 E2",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-sport-quattro-s1-e2",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=74569",
-          "imageMatch": "\"font-size: 0.9rem;\"> 2015 Audi R8 LMS 2015 Audi S1 1983 Audi Sport quattro 1986 Audi Sport quattro S1 <"
+          "id": "assetto:audi-sport-quattro-s1-e2"
         },
         {
           "year": "",
@@ -13626,10 +13569,7 @@
           "model": "Sport quattro Step 1",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-sport-quattro-step-1",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=109089",
-          "imageMatch": "tyle=\"font-size: 0.9rem;\"> 1986 Audi Sport quattro S1 2015 Audi TT Cup 2016 Audi TT RS VLN 2011 BMW 1 M Coupé <div class=\"card c"
+          "id": "assetto:audi-sport-quattro-step-1"
         },
         {
           "year": "",
@@ -13637,10 +13577,7 @@
           "model": "TT Cup",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-tt-cup",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=107739",
-          "imageMatch": "card-img-top\" alt=\"Audi S1\" /> 2015 Audi S1 1983 Audi Sport quattro 1986 Audi Sport quattro S1 2015 Audi TT Cup </d"
+          "id": "assetto:audi-tt-cup"
         },
         {
           "year": "",
@@ -13648,10 +13585,7 @@
           "model": "TT RS VLN",
           "class": "",
           "drive": "",
-          "id": "assetto:audi-tt-rs-vln",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=116489",
-          "imageMatch": "img-top\" alt=\"Audi Sport quattro\" /> 1983 Audi Sport quattro 1986 Audi Sport quattro S1 2015 Audi TT Cup 2016 Audi TT RS VLN"
+          "id": "assetto:audi-tt-rs-vln"
         },
         {
           "year": "",
@@ -13659,10 +13593,7 @@
           "model": "1 Series M Coupe",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-1-series-m-coupe",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=48386",
-          "imageMatch": "0.jpg\" class=\"card-img-top\" alt=\"BMW 1 M Coupé\" /> 2011 BMW 1 M Coupé 2014 BMW M235i Racing 1989 BMW M3 2007 BMW M3 <div"
+          "id": "assetto:bmw-1-series-m-coupe"
         },
         {
           "year": "",
@@ -13670,10 +13601,7 @@
           "model": "1 Series M Coupe Stage 3",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-1-series-m-coupe-stage-3",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=48386",
-          "imageMatch": "0.jpg\" class=\"card-img-top\" alt=\"BMW 1 M Coupé\" /> 2011 BMW 1 M Coupé 2014 BMW M235i Racing 1989 BMW M3 2007 BMW M3 <div"
+          "id": "assetto:bmw-1-series-m-coupe-stage-3"
         },
         {
           "year": "",
@@ -13681,10 +13609,7 @@
           "model": "M235i Racing",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-m235i-racing",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=48386",
-          "imageMatch": "0.jpg\" class=\"card-img-top\" alt=\"BMW 1 M Coupé\" /> 2011 BMW 1 M Coupé 2014 BMW M235i Racing 1989 BMW M3 2007 BMW M3 <div"
+          "id": "assetto:bmw-m235i-racing"
         },
         {
           "year": "",
@@ -13692,10 +13617,7 @@
           "model": "M3 E30",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-m3-e30",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=80422",
-          "imageMatch": "d-img-top\" alt=\"BMW M3 GT2\" /> 2009 BMW M3 GT2 2014 BMW M4 2014 BMW M4 2012 BMW Z4 <a"
+          "id": "assetto:bmw-m3-e30"
         },
         {
           "year": "",
@@ -13703,10 +13625,7 @@
           "model": "M3 E30 Drift",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-m3-e30-drift",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=80422",
-          "imageMatch": "d-img-top\" alt=\"BMW M3 GT2\" /> 2009 BMW M3 GT2 2014 BMW M4 2014 BMW M4 2012 BMW Z4 <a"
+          "id": "assetto:bmw-m3-e30-drift"
         },
         {
           "year": "",
@@ -13714,10 +13633,7 @@
           "model": "M3 E30 Gr.A 92",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-m3-e30-gr-a-92",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=80422",
-          "imageMatch": "d-img-top\" alt=\"BMW M3 GT2\" /> 2009 BMW M3 GT2 2014 BMW M4 2014 BMW M4 2012 BMW Z4 <a"
+          "id": "assetto:bmw-m3-e30-gr-a-92"
         },
         {
           "year": "",
@@ -13769,10 +13685,7 @@
           "model": "M3 E92 Drift",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-m3-e92-drift",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=80422",
-          "imageMatch": "d-img-top\" alt=\"BMW M3 GT2\" /> 2009 BMW M3 GT2 2014 BMW M4 2014 BMW M4 2012 BMW Z4 <a"
+          "id": "assetto:bmw-m3-e92-drift"
         },
         {
           "year": "",
@@ -13802,10 +13715,7 @@
           "model": "M4 Coupe Akrapovic Edition",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-m4-coupe-akrapovic-edition",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=48387",
-          "imageMatch": "ze: 0.9rem;\"> 2014 BMW M4 2014 BMW M4 2012 BMW Z4 2010 BMW Z4 GT3 </a"
+          "id": "assetto:bmw-m4-coupe-akrapovic-edition"
         },
         {
           "year": "",
@@ -13832,10 +13742,7 @@
           "model": "Z4 E89 Step 1",
           "class": "",
           "drive": "",
-          "id": "assetto:bmw-z4-e89-step-1",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=48387",
-          "imageMatch": "ze: 0.9rem;\"> 2014 BMW M4 2014 BMW M4 2012 BMW Z4 2010 BMW Z4 GT3 </a"
+          "id": "assetto:bmw-z4-e89-step-1"
         },
         {
           "year": "",
@@ -14030,10 +13937,7 @@
           "model": "F40 Stage 3",
           "class": "",
           "drive": "",
-          "id": "assetto:ferrari-f40-stage-3",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=56171",
-          "imageMatch": "=\"font-size: 0.9rem;\"> 2013 Ferrari F138 2004 Ferrari F2004 1987 Ferrari F40 2015 Ferrari FXX K"
+          "id": "assetto:ferrari-f40-stage-3"
         },
         {
           "year": "",
@@ -14294,10 +14198,7 @@
           "model": "Elise SC Step 1",
           "class": "",
           "drive": "",
-          "id": "assetto:lotus-elise-sc-step-1",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=46897",
-          "imageMatch": "mb-3\"> 1986 Lotus 98T Renault 2008 Lotus Elise 2009 Lotus Evora 2012 Lotus Evora GTC"
+          "id": "assetto:lotus-elise-sc-step-1"
         },
         {
           "year": "",
@@ -14305,10 +14206,7 @@
           "model": "Elise SC Step 2",
           "class": "",
           "drive": "",
-          "id": "assetto:lotus-elise-sc-step-2",
-          "image": "https://www.igcd.net/lang/uk.png",
-          "imageSource": "https://www.igcd.net/vehicle.php?id=46897",
-          "imageMatch": "mb-3\"> 1986 Lotus 98T Renault 2008 Lotus Elise 2009 Lotus Evora 2012 Lotus Evora GTC"
+          "id": "assetto:lotus-elise-sc-step-2"
         },
         {
           "year": "",
@@ -15132,7 +15030,10 @@
           "model": "RT12 R",
           "class": "",
           "drive": "",
-          "id": "assetto:ruf-rt12-r"
+          "id": "assetto:ruf-rt12-r",
+          "image": "https://www.igcd.net/thumbnail.php?pic=096-122.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=64362",
+          "imageMatch": "Reused verified base-model image from assetto:ruf-rt-12r-awd"
         },
         {
           "year": "",
@@ -15200,7 +15101,10 @@
           "model": "Supra MK IV",
           "class": "",
           "drive": "",
-          "id": "assetto:toyota-supra-mk-iv"
+          "id": "assetto:toyota-supra-mk-iv",
+          "image": "https://www.igcd.net/thumbnail.php?pic=091-563.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=91564",
+          "imageMatch": "Reused verified base-model image from assetto:toyota-supra-time-attack"
         },
         {
           "year": "",
@@ -15208,7 +15112,10 @@
           "model": "Supra MK IV Drift",
           "class": "",
           "drive": "",
-          "id": "assetto:toyota-supra-mk-iv-drift"
+          "id": "assetto:toyota-supra-mk-iv-drift",
+          "image": "https://www.igcd.net/thumbnail.php?pic=091-563.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=91564",
+          "imageMatch": "Reused verified base-model image from assetto:toyota-supra-time-attack"
         },
         {
           "year": "",
@@ -15322,8 +15229,8 @@
         }
       ],
       "official_total": 178,
-      "imageCoverage": 168,
-      "imageVerifiedAt": "2026-09-27"
+      "imageCoverage": 137,
+      "imageVerifiedAt": "2026-09-28"
     },
     {
       "id": "crew",
