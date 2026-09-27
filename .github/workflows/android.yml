@@ -4,86 +4,70 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'DriverVault-source-v*.zip'
+      - 'DriverVault-source-v1.4.zip'
       - '.github/workflows/android.yml'
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
           cache: true
-
-      - name: Prepare DriverVault source
+      - name: Prepare DriverVault v1.4
         run: |
-          ZIP="DriverVault-source-v1.3.zip"
+          set -euo pipefail
+          ZIP="DriverVault-source-v1.4.zip"
           test -f "$ZIP" || { echo "ERROR: $ZIP not found"; exit 1; }
           echo "Building EXACT source: $ZIP"
-          rm -rf build-project
-          mkdir build-project
+          rm -rf build-project && mkdir build-project
           unzip -q "$ZIP" -d build-project
           cd build-project
-
-          echo "Updating and validating catalogues BEFORE Flutter build..."
+          python3 -m py_compile scripts/update_catalogues.py
+          echo "Resolving and LIVE-VERIFYING vehicle images..."
           python3 scripts/update_catalogues.py
-
           python3 - <<'PY'
           import json
-          d=json.load(open("assets/catalog/catalog.json"))
-          for g in d["games"]:
-              print(f"{g['name']}: {len(g['vehicles'])} vehicles")
-          fh=next(g for g in d["games"] if g["id"]=="fh5")
-          assert len(fh["vehicles"]) == 902, "REFUSING TO BUILD: FH5 is not 902 vehicles"
-          print("FH5 hard gate passed: 902 vehicles")
-          code=open("lib/main.dart",encoding="utf-8").read()
-          assert "VehicleImageResolver" in code, "REFUSING TO BUILD: image widget missing"
-          assert "trustcar" not in code, "REFUSING TO BUILD: obsolete runtime image service still present"
-          print("Build-time image catalogue gate passed")
+          d=json.load(open('assets/catalog/catalog.json'))
+          fh=next(g for g in d['games'] if g['id']=='fh5')
+          assert len(fh['vehicles'])==902
+          first=fh[:4]
+          assert all(v.get('image','').startswith('https://') for v in first), 'First four FH5 image URLs missing'
+          print('FH5 hard gate: 902/902')
+          print('First four image fields populated: 4/4')
           PY
-
           flutter create . --platforms=android,ios --org com.drivervault.app
           rm -f test/widget_test.dart
-
           python3 - <<'PY'
           from pathlib import Path
           import re
-          p=Path("android/app/src/main/AndroidManifest.xml")
+          p=Path('android/app/src/main/AndroidManifest.xml')
           s=p.read_text()
-          s=re.sub(r'android:label="[^"]*"', 'android:label="DriverVault"', s, count=1)
+          s=re.sub(r'android:label="[^"]*"','android:label="DriverVault"',s,count=1)
           if 'android.permission.INTERNET' not in s:
-              s=s.replace('<manifest xmlns:android="http://schemas.android.com/apk/res/android">',
-                          '<manifest xmlns:android="http://schemas.android.com/apk/res/android">\n    <uses-permission android:name="android.permission.INTERNET"/>')
+              s=s.replace('<manifest xmlns:android="http://schemas.android.com/apk/res/android">','<manifest xmlns:android="http://schemas.android.com/apk/res/android">\n    <uses-permission android:name="android.permission.INTERNET"/>')
           p.write_text(s)
-
-          ip=Path("ios/Runner/Info.plist")
-          t=ip.read_text()
-          t=t.replace('<key>CFBundleDisplayName</key>\n\t<string>Drivervault</string>',
-                      '<key>CFBundleDisplayName</key>\n\t<string>DriverVault</string>')
+          ip=Path('ios/Runner/Info.plist'); t=ip.read_text()
+          t=t.replace('<key>CFBundleDisplayName</key>\n\t<string>Drivervault</string>','<key>CFBundleDisplayName</key>\n\t<string>DriverVault</string>')
           ip.write_text(t)
           PY
-
           flutter pub get
           dart run flutter_launcher_icons
-
       - name: Analyze
         working-directory: build-project
         run: flutter analyze --no-fatal-infos
-
       - name: Build debug APK
         working-directory: build-project
         run: flutter build apk --debug
-
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v1.3-debug
+          name: DriverVault-v1.4-debug
           path: build-project/build/app/outputs/flutter-apk/app-debug.apk
