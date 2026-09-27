@@ -3,7 +3,9 @@ on:
   workflow_dispatch:
   push:
     branches: [ main ]
-    paths: ['DriverVault-source-v*.zip','.github/workflows/android.yml']
+    paths:
+      - 'DriverVault-source-v*.zip'
+      - '.github/workflows/android.yml'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,6 +26,7 @@ jobs:
           rm -f test/widget_test.dart
           flutter pub get
           dart run flutter_launcher_icons
+          sed -i 's/android:label="drivervault"/android:label="DriverVault"/' android/app/src/main/AndroidManifest.xml
       - name: Analyze
         working-directory: build-project
         run: flutter analyze --no-fatal-infos
@@ -33,5 +36,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v0.4-debug
+          name: DriverVault-v0.5-debug
           path: build-project/build/app/outputs/flutter-apk/app-debug.apk
