@@ -25,8 +25,9 @@ jobs:
 
       - name: Prepare DriverVault source
         run: |
-          ZIP=$(ls DriverVault-source-v*.zip | sort -V | tail -n 1)
-          echo "Building $ZIP"
+          ZIP="DriverVault-source-v1.3.zip"
+          test -f "$ZIP" || { echo "ERROR: $ZIP not found"; exit 1; }
+          echo "Building EXACT source: $ZIP"
           rm -rf build-project
           mkdir build-project
           unzip -q "$ZIP" -d build-project
