@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
@@ -29,12 +33,14 @@ jobs:
           dart run flutter_launcher_icons
           python3 - <<'PY'
           from pathlib import Path
+          import re
           p=Path("android/app/src/main/AndroidManifest.xml")
           s=p.read_text()
-          import re
           s=re.sub(r'android:label="[^"]*"', 'android:label="DriverVault"', s, count=1)
+          if 'android.permission.INTERNET' not in s:
+              s=s.replace('<manifest xmlns:android="http://schemas.android.com/apk/res/android">',
+                          '<manifest xmlns:android="http://schemas.android.com/apk/res/android">\n    <uses-permission android:name="android.permission.INTERNET"/>')
           p.write_text(s)
-          print("Android label:", re.search(r'android:label="[^"]*"', s).group(0))
           PY
       - name: Analyze
         working-directory: build-project
@@ -45,5 +51,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v0.7.2-debug
+          name: DriverVault-v0.9-debug
           path: build-project/build/app/outputs/flutter-apk/app-debug.apk
