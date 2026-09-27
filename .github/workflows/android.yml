@@ -45,8 +45,7 @@ jobs:
           print("FH5 hard gate passed: 902 vehicles")
           code=open("lib/main.dart",encoding="utf-8").read()
           assert "VehicleImageResolver" in code, "REFUSING TO BUILD: image resolver missing"
-          assert "forza.fandom.com/api.php" in code, "REFUSING TO BUILD: FH5 image source missing"
-          assert "commons.wikimedia.org/w/api.php" in code, "REFUSING TO BUILD: fallback image source missing"
+          assert "carapi.trustcar.info" in code, "REFUSING TO BUILD: FH5 image source missing"
           print("Vehicle image resolver gate passed")
           PY
 
@@ -85,5 +84,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v1.1-debug
+          name: DriverVault-v1.2-debug
           path: build-project/build/app/outputs/flutter-apk/app-debug.apk
