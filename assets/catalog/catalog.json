@@ -12479,11 +12479,131 @@
           "image": null,
           "imageSource": null,
           "imageMatch": "Verified official CarX Drift Racing Online update 2.28.0 roster"
+        },
+        {
+          "id": "carx:mifune",
+          "make": "",
+          "model": "Mifune",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:eva-x",
+          "make": "",
+          "model": "EVA X",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:syberia-swi",
+          "make": "",
+          "model": "Syberia SWI",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:speedline-gt",
+          "make": "",
+          "model": "SpeedLine GT",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:kanniedood",
+          "make": "",
+          "model": "Kanniedood",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:veneom-gt500cr",
+          "make": "",
+          "model": "Veneom GT500CR",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:black-jack-x22",
+          "make": "",
+          "model": "Black Jack X22",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:magnum-rt",
+          "make": "",
+          "model": "Magnum RT",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:dakohosu",
+          "make": "",
+          "model": "Dakohosu",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:mercher-klc",
+          "make": "",
+          "model": "Mercher KLC",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:dtm-46",
+          "make": "",
+          "model": "DTM 46",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:bug-catcher",
+          "make": "",
+          "model": "Bug Catcher",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:raven-rv8",
+          "make": "",
+          "model": "Raven RV8",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:asura-m1",
+          "make": "",
+          "model": "Asura M1",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:shark-gt",
+          "make": "",
+          "model": "Shark GT",
+          "image": null,
+          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
+          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
         }
       ],
       "imageCoverage": 27,
       "imageVerifiedAt": "2026-09-27",
-      "official_total": 94,
+      "official_total": 109,
       "catalogVerifiedAt": "2026-09-28"
     },
     {
