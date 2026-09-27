@@ -811,6 +811,30 @@
             "id": "invert",
             "label": "Invert Force Feedback",
             "type": "toggle"
+          },
+          {
+            "id": "steering_filter",
+            "label": "Steering Filter",
+            "type": "choice",
+            "options": [
+              "Direct",
+              "Automatic"
+            ]
+          },
+          {
+            "id": "ffb_max_strength",
+            "label": "Max Strength",
+            "type": "text"
+          },
+          {
+            "id": "ffb_update_rate",
+            "label": "Update Rate Limit",
+            "type": "text"
+          },
+          {
+            "id": "response_curve",
+            "label": "Response Correction Curve",
+            "type": "toggle"
           }
         ]
       },
@@ -1156,6 +1180,24 @@
             "max": 100,
             "step": 1,
             "unit": "%"
+          },
+          {
+            "id": "steering_deadzone",
+            "label": "Steering Deadzone",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "wheel_angle",
+            "label": "Steering Wheel Angle",
+            "type": "number",
+            "min": 180,
+            "max": 1080,
+            "step": 10,
+            "unit": "°"
           }
         ]
       },
@@ -1233,6 +1275,24 @@
           {
             "id": "ffb",
             "label": "Force Feedback",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "wheel_angle",
+            "label": "Steering Wheel Angle",
+            "type": "number",
+            "min": 180,
+            "max": 1080,
+            "step": 10,
+            "unit": "°"
+          },
+          {
+            "id": "steering_deadzone",
+            "label": "Steering Deadzone",
             "type": "number",
             "min": 0,
             "max": 100,
@@ -1400,6 +1460,42 @@
             "max": 100,
             "step": 1,
             "unit": "%"
+          },
+          {
+            "id": "steering_deadzone",
+            "label": "Steering Deadzone",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "accelerator_deadzone",
+            "label": "Accelerator Deadzone",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "brake_deadzone",
+            "label": "Brake Deadzone",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "clutch_deadzone",
+            "label": "Clutch Deadzone",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
           }
         ]
       },
@@ -1546,6 +1642,11 @@
             "id": "enhanced_understeer",
             "label": "Enhanced Understeer Effect",
             "type": "toggle"
+          },
+          {
+            "id": "brake_gamma",
+            "label": "Brake Gamma",
+            "type": "text"
           }
         ]
       },
@@ -1704,6 +1805,33 @@
             "max": 150,
             "step": 1,
             "unit": "%"
+          },
+          {
+            "id": "steering_deadzone",
+            "label": "Steering Deadzone",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "throttle_deadzone",
+            "label": "Throttle Deadzone",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "brake_deadzone",
+            "label": "Brake Deadzone",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
           }
         ]
       },
@@ -1789,6 +1917,33 @@
               "Automatic",
               "Manual"
             ]
+          },
+          {
+            "id": "steering_deadzone",
+            "label": "Steering Deadzone",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "wheel_angle",
+            "label": "Steering Wheel Angle",
+            "type": "number",
+            "min": 180,
+            "max": 1080,
+            "step": 10,
+            "unit": "°"
+          },
+          {
+            "id": "brake_sensitivity",
+            "label": "Brake Sensitivity",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
           }
         ]
       },
@@ -1824,5 +1979,5 @@
       }
     ]
   },
-  "schemaVersion": "1.1.0"
+  "schemaVersion": 2
 }
