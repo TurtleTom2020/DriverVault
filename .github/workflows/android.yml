@@ -42,8 +42,12 @@ jobs:
               print(f"{g['name']}: {len(g['vehicles'])} vehicles")
           fh=next(g for g in d["games"] if g["id"]=="fh5")
           assert len(fh["vehicles"]) == 902, "REFUSING TO BUILD: FH5 is not 902 vehicles"
-          assert all(v.get("image") for v in fh["vehicles"]), "REFUSING TO BUILD: FH5 image URLs missing"
-          print("FH5 hard gate passed: 902 vehicles + 902 image URLs")
+          print("FH5 hard gate passed: 902 vehicles")
+          code=open("lib/main.dart",encoding="utf-8").read()
+          assert "VehicleImageResolver" in code, "REFUSING TO BUILD: image resolver missing"
+          assert "forza.fandom.com/api.php" in code, "REFUSING TO BUILD: FH5 image source missing"
+          assert "commons.wikimedia.org/w/api.php" in code, "REFUSING TO BUILD: fallback image source missing"
+          print("Vehicle image resolver gate passed")
           PY
 
           flutter create . --platforms=android,ios --org com.drivervault.app
@@ -81,5 +85,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v1.0-debug
+          name: DriverVault-v1.1-debug
           path: build-project/build/app/outputs/flutter-apk/app-debug.apk
