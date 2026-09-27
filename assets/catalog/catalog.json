@@ -12599,11 +12599,115 @@
           "image": null,
           "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
           "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+        },
+        {
+          "id": "carx:general-vx",
+          "make": "",
+          "model": "General VX",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+        },
+        {
+          "id": "carx:apollo",
+          "make": "",
+          "model": "Apollo",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+        },
+        {
+          "id": "carx:camaric",
+          "make": "",
+          "model": "Camaric",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+        },
+        {
+          "id": "carx:wild-runner",
+          "make": "",
+          "model": "Wild Runner",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+        },
+        {
+          "id": "carx:equator-d",
+          "make": "",
+          "model": "Equator D",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+        },
+        {
+          "id": "carx:hummel",
+          "make": "",
+          "model": "Hummel",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+        },
+        {
+          "id": "carx:kaiju",
+          "make": "",
+          "model": "Kaiju",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+        },
+        {
+          "id": "carx:betsy",
+          "make": "",
+          "model": "Betsy",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+        },
+        {
+          "id": "carx:udm-3",
+          "make": "",
+          "model": "UDM 3",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+        },
+        {
+          "id": "carx:pigeon-iv",
+          "make": "",
+          "model": "Pigeon IV",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+        },
+        {
+          "id": "carx:thor-8800",
+          "make": "",
+          "model": "Thor 8800",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+        },
+        {
+          "id": "carx:blackjack-x150",
+          "make": "",
+          "model": "Blackjack X150",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+        },
+        {
+          "id": "carx:interceptor",
+          "make": "",
+          "model": "Interceptor",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
         }
       ],
       "imageCoverage": 27,
       "imageVerifiedAt": "2026-09-27",
-      "official_total": 109,
+      "official_total": 122,
       "catalogVerifiedAt": "2026-09-28"
     },
     {
