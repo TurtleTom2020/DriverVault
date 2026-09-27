@@ -1,75 +1,45 @@
-name: Build DriverVault APK
+name: Extract DriverVault Source
+
 on:
   workflow_dispatch:
   push:
     branches: [ main ]
     paths:
-      - 'DriverVault-source-v1.8.zip'
+      - '.github/workflows/android.yml'
 
 jobs:
-  build:
+  extract:
     runs-on: ubuntu-latest
-    timeout-minutes: 35
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          cache: true
-      - name: Prepare and validate DriverVault v1.8
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract DriverVault v1.8
         run: |
           set -euo pipefail
-          ZIP="DriverVault-source-v1.8.zip"
-          test -f "$ZIP" || { echo "ERROR: $ZIP not found"; exit 1; }
-          rm -rf build-project && mkdir build-project
-          unzip -q "$ZIP" -d build-project
-          cd build-project
-          python3 - <<'PY'
-          import json
-          c=json.load(open('assets/catalog/catalog.json'))
-          h=json.load(open('assets/catalog/hardware.json'))
-          s=json.load(open('assets/catalog/game_schemas.json'))
-          counts={g['id']:len(g.get('vehicles',[])) for g in c['games']}
-          expected={'fh5':902,'carx':80,'beamng':39,'ets2':28,'ats':19,'assetto':178,'wrc':99,'alaskan':19,'mudrunner':35,'snowrunner':116,'gt7':584}
-          for k,v in expected.items(): assert counts.get(k)==v,(k,counts.get(k),v)
-          fh=next(g for g in c['games'] if g['id']=='fh5')
-          imgs=sum(bool(v.get('image')) for v in fh['vehicles'])
-          assert imgs>=805,imgs
-          lg=next(x for x in h['manufacturers'] if x['name']=='Logitech G')
-          names=[x['name'] for x in lg['devices']]
-          assert 'RS50 Base – PlayStation/PC' in names
-          assert 'RS50 Base – Xbox/PC' in names
-          assert len(s)>=10
-          code=open('lib/main.dart').read()
-          assert "gameId':widget.game['id']" in code
-          assert 'ConstrainedBox(constraints:const BoxConstraints(maxWidth:420)' in code
-          print('PACKAGED catalogue validated:',counts)
-          print('FH5 packaged images:',imgs,'/ 902')
-          print('Game schemas:',len(s))
-          PY
-          flutter create . --platforms=android,ios --org com.drivervault.app
-          rm -f test/widget_test.dart
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-          p=Path('android/app/src/main/AndroidManifest.xml'); x=p.read_text(); x=re.sub(r'android:label="[^"]*"','android:label="DriverVault"',x,count=1)
-          if 'android.permission.INTERNET' not in x: x=x.replace('<manifest xmlns:android="http://schemas.android.com/apk/res/android">','<manifest xmlns:android="http://schemas.android.com/apk/res/android">\n    <uses-permission android:name="android.permission.INTERNET"/>')
-          p.write_text(x)
-          PY
-          flutter pub get
-          dart run flutter_launcher_icons
-      - name: Analyze
-        working-directory: build-project
-        run: flutter analyze --no-fatal-infos
-      - name: Build debug APK
-        working-directory: build-project
-        run: flutter build apk --debug
-      - name: Upload APK
+
+          test -f DriverVault-source-v1.8.zip || {
+            echo "ERROR: DriverVault-source-v1.8.zip not found"
+            exit 1
+          }
+
+          rm -rf extracted
+          mkdir extracted
+
+          unzip -q DriverVault-source-v1.8.zip -d extracted
+
+          echo "Checking extracted source..."
+          test -f extracted/lib/main.dart
+          test -f extracted/assets/catalog/catalog.json
+          test -f extracted/assets/catalog/hardware.json
+          test -f extracted/assets/catalog/game_schemas.json
+
+          echo "Source successfully extracted."
+
+      - name: Upload editable DriverVault source
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v1.8-debug
-          path: build-project/build/app/outputs/flutter-apk/app-debug.apk
+          name: DriverVault-v1.8-editable-source
+          path: extracted/
+          retention-days: 7
