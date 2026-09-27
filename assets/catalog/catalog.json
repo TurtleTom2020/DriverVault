@@ -13431,7 +13431,10 @@
           "model": "595 SS",
           "class": "",
           "drive": "",
-          "id": "assetto:abarth-595-ss"
+          "id": "assetto:abarth-595-ss",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_abarth_595ss",
+          "imageSource": "https://assetto-db.com/car/ks_abarth_595ss",
+          "imageMatch": "Exact Assetto Corsa game ID ks_abarth_595ss"
         },
         {
           "year": "",
@@ -13439,7 +13442,10 @@
           "model": "595 SS Step 1",
           "class": "",
           "drive": "",
-          "id": "assetto:abarth-595-ss-step-1"
+          "id": "assetto:abarth-595-ss-step-1",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_abarth_595ss_s1",
+          "imageSource": "https://unitedcorsa.com/en-gb/discover/assetto-corsa/cars/abarth-595-ss-step-1",
+          "imageMatch": "Exact Assetto Corsa game ID ks_abarth_595ss_s1"
         },
         {
           "year": "",
@@ -13447,7 +13453,10 @@
           "model": "595 SS Step 2",
           "class": "",
           "drive": "",
-          "id": "assetto:abarth-595-ss-step-2"
+          "id": "assetto:abarth-595-ss-step-2",
+          "image": "https://unitedcorsa.com/api/ac-car-preview/ks_abarth_595ss_s2",
+          "imageSource": "https://assetto-db.com/cars/Abarth",
+          "imageMatch": "Exact Assetto Corsa game ID ks_abarth_595ss_s2"
         },
         {
           "year": "",
@@ -15283,7 +15292,7 @@
         }
       ],
       "official_total": 178,
-      "imageCoverage": 155,
+      "imageCoverage": 158,
       "imageVerifiedAt": "2026-09-28"
     },
     {
