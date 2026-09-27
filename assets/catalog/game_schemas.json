@@ -1,27 +1,1828 @@
 {
-  "fh5": {"sections": [
-    {"title":"Wheel / Advanced Controls","fields":[
-      {"id":"steering_axis_deadzone_inside","label":"Steering Axis Deadzone Inside","type":"number","min":0,"max":100,"step":1,"unit":"%"},
-      {"id":"steering_axis_deadzone_outside","label":"Steering Axis Deadzone Outside","type":"number","min":0,"max":100,"step":1,"unit":"%"},
-      {"id":"accel_deadzone_inside","label":"Acceleration Axis Deadzone Inside","type":"number","min":0,"max":100,"step":1,"unit":"%"},{"id":"accel_deadzone_outside","label":"Acceleration Axis Deadzone Outside","type":"number","min":0,"max":100,"step":1,"unit":"%"},
-      {"id":"decel_deadzone_inside","label":"Deceleration Axis Deadzone Inside","type":"number","min":0,"max":100,"step":1,"unit":"%"},{"id":"decel_deadzone_outside","label":"Deceleration Axis Deadzone Outside","type":"number","min":0,"max":100,"step":1,"unit":"%"},
-      {"id":"clutch_deadzone_inside","label":"Clutch Axis Deadzone Inside","type":"number","min":0,"max":100,"step":1,"unit":"%"},{"id":"clutch_deadzone_outside","label":"Clutch Axis Deadzone Outside","type":"number","min":0,"max":100,"step":1,"unit":"%"},
-      {"id":"ebrake_deadzone_inside","label":"E-Brake Axis Deadzone Inside","type":"number","min":0,"max":100,"step":1,"unit":"%"},{"id":"ebrake_deadzone_outside","label":"E-Brake Axis Deadzone Outside","type":"number","min":0,"max":100,"step":1,"unit":"%"},
-      {"id":"vibration_scale","label":"Vibration Scale","type":"number","min":0,"max":2,"step":0.1},{"id":"ffb_scale","label":"Force Feedback Scale","type":"number","min":0,"max":2,"step":0.1},{"id":"center_spring","label":"Center Spring Scale","type":"number","min":0,"max":2,"step":0.1},{"id":"wheel_damper","label":"Wheel Damper Scale","type":"number","min":0,"max":2,"step":0.1},{"id":"mechanical_trail","label":"Mechanical Trail Scale","type":"number","min":0,"max":2,"step":0.1},{"id":"min_force","label":"Force Feedback Minimum Force","type":"number","min":0,"max":2,"step":0.1},{"id":"load_sensitivity","label":"Force Feedback Load Sensitivity","type":"number","min":0,"max":2,"step":0.1},{"id":"road_feel","label":"Road Feel Scale","type":"number","min":0,"max":2,"step":0.1},{"id":"offroad_feel","label":"Off-Road Feel Scale","type":"number","min":0,"max":2,"step":0.1},{"id":"steering_sensitivity","label":"Steering Sensitivity","type":"number","min":0,"max":1,"step":0.1}
-    ]},
-    {"title":"Difficulty / Assists","fields":[{"id":"drivatar","label":"Drivatar Difficulty","type":"choice","options":["New Racer","Inexperienced","Average","Above Average","Highly Skilled","Expert","Pro","Unbeatable"]},{"id":"braking","label":"Braking","type":"choice","options":["Assisted","Anti-Lock On","Anti-Lock Off"]},{"id":"steering","label":"Steering","type":"choice","options":["Assisted","Standard","Simulation"]},{"id":"traction","label":"Traction Control","type":"toggle"},{"id":"stability","label":"Stability Control","type":"toggle"},{"id":"shifting","label":"Shifting","type":"choice","options":["Automatic","Manual","Manual w/ Clutch"]},{"id":"driving_line","label":"Driving Line","type":"choice","options":["Full","Braking Only","Off"]},{"id":"damage","label":"Damage & Tyre Wear","type":"choice","options":["None","Cosmetic","Simulation"]},{"id":"rewind","label":"Rewind","type":"toggle"}]},
-    {"title":"Vehicle Tune — Tyres / Gearing","fields":[{"id":"tyre_front","label":"Front Tyre Pressure","type":"text"},{"id":"tyre_rear","label":"Rear Tyre Pressure","type":"text"},{"id":"final_drive","label":"Final Drive","type":"text"},{"id":"gear1","label":"1st Gear","type":"text"},{"id":"gear2","label":"2nd Gear","type":"text"},{"id":"gear3","label":"3rd Gear","type":"text"},{"id":"gear4","label":"4th Gear","type":"text"},{"id":"gear5","label":"5th Gear","type":"text"},{"id":"gear6","label":"6th Gear","type":"text"},{"id":"gear7","label":"7th Gear","type":"text"},{"id":"gear8","label":"8th Gear","type":"text"},{"id":"gear9","label":"9th Gear","type":"text"},{"id":"gear10","label":"10th Gear","type":"text"}]},
-    {"title":"Vehicle Tune — Alignment / Suspension","fields":[{"id":"camber_f","label":"Front Camber","type":"text"},{"id":"camber_r","label":"Rear Camber","type":"text"},{"id":"toe_f","label":"Front Toe","type":"text"},{"id":"toe_r","label":"Rear Toe","type":"text"},{"id":"caster","label":"Front Caster","type":"text"},{"id":"arb_f","label":"Front Antiroll Bar","type":"text"},{"id":"arb_r","label":"Rear Antiroll Bar","type":"text"},{"id":"spring_f","label":"Front Springs","type":"text"},{"id":"spring_r","label":"Rear Springs","type":"text"},{"id":"height_f","label":"Front Ride Height","type":"text"},{"id":"height_r","label":"Rear Ride Height","type":"text"},{"id":"rebound_f","label":"Front Rebound","type":"text"},{"id":"rebound_r","label":"Rear Rebound","type":"text"},{"id":"bump_f","label":"Front Bump","type":"text"},{"id":"bump_r","label":"Rear Bump","type":"text"}]},
-    {"title":"Vehicle Tune — Aero / Brakes / Differential","fields":[{"id":"aero_f","label":"Front Aero","type":"text"},{"id":"aero_r","label":"Rear Aero","type":"text"},{"id":"brake_balance","label":"Brake Balance","type":"text"},{"id":"brake_pressure","label":"Brake Pressure","type":"text"},{"id":"diff_front_accel","label":"Front Differential Acceleration","type":"text"},{"id":"diff_front_decel","label":"Front Differential Deceleration","type":"text"},{"id":"diff_rear_accel","label":"Rear Differential Acceleration","type":"text"},{"id":"diff_rear_decel","label":"Rear Differential Deceleration","type":"text"},{"id":"diff_center","label":"Centre Differential Balance","type":"text"}]}
-  ]},
-  "carx": {"sections":[{"title":"Controls / Force Feedback","fields":[{"id":"gearbox","label":"Gearbox Type","type":"choice","options":["Automatic","Manual"]},{"id":"clutch","label":"Clutch","type":"choice","options":["Automatic","Manual"]},{"id":"ignition","label":"Ignition Type","type":"choice","options":["Simplified","Realistic"]},{"id":"wheel_angle","label":"Steering Wheel Angle","type":"number","min":90,"max":1080,"step":10,"unit":"°"},{"id":"ffb","label":"Wheel Force Feedback","type":"number","min":0,"max":1,"step":0.05},{"id":"autocenter","label":"Auto-centering Force at Standstill","type":"number","min":0,"max":1,"step":0.1},{"id":"wheel_controller","label":"Wheel as Controller","type":"toggle"},{"id":"prediction","label":"Prediction","type":"number","min":0,"max":1,"step":0.1},{"id":"stabilization","label":"Stabilization","type":"number","min":0,"max":5,"step":0.1},{"id":"smoothing","label":"Smoothing","type":"number","min":0,"max":1,"step":0.1},{"id":"acceleration","label":"Acceleration","type":"number","min":0,"max":1,"step":0.1},{"id":"inertia","label":"Inertia","type":"number","min":0,"max":1,"step":0.1},{"id":"post","label":"Post-processing Feedback","type":"toggle"},{"id":"steer_deadzone","label":"Steering Deadzone","type":"number","min":0,"max":1,"step":0.05},{"id":"steer_linearity","label":"Steering Linearity","type":"number","min":0,"max":1,"step":0.05},{"id":"accel_linearity","label":"Accelerator Linearity","type":"number","min":0,"max":1,"step":0.05},{"id":"brake_linearity","label":"Braking Linearity","type":"number","min":0,"max":1,"step":0.05},{"id":"handbrake_linearity","label":"Handbrake Linearity","type":"number","min":0,"max":1,"step":0.05},{"id":"clutch_linearity","label":"Clutch Linearity","type":"number","min":0,"max":1,"step":0.05}]},{"title":"Dynostand Tune","fields":[{"id":"spring_length_f","label":"Front Spring Length","type":"text"},{"id":"spring_length_r","label":"Rear Spring Length","type":"text"},{"id":"spring_stiff_f","label":"Front Spring Stiffness","type":"text"},{"id":"spring_stiff_r","label":"Rear Spring Stiffness","type":"text"},{"id":"camber_f","label":"Front Camber","type":"text"},{"id":"camber_r","label":"Rear Camber","type":"text"},{"id":"toe_f","label":"Front Toe","type":"text"},{"id":"toe_r","label":"Rear Toe","type":"text"},{"id":"caster","label":"Caster","type":"text"},{"id":"ackerman","label":"Ackerman Angle","type":"text"},{"id":"steering_angle","label":"Max Steering Angle","type":"text"},{"id":"kingpin","label":"Kingpin Angle Inclination","type":"text"},{"id":"axis_offset","label":"Steering Axis Offset","type":"text"},{"id":"tyre_pressure_f","label":"Front Tyre Pressure","type":"text"},{"id":"tyre_pressure_r","label":"Rear Tyre Pressure","type":"text"},{"id":"adhesion_f","label":"Front Tyre Adhesion","type":"text"},{"id":"adhesion_r","label":"Rear Tyre Adhesion","type":"text"},{"id":"final_drive","label":"Final Drive","type":"text"},{"id":"diff","label":"Differential / Locking","type":"text"},{"id":"brake_torque","label":"Brake Torque","type":"text"},{"id":"brake_bias","label":"Brake Bias","type":"text"},{"id":"abs","label":"ABS","type":"toggle"}] }]},
-  "beamng": {"sections":[{"title":"Steering Binding / Force Feedback","fields":[{"id":"steering_linearity","label":"Steering Linearity","type":"text"},{"id":"steering_deadzone_rest","label":"Deadzone (rest)","type":"text"},{"id":"steering_deadzone_end","label":"Deadzone (end)","type":"text"},{"id":"ffb_enabled","label":"Force Feedback Enabled","type":"toggle"},{"id":"ffb_strength","label":"Strength","type":"text"},{"id":"ffb_smoothing","label":"Smoothing","type":"text"},{"id":"low_speed","label":"Reduce Strength at Low Speeds","type":"toggle"},{"id":"update_type","label":"FFB Update Type","type":"choice","options":["Automatic","Fast","Full"]},{"id":"invert","label":"Invert Force Feedback","type":"toggle"}]},{"title":"Vehicle Configuration","fields":[{"id":"tyres","label":"Tyres / Wheels","type":"text"},{"id":"alignment","label":"Alignment","type":"text"},{"id":"suspension","label":"Suspension","type":"text"},{"id":"differential","label":"Differential","type":"text"},{"id":"gearing","label":"Gearing","type":"text"},{"id":"brakes","label":"Brakes","type":"text"},{"id":"engine","label":"Engine / ECU","type":"text"}] }]},
-  "gt7":{"sections":[{"title":"Controller / Assist Settings","fields":[{"id":"ffb_max","label":"Force Feedback Max Torque","type":"number","min":1,"max":10,"step":1},{"id":"ffb_sensitivity","label":"Force Feedback Sensitivity","type":"number","min":1,"max":10,"step":1},{"id":"controller_sensitivity","label":"Controller Steering Sensitivity","type":"number","min":-2,"max":10,"step":1},{"id":"tcs","label":"Traction Control","type":"number","min":0,"max":5,"step":1},{"id":"abs","label":"ABS","type":"choice","options":["Off","Weak","Default"]},{"id":"asm","label":"Active Stability Management","type":"toggle"},{"id":"countersteer","label":"Countersteering Assistance","type":"choice","options":["Off","Weak","Strong"]}]},{"title":"Car Settings Sheet","fields":[{"id":"tyres_f","label":"Front Tyres","type":"text"},{"id":"tyres_r","label":"Rear Tyres","type":"text"},{"id":"ride_height_f","label":"Front Body Height","type":"text"},{"id":"ride_height_r","label":"Rear Body Height","type":"text"},{"id":"arb_f","label":"Front Anti-Roll Bar","type":"text"},{"id":"arb_r","label":"Rear Anti-Roll Bar","type":"text"},{"id":"damping_comp_f","label":"Front Damping Compression","type":"text"},{"id":"damping_comp_r","label":"Rear Damping Compression","type":"text"},{"id":"damping_exp_f","label":"Front Damping Expansion","type":"text"},{"id":"damping_exp_r","label":"Rear Damping Expansion","type":"text"},{"id":"frequency_f","label":"Front Natural Frequency","type":"text"},{"id":"frequency_r","label":"Rear Natural Frequency","type":"text"},{"id":"camber_f","label":"Front Negative Camber","type":"text"},{"id":"camber_r","label":"Rear Negative Camber","type":"text"},{"id":"toe_f","label":"Front Toe Angle","type":"text"},{"id":"toe_r","label":"Rear Toe Angle","type":"text"},{"id":"diff_initial","label":"LSD Initial Torque","type":"text"},{"id":"diff_accel","label":"LSD Acceleration Sensitivity","type":"text"},{"id":"diff_brake","label":"LSD Braking Sensitivity","type":"text"},{"id":"downforce_f","label":"Front Downforce","type":"text"},{"id":"downforce_r","label":"Rear Downforce","type":"text"},{"id":"ecu","label":"ECU Output Adjustment","type":"text"},{"id":"ballast","label":"Ballast","type":"text"},{"id":"ballast_pos","label":"Ballast Positioning","type":"text"},{"id":"power_restrictor","label":"Power Restrictor","type":"text"},{"id":"transmission","label":"Transmission / Ratios","type":"text"},{"id":"brake_balance","label":"Brake Balance","type":"text"}] }]},
-  "snowrunner":{"sections":[{"title":"Driving Setup","fields":[{"id":"steering_mode","label":"Steering Mode","type":"choice","options":["Controller","Steering Wheel"]},{"id":"wheel_sensitivity","label":"Wheel Sensitivity","type":"text"},{"id":"ffb_gain","label":"Force Feedback Gain","type":"text"},{"id":"ffb_friction","label":"Friction Gain","type":"text"},{"id":"ffb_damper","label":"Damper Gain","type":"text"},{"id":"ffb_spring","label":"Spring Gain","type":"text"},{"id":"ffb_collision","label":"Collision Gain","type":"text"},{"id":"ffb_engine","label":"Engine Gain","type":"text"},{"id":"ffb_tyre","label":"Tyre Gain","type":"text"},{"id":"ffb_terrain","label":"Terrain Gain","type":"text"}]},{"title":"Truck Build","fields":[{"id":"engine","label":"Engine","type":"text"},{"id":"gearbox","label":"Gearbox","type":"text"},{"id":"suspension","label":"Suspension","type":"text"},{"id":"tyres","label":"Tyres","type":"text"},{"id":"winch","label":"Winch","type":"text"},{"id":"awd","label":"AWD Upgrade","type":"text"},{"id":"diff","label":"Differential Lock","type":"text"},{"id":"snorkel","label":"Snorkel","type":"text"},{"id":"frame","label":"Frame Add-on","type":"text"}] }]},
-  "mudrunner":{"sections":[{"title":"Wheel / Controls","fields":[{"id":"wheel_preset","label":"Steering Wheel Preset","type":"text"},{"id":"steering_sensitivity","label":"Steering Sensitivity","type":"text"},{"id":"ffb","label":"Force Feedback","type":"text"}]},{"title":"Truck Configuration","fields":[{"id":"wheels","label":"Wheels / Tyres","type":"text"},{"id":"addons","label":"Add-ons","type":"text"},{"id":"trailer","label":"Trailer","type":"text"}] }]},
-  "ets2":{"sections":[{"title":"Steering Wheel / Controls","fields":[{"id":"controller_subtype","label":"Controller Subtype","type":"choice","options":["Wheel","Gamepad / Joystick"]},{"id":"transmission","label":"Transmission Type","type":"choice","options":["Simple Automatic","Real Automatic","Sequential","H-Shifter"]},{"id":"steering_sensitivity","label":"Steering Sensitivity","type":"text"},{"id":"steering_nonlinearity","label":"Steering Non-linearity","type":"text"},{"id":"ffb","label":"Force Feedback","type":"toggle"},{"id":"ffb_gain","label":"Overall Gain","type":"text"},{"id":"centering_high","label":"Centering at High Speed","type":"text"},{"id":"centering_low","label":"Centering at Low Speed","type":"text"},{"id":"internal_friction","label":"Internal Friction","type":"text"},{"id":"engine_resonance","label":"Engine Resonance","type":"text"},{"id":"terrain","label":"Terrain Surface","type":"text"},{"id":"bumps","label":"Bumps","type":"text"},{"id":"collisions","label":"Collisions","type":"text"},{"id":"gearbox_grind","label":"Gearbox Grind","type":"text"},{"id":"understeer","label":"Understeer Slip","type":"text"}]},{"title":"Truck Setup","fields":[{"id":"truck","label":"Truck / Chassis","type":"text"},{"id":"engine","label":"Engine","type":"text"},{"id":"gearbox","label":"Transmission","type":"text"},{"id":"diff","label":"Differential Ratio","type":"text"},{"id":"tyres","label":"Tyres","type":"text"}] }]},
-  "ats":{"copy":"ets2"},
-  "assetto":{"sections":[{"title":"Wheel / Force Feedback","fields":[{"id":"degrees","label":"Degrees of Rotation","type":"text"},{"id":"gamma","label":"Steering Gamma","type":"text"},{"id":"filter","label":"Steering Filter","type":"text"},{"id":"speed_sensitivity","label":"Speed Sensitivity","type":"text"},{"id":"ffb_gain","label":"Gain","type":"text"},{"id":"filter_ffb","label":"FFB Filter","type":"text"},{"id":"min_force","label":"Minimum Force","type":"text"},{"id":"kerb","label":"Kerb Effect","type":"text"},{"id":"road","label":"Road Effect","type":"text"},{"id":"slip","label":"Slip Effect","type":"text"},{"id":"abs","label":"ABS Effect","type":"text"},{"id":"enhanced_understeer","label":"Enhanced Understeer Effect","type":"toggle"}]},{"title":"Car Setup","fields":[{"id":"tyres","label":"Tyres / Pressures","type":"text"},{"id":"fuel","label":"Fuel","type":"text"},{"id":"alignment","label":"Alignment","type":"text"},{"id":"dampers","label":"Dampers","type":"text"},{"id":"springs","label":"Springs / Ride Height","type":"text"},{"id":"aero","label":"Aero","type":"text"},{"id":"drivetrain","label":"Drivetrain / Differential","type":"text"},{"id":"gearing","label":"Gearing","type":"text"},{"id":"brakes","label":"Brakes","type":"text"}] }]},
-  "wrc":{"sections":[{"title":"Wheel / Vibration & Feedback","fields":[{"id":"steering_saturation","label":"Steering Saturation","type":"text"},{"id":"steering_linearity","label":"Steering Linearity","type":"text"},{"id":"self_aligning","label":"Self Aligning Torque","type":"text"},{"id":"wheel_friction","label":"Wheel Friction","type":"text"},{"id":"tyre_friction","label":"Tyre Friction","type":"text"},{"id":"suspension","label":"Suspension","type":"text"},{"id":"tyre_slip","label":"Tyre Slip","type":"text"},{"id":"engine","label":"Engine","type":"text"},{"id":"collision","label":"Collision","type":"text"},{"id":"soft_lock","label":"Soft Lock","type":"text"},{"id":"steering_centre","label":"Steering Centre Force","type":"text"}]},{"title":"Vehicle Setup","fields":[{"id":"alignment","label":"Alignment","type":"text"},{"id":"brakes","label":"Brakes","type":"text"},{"id":"differential","label":"Differential","type":"text"},{"id":"gearing","label":"Gearing","type":"text"},{"id":"damping","label":"Damping","type":"text"},{"id":"springs","label":"Springs","type":"text"},{"id":"ride_height","label":"Ride Height","type":"text"}] }]},
-  "alaskan":{"sections":[{"title":"Driving / Controls","fields":[{"id":"input_device","label":"Input Device","type":"choice","options":["Controller","Steering Wheel"]},{"id":"steering","label":"Steering Sensitivity","type":"text"},{"id":"ffb","label":"Force Feedback","type":"text"},{"id":"transmission","label":"Transmission","type":"choice","options":["Automatic","Manual"]}]},{"title":"Truck Configuration","fields":[{"id":"truck","label":"Truck","type":"text"},{"id":"engine","label":"Engine / Powertrain","type":"text"},{"id":"tyres","label":"Tyres","type":"text"},{"id":"fuel","label":"Fuel / Range Notes","type":"text"},{"id":"trailer","label":"Trailer / Load","type":"text"}] }]}
+  "fh5": {
+    "sections": [
+      {
+        "title": "Wheel / Advanced Controls",
+        "fields": [
+          {
+            "id": "steering_axis_deadzone_inside",
+            "label": "Steering Axis Deadzone Inside",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "steering_axis_deadzone_outside",
+            "label": "Steering Axis Deadzone Outside",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "accel_deadzone_inside",
+            "label": "Acceleration Axis Deadzone Inside",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "accel_deadzone_outside",
+            "label": "Acceleration Axis Deadzone Outside",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "decel_deadzone_inside",
+            "label": "Deceleration Axis Deadzone Inside",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "decel_deadzone_outside",
+            "label": "Deceleration Axis Deadzone Outside",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "clutch_deadzone_inside",
+            "label": "Clutch Axis Deadzone Inside",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "clutch_deadzone_outside",
+            "label": "Clutch Axis Deadzone Outside",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ebrake_deadzone_inside",
+            "label": "E-Brake Axis Deadzone Inside",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ebrake_deadzone_outside",
+            "label": "E-Brake Axis Deadzone Outside",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "vibration_scale",
+            "label": "Vibration Scale",
+            "type": "number",
+            "min": 0,
+            "max": 2,
+            "step": 0.1
+          },
+          {
+            "id": "ffb_scale",
+            "label": "Force Feedback Scale",
+            "type": "number",
+            "min": 0,
+            "max": 2,
+            "step": 0.1
+          },
+          {
+            "id": "center_spring",
+            "label": "Center Spring Scale",
+            "type": "number",
+            "min": 0,
+            "max": 2,
+            "step": 0.1
+          },
+          {
+            "id": "wheel_damper",
+            "label": "Wheel Damper Scale",
+            "type": "number",
+            "min": 0,
+            "max": 2,
+            "step": 0.1
+          },
+          {
+            "id": "mechanical_trail",
+            "label": "Mechanical Trail Scale",
+            "type": "number",
+            "min": 0,
+            "max": 2,
+            "step": 0.1
+          },
+          {
+            "id": "min_force",
+            "label": "Force Feedback Minimum Force",
+            "type": "number",
+            "min": 0,
+            "max": 2,
+            "step": 0.1
+          },
+          {
+            "id": "load_sensitivity",
+            "label": "Force Feedback Load Sensitivity",
+            "type": "number",
+            "min": 0,
+            "max": 2,
+            "step": 0.1
+          },
+          {
+            "id": "road_feel",
+            "label": "Road Feel Scale",
+            "type": "number",
+            "min": 0,
+            "max": 2,
+            "step": 0.1
+          },
+          {
+            "id": "offroad_feel",
+            "label": "Off-Road Feel Scale",
+            "type": "number",
+            "min": 0,
+            "max": 2,
+            "step": 0.1
+          },
+          {
+            "id": "steering_sensitivity",
+            "label": "Steering Sensitivity",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.1
+          }
+        ]
+      },
+      {
+        "title": "Difficulty / Assists",
+        "fields": [
+          {
+            "id": "drivatar",
+            "label": "Drivatar Difficulty",
+            "type": "choice",
+            "options": [
+              "New Racer",
+              "Inexperienced",
+              "Average",
+              "Above Average",
+              "Highly Skilled",
+              "Expert",
+              "Pro",
+              "Unbeatable"
+            ]
+          },
+          {
+            "id": "braking",
+            "label": "Braking",
+            "type": "choice",
+            "options": [
+              "Assisted",
+              "Anti-Lock On",
+              "Anti-Lock Off"
+            ]
+          },
+          {
+            "id": "steering",
+            "label": "Steering",
+            "type": "choice",
+            "options": [
+              "Assisted",
+              "Standard",
+              "Simulation"
+            ]
+          },
+          {
+            "id": "traction",
+            "label": "Traction Control",
+            "type": "toggle"
+          },
+          {
+            "id": "stability",
+            "label": "Stability Control",
+            "type": "toggle"
+          },
+          {
+            "id": "shifting",
+            "label": "Shifting",
+            "type": "choice",
+            "options": [
+              "Automatic",
+              "Manual",
+              "Manual w/ Clutch"
+            ]
+          },
+          {
+            "id": "driving_line",
+            "label": "Driving Line",
+            "type": "choice",
+            "options": [
+              "Full",
+              "Braking Only",
+              "Off"
+            ]
+          },
+          {
+            "id": "damage",
+            "label": "Damage & Tyre Wear",
+            "type": "choice",
+            "options": [
+              "None",
+              "Cosmetic",
+              "Simulation"
+            ]
+          },
+          {
+            "id": "rewind",
+            "label": "Rewind",
+            "type": "toggle"
+          }
+        ]
+      },
+      {
+        "title": "Vehicle Tune — Tyres / Gearing",
+        "fields": [
+          {
+            "id": "tyre_front",
+            "label": "Front Tyre Pressure",
+            "type": "text"
+          },
+          {
+            "id": "tyre_rear",
+            "label": "Rear Tyre Pressure",
+            "type": "text"
+          },
+          {
+            "id": "final_drive",
+            "label": "Final Drive",
+            "type": "text"
+          },
+          {
+            "id": "gear1",
+            "label": "1st Gear",
+            "type": "text"
+          },
+          {
+            "id": "gear2",
+            "label": "2nd Gear",
+            "type": "text"
+          },
+          {
+            "id": "gear3",
+            "label": "3rd Gear",
+            "type": "text"
+          },
+          {
+            "id": "gear4",
+            "label": "4th Gear",
+            "type": "text"
+          },
+          {
+            "id": "gear5",
+            "label": "5th Gear",
+            "type": "text"
+          },
+          {
+            "id": "gear6",
+            "label": "6th Gear",
+            "type": "text"
+          },
+          {
+            "id": "gear7",
+            "label": "7th Gear",
+            "type": "text"
+          },
+          {
+            "id": "gear8",
+            "label": "8th Gear",
+            "type": "text"
+          },
+          {
+            "id": "gear9",
+            "label": "9th Gear",
+            "type": "text"
+          },
+          {
+            "id": "gear10",
+            "label": "10th Gear",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "title": "Vehicle Tune — Alignment / Suspension",
+        "fields": [
+          {
+            "id": "camber_f",
+            "label": "Front Camber",
+            "type": "text"
+          },
+          {
+            "id": "camber_r",
+            "label": "Rear Camber",
+            "type": "text"
+          },
+          {
+            "id": "toe_f",
+            "label": "Front Toe",
+            "type": "text"
+          },
+          {
+            "id": "toe_r",
+            "label": "Rear Toe",
+            "type": "text"
+          },
+          {
+            "id": "caster",
+            "label": "Front Caster",
+            "type": "text"
+          },
+          {
+            "id": "arb_f",
+            "label": "Front Antiroll Bar",
+            "type": "text"
+          },
+          {
+            "id": "arb_r",
+            "label": "Rear Antiroll Bar",
+            "type": "text"
+          },
+          {
+            "id": "spring_f",
+            "label": "Front Springs",
+            "type": "text"
+          },
+          {
+            "id": "spring_r",
+            "label": "Rear Springs",
+            "type": "text"
+          },
+          {
+            "id": "height_f",
+            "label": "Front Ride Height",
+            "type": "text"
+          },
+          {
+            "id": "height_r",
+            "label": "Rear Ride Height",
+            "type": "text"
+          },
+          {
+            "id": "rebound_f",
+            "label": "Front Rebound",
+            "type": "text"
+          },
+          {
+            "id": "rebound_r",
+            "label": "Rear Rebound",
+            "type": "text"
+          },
+          {
+            "id": "bump_f",
+            "label": "Front Bump",
+            "type": "text"
+          },
+          {
+            "id": "bump_r",
+            "label": "Rear Bump",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "title": "Vehicle Tune — Aero / Brakes / Differential",
+        "fields": [
+          {
+            "id": "aero_f",
+            "label": "Front Aero",
+            "type": "text"
+          },
+          {
+            "id": "aero_r",
+            "label": "Rear Aero",
+            "type": "text"
+          },
+          {
+            "id": "brake_balance",
+            "label": "Brake Balance",
+            "type": "text"
+          },
+          {
+            "id": "brake_pressure",
+            "label": "Brake Pressure",
+            "type": "text"
+          },
+          {
+            "id": "diff_front_accel",
+            "label": "Front Differential Acceleration",
+            "type": "text"
+          },
+          {
+            "id": "diff_front_decel",
+            "label": "Front Differential Deceleration",
+            "type": "text"
+          },
+          {
+            "id": "diff_rear_accel",
+            "label": "Rear Differential Acceleration",
+            "type": "text"
+          },
+          {
+            "id": "diff_rear_decel",
+            "label": "Rear Differential Deceleration",
+            "type": "text"
+          },
+          {
+            "id": "diff_center",
+            "label": "Centre Differential Balance",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "carx": {
+    "sections": [
+      {
+        "title": "Controls / Force Feedback",
+        "fields": [
+          {
+            "id": "gearbox",
+            "label": "Gearbox Type",
+            "type": "choice",
+            "options": [
+              "Automatic",
+              "Manual"
+            ]
+          },
+          {
+            "id": "clutch",
+            "label": "Clutch",
+            "type": "choice",
+            "options": [
+              "Automatic",
+              "Manual"
+            ]
+          },
+          {
+            "id": "ignition",
+            "label": "Ignition Type",
+            "type": "choice",
+            "options": [
+              "Simplified",
+              "Realistic"
+            ]
+          },
+          {
+            "id": "wheel_angle",
+            "label": "Steering Wheel Angle",
+            "type": "number",
+            "min": 90,
+            "max": 1080,
+            "step": 10,
+            "unit": "°"
+          },
+          {
+            "id": "ffb",
+            "label": "Wheel Force Feedback",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.05
+          },
+          {
+            "id": "autocenter",
+            "label": "Auto-centering Force at Standstill",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.1
+          },
+          {
+            "id": "wheel_controller",
+            "label": "Wheel as Controller",
+            "type": "toggle"
+          },
+          {
+            "id": "prediction",
+            "label": "Prediction",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.1
+          },
+          {
+            "id": "stabilization",
+            "label": "Stabilization",
+            "type": "number",
+            "min": 0,
+            "max": 5,
+            "step": 0.1
+          },
+          {
+            "id": "smoothing",
+            "label": "Smoothing",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.1
+          },
+          {
+            "id": "acceleration",
+            "label": "Acceleration",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.1
+          },
+          {
+            "id": "inertia",
+            "label": "Inertia",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.1
+          },
+          {
+            "id": "post",
+            "label": "Post-processing Feedback",
+            "type": "toggle"
+          },
+          {
+            "id": "steer_deadzone",
+            "label": "Steering Deadzone",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.05
+          },
+          {
+            "id": "steer_linearity",
+            "label": "Steering Linearity",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.05
+          },
+          {
+            "id": "accel_linearity",
+            "label": "Accelerator Linearity",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.05
+          },
+          {
+            "id": "brake_linearity",
+            "label": "Braking Linearity",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.05
+          },
+          {
+            "id": "handbrake_linearity",
+            "label": "Handbrake Linearity",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.05
+          },
+          {
+            "id": "clutch_linearity",
+            "label": "Clutch Linearity",
+            "type": "number",
+            "min": 0,
+            "max": 1,
+            "step": 0.05
+          }
+        ]
+      },
+      {
+        "title": "Dynostand Tune",
+        "fields": [
+          {
+            "id": "spring_length_f",
+            "label": "Front Spring Length",
+            "type": "text"
+          },
+          {
+            "id": "spring_length_r",
+            "label": "Rear Spring Length",
+            "type": "text"
+          },
+          {
+            "id": "spring_stiff_f",
+            "label": "Front Spring Stiffness",
+            "type": "text"
+          },
+          {
+            "id": "spring_stiff_r",
+            "label": "Rear Spring Stiffness",
+            "type": "text"
+          },
+          {
+            "id": "camber_f",
+            "label": "Front Camber",
+            "type": "text"
+          },
+          {
+            "id": "camber_r",
+            "label": "Rear Camber",
+            "type": "text"
+          },
+          {
+            "id": "toe_f",
+            "label": "Front Toe",
+            "type": "text"
+          },
+          {
+            "id": "toe_r",
+            "label": "Rear Toe",
+            "type": "text"
+          },
+          {
+            "id": "caster",
+            "label": "Caster",
+            "type": "text"
+          },
+          {
+            "id": "ackerman",
+            "label": "Ackerman Angle",
+            "type": "text"
+          },
+          {
+            "id": "steering_angle",
+            "label": "Max Steering Angle",
+            "type": "text"
+          },
+          {
+            "id": "kingpin",
+            "label": "Kingpin Angle Inclination",
+            "type": "text"
+          },
+          {
+            "id": "axis_offset",
+            "label": "Steering Axis Offset",
+            "type": "text"
+          },
+          {
+            "id": "tyre_pressure_f",
+            "label": "Front Tyre Pressure",
+            "type": "text"
+          },
+          {
+            "id": "tyre_pressure_r",
+            "label": "Rear Tyre Pressure",
+            "type": "text"
+          },
+          {
+            "id": "adhesion_f",
+            "label": "Front Tyre Adhesion",
+            "type": "text"
+          },
+          {
+            "id": "adhesion_r",
+            "label": "Rear Tyre Adhesion",
+            "type": "text"
+          },
+          {
+            "id": "final_drive",
+            "label": "Final Drive",
+            "type": "text"
+          },
+          {
+            "id": "diff",
+            "label": "Differential / Locking",
+            "type": "text"
+          },
+          {
+            "id": "brake_torque",
+            "label": "Brake Torque",
+            "type": "text"
+          },
+          {
+            "id": "brake_bias",
+            "label": "Brake Bias",
+            "type": "text"
+          },
+          {
+            "id": "abs",
+            "label": "ABS",
+            "type": "toggle"
+          }
+        ]
+      }
+    ]
+  },
+  "beamng": {
+    "sections": [
+      {
+        "title": "Steering Binding / Force Feedback",
+        "fields": [
+          {
+            "id": "steering_linearity",
+            "label": "Steering Linearity",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "steering_deadzone_rest",
+            "label": "Deadzone (rest)",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "steering_deadzone_end",
+            "label": "Deadzone (end)",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb_enabled",
+            "label": "Force Feedback Enabled",
+            "type": "toggle"
+          },
+          {
+            "id": "ffb_strength",
+            "label": "Strength",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb_smoothing",
+            "label": "Smoothing",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "low_speed",
+            "label": "Reduce Strength at Low Speeds",
+            "type": "toggle"
+          },
+          {
+            "id": "update_type",
+            "label": "FFB Update Type",
+            "type": "choice",
+            "options": [
+              "Automatic",
+              "Fast",
+              "Full"
+            ]
+          },
+          {
+            "id": "invert",
+            "label": "Invert Force Feedback",
+            "type": "toggle"
+          }
+        ]
+      },
+      {
+        "title": "Vehicle Configuration",
+        "fields": [
+          {
+            "id": "tyres",
+            "label": "Tyres / Wheels",
+            "type": "text"
+          },
+          {
+            "id": "alignment",
+            "label": "Alignment",
+            "type": "text"
+          },
+          {
+            "id": "suspension",
+            "label": "Suspension",
+            "type": "text"
+          },
+          {
+            "id": "differential",
+            "label": "Differential",
+            "type": "text"
+          },
+          {
+            "id": "gearing",
+            "label": "Gearing",
+            "type": "text"
+          },
+          {
+            "id": "brakes",
+            "label": "Brakes",
+            "type": "text"
+          },
+          {
+            "id": "engine",
+            "label": "Engine / ECU",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "gt7": {
+    "sections": [
+      {
+        "title": "Controller / Assist Settings",
+        "fields": [
+          {
+            "id": "ffb_max",
+            "label": "Force Feedback Max Torque",
+            "type": "number",
+            "min": 1,
+            "max": 10,
+            "step": 1
+          },
+          {
+            "id": "ffb_sensitivity",
+            "label": "Force Feedback Sensitivity",
+            "type": "number",
+            "min": 1,
+            "max": 10,
+            "step": 1
+          },
+          {
+            "id": "controller_sensitivity",
+            "label": "Controller Steering Sensitivity",
+            "type": "number",
+            "min": -2,
+            "max": 10,
+            "step": 1
+          },
+          {
+            "id": "tcs",
+            "label": "Traction Control",
+            "type": "number",
+            "min": 0,
+            "max": 5,
+            "step": 1
+          },
+          {
+            "id": "abs",
+            "label": "ABS",
+            "type": "choice",
+            "options": [
+              "Off",
+              "Weak",
+              "Default"
+            ]
+          },
+          {
+            "id": "asm",
+            "label": "Active Stability Management",
+            "type": "toggle"
+          },
+          {
+            "id": "countersteer",
+            "label": "Countersteering Assistance",
+            "type": "choice",
+            "options": [
+              "Off",
+              "Weak",
+              "Strong"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Car Settings Sheet",
+        "fields": [
+          {
+            "id": "tyres_f",
+            "label": "Front Tyres",
+            "type": "text"
+          },
+          {
+            "id": "tyres_r",
+            "label": "Rear Tyres",
+            "type": "text"
+          },
+          {
+            "id": "ride_height_f",
+            "label": "Front Body Height",
+            "type": "text"
+          },
+          {
+            "id": "ride_height_r",
+            "label": "Rear Body Height",
+            "type": "text"
+          },
+          {
+            "id": "arb_f",
+            "label": "Front Anti-Roll Bar",
+            "type": "text"
+          },
+          {
+            "id": "arb_r",
+            "label": "Rear Anti-Roll Bar",
+            "type": "text"
+          },
+          {
+            "id": "damping_comp_f",
+            "label": "Front Damping Compression",
+            "type": "text"
+          },
+          {
+            "id": "damping_comp_r",
+            "label": "Rear Damping Compression",
+            "type": "text"
+          },
+          {
+            "id": "damping_exp_f",
+            "label": "Front Damping Expansion",
+            "type": "text"
+          },
+          {
+            "id": "damping_exp_r",
+            "label": "Rear Damping Expansion",
+            "type": "text"
+          },
+          {
+            "id": "frequency_f",
+            "label": "Front Natural Frequency",
+            "type": "text"
+          },
+          {
+            "id": "frequency_r",
+            "label": "Rear Natural Frequency",
+            "type": "text"
+          },
+          {
+            "id": "camber_f",
+            "label": "Front Negative Camber",
+            "type": "text"
+          },
+          {
+            "id": "camber_r",
+            "label": "Rear Negative Camber",
+            "type": "text"
+          },
+          {
+            "id": "toe_f",
+            "label": "Front Toe Angle",
+            "type": "text"
+          },
+          {
+            "id": "toe_r",
+            "label": "Rear Toe Angle",
+            "type": "text"
+          },
+          {
+            "id": "diff_initial",
+            "label": "LSD Initial Torque",
+            "type": "text"
+          },
+          {
+            "id": "diff_accel",
+            "label": "LSD Acceleration Sensitivity",
+            "type": "text"
+          },
+          {
+            "id": "diff_brake",
+            "label": "LSD Braking Sensitivity",
+            "type": "text"
+          },
+          {
+            "id": "downforce_f",
+            "label": "Front Downforce",
+            "type": "text"
+          },
+          {
+            "id": "downforce_r",
+            "label": "Rear Downforce",
+            "type": "text"
+          },
+          {
+            "id": "ecu",
+            "label": "ECU Output Adjustment",
+            "type": "text"
+          },
+          {
+            "id": "ballast",
+            "label": "Ballast",
+            "type": "text"
+          },
+          {
+            "id": "ballast_pos",
+            "label": "Ballast Positioning",
+            "type": "text"
+          },
+          {
+            "id": "power_restrictor",
+            "label": "Power Restrictor",
+            "type": "text"
+          },
+          {
+            "id": "transmission",
+            "label": "Transmission / Ratios",
+            "type": "text"
+          },
+          {
+            "id": "brake_balance",
+            "label": "Brake Balance",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "snowrunner": {
+    "sections": [
+      {
+        "title": "Driving Setup",
+        "fields": [
+          {
+            "id": "steering_mode",
+            "label": "Steering Mode",
+            "type": "choice",
+            "options": [
+              "Controller",
+              "Steering Wheel"
+            ]
+          },
+          {
+            "id": "wheel_sensitivity",
+            "label": "Wheel Sensitivity",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb_gain",
+            "label": "Force Feedback Gain",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb_friction",
+            "label": "Friction Gain",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb_damper",
+            "label": "Damper Gain",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb_spring",
+            "label": "Spring Gain",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb_collision",
+            "label": "Collision Gain",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb_engine",
+            "label": "Engine Gain",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb_tyre",
+            "label": "Tyre Gain",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb_terrain",
+            "label": "Terrain Gain",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          }
+        ]
+      },
+      {
+        "title": "Truck Build",
+        "fields": [
+          {
+            "id": "engine",
+            "label": "Engine",
+            "type": "text"
+          },
+          {
+            "id": "gearbox",
+            "label": "Gearbox",
+            "type": "text"
+          },
+          {
+            "id": "suspension",
+            "label": "Suspension",
+            "type": "text"
+          },
+          {
+            "id": "tyres",
+            "label": "Tyres",
+            "type": "text"
+          },
+          {
+            "id": "winch",
+            "label": "Winch",
+            "type": "text"
+          },
+          {
+            "id": "awd",
+            "label": "AWD Upgrade",
+            "type": "text"
+          },
+          {
+            "id": "diff",
+            "label": "Differential Lock",
+            "type": "text"
+          },
+          {
+            "id": "snorkel",
+            "label": "Snorkel",
+            "type": "text"
+          },
+          {
+            "id": "frame",
+            "label": "Frame Add-on",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "mudrunner": {
+    "sections": [
+      {
+        "title": "Wheel / Controls",
+        "fields": [
+          {
+            "id": "wheel_preset",
+            "label": "Steering Wheel Preset",
+            "type": "text"
+          },
+          {
+            "id": "steering_sensitivity",
+            "label": "Steering Sensitivity",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb",
+            "label": "Force Feedback",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          }
+        ]
+      },
+      {
+        "title": "Truck Configuration",
+        "fields": [
+          {
+            "id": "wheels",
+            "label": "Wheels / Tyres",
+            "type": "text"
+          },
+          {
+            "id": "addons",
+            "label": "Add-ons",
+            "type": "text"
+          },
+          {
+            "id": "trailer",
+            "label": "Trailer",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "ets2": {
+    "sections": [
+      {
+        "title": "Steering Wheel / Controls",
+        "fields": [
+          {
+            "id": "controller_subtype",
+            "label": "Controller Subtype",
+            "type": "choice",
+            "options": [
+              "Wheel",
+              "Gamepad / Joystick"
+            ]
+          },
+          {
+            "id": "transmission",
+            "label": "Transmission Type",
+            "type": "choice",
+            "options": [
+              "Simple Automatic",
+              "Real Automatic",
+              "Sequential",
+              "H-Shifter"
+            ]
+          },
+          {
+            "id": "steering_sensitivity",
+            "label": "Steering Sensitivity",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "steering_nonlinearity",
+            "label": "Steering Non-linearity",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb",
+            "label": "Force Feedback",
+            "type": "toggle"
+          },
+          {
+            "id": "ffb_gain",
+            "label": "Overall Gain",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "centering_high",
+            "label": "Centering at High Speed",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "centering_low",
+            "label": "Centering at Low Speed",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "internal_friction",
+            "label": "Internal Friction",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "engine_resonance",
+            "label": "Engine Resonance",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "terrain",
+            "label": "Terrain Surface",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "bumps",
+            "label": "Bumps",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "collisions",
+            "label": "Collisions",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "gearbox_grind",
+            "label": "Gearbox Grind",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "understeer",
+            "label": "Understeer Slip",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          }
+        ]
+      },
+      {
+        "title": "Truck Setup",
+        "fields": [
+          {
+            "id": "truck",
+            "label": "Truck / Chassis",
+            "type": "text"
+          },
+          {
+            "id": "engine",
+            "label": "Engine",
+            "type": "text"
+          },
+          {
+            "id": "gearbox",
+            "label": "Transmission",
+            "type": "text"
+          },
+          {
+            "id": "diff",
+            "label": "Differential Ratio",
+            "type": "text"
+          },
+          {
+            "id": "tyres",
+            "label": "Tyres",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "ats": {
+    "copy": "ets2"
+  },
+  "assetto": {
+    "sections": [
+      {
+        "title": "Wheel / Force Feedback",
+        "fields": [
+          {
+            "id": "degrees",
+            "label": "Degrees of Rotation",
+            "type": "number",
+            "min": 90,
+            "max": 1080,
+            "step": 10,
+            "unit": "°"
+          },
+          {
+            "id": "gamma",
+            "label": "Steering Gamma",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "filter",
+            "label": "Steering Filter",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "speed_sensitivity",
+            "label": "Speed Sensitivity",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb_gain",
+            "label": "Gain",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "filter_ffb",
+            "label": "FFB Filter",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "min_force",
+            "label": "Minimum Force",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "kerb",
+            "label": "Kerb Effect",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "road",
+            "label": "Road Effect",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "slip",
+            "label": "Slip Effect",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "abs",
+            "label": "ABS Effect",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "enhanced_understeer",
+            "label": "Enhanced Understeer Effect",
+            "type": "toggle"
+          }
+        ]
+      },
+      {
+        "title": "Car Setup",
+        "fields": [
+          {
+            "id": "tyres",
+            "label": "Tyres / Pressures",
+            "type": "text"
+          },
+          {
+            "id": "fuel",
+            "label": "Fuel",
+            "type": "text"
+          },
+          {
+            "id": "alignment",
+            "label": "Alignment",
+            "type": "text"
+          },
+          {
+            "id": "dampers",
+            "label": "Dampers",
+            "type": "text"
+          },
+          {
+            "id": "springs",
+            "label": "Springs / Ride Height",
+            "type": "text"
+          },
+          {
+            "id": "aero",
+            "label": "Aero",
+            "type": "text"
+          },
+          {
+            "id": "drivetrain",
+            "label": "Drivetrain / Differential",
+            "type": "text"
+          },
+          {
+            "id": "gearing",
+            "label": "Gearing",
+            "type": "text"
+          },
+          {
+            "id": "brakes",
+            "label": "Brakes",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "wrc": {
+    "sections": [
+      {
+        "title": "Wheel / Vibration & Feedback",
+        "fields": [
+          {
+            "id": "steering_saturation",
+            "label": "Steering Saturation",
+            "type": "number",
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "steering_linearity",
+            "label": "Steering Linearity",
+            "type": "number",
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "self_aligning",
+            "label": "Self Aligning Torque",
+            "type": "number",
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "wheel_friction",
+            "label": "Wheel Friction",
+            "type": "number",
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "tyre_friction",
+            "label": "Tyre Friction",
+            "type": "number",
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "suspension",
+            "label": "Suspension",
+            "type": "number",
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "tyre_slip",
+            "label": "Tyre Slip",
+            "type": "number",
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "engine",
+            "label": "Engine",
+            "type": "number",
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "collision",
+            "label": "Collision",
+            "type": "number",
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "soft_lock",
+            "label": "Soft Lock",
+            "type": "number",
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "steering_centre",
+            "label": "Steering Centre Force",
+            "type": "number",
+            "min": 0,
+            "max": 150,
+            "step": 1,
+            "unit": "%"
+          }
+        ]
+      },
+      {
+        "title": "Vehicle Setup",
+        "fields": [
+          {
+            "id": "alignment",
+            "label": "Alignment",
+            "type": "text"
+          },
+          {
+            "id": "brakes",
+            "label": "Brakes",
+            "type": "text"
+          },
+          {
+            "id": "differential",
+            "label": "Differential",
+            "type": "text"
+          },
+          {
+            "id": "gearing",
+            "label": "Gearing",
+            "type": "text"
+          },
+          {
+            "id": "damping",
+            "label": "Damping",
+            "type": "text"
+          },
+          {
+            "id": "springs",
+            "label": "Springs",
+            "type": "text"
+          },
+          {
+            "id": "ride_height",
+            "label": "Ride Height",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "alaskan": {
+    "sections": [
+      {
+        "title": "Driving / Controls",
+        "fields": [
+          {
+            "id": "input_device",
+            "label": "Input Device",
+            "type": "choice",
+            "options": [
+              "Controller",
+              "Steering Wheel"
+            ]
+          },
+          {
+            "id": "steering",
+            "label": "Steering Sensitivity",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "ffb",
+            "label": "Force Feedback",
+            "type": "number",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "%"
+          },
+          {
+            "id": "transmission",
+            "label": "Transmission",
+            "type": "choice",
+            "options": [
+              "Automatic",
+              "Manual"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Truck Configuration",
+        "fields": [
+          {
+            "id": "truck",
+            "label": "Truck",
+            "type": "text"
+          },
+          {
+            "id": "engine",
+            "label": "Engine / Powertrain",
+            "type": "text"
+          },
+          {
+            "id": "tyres",
+            "label": "Tyres",
+            "type": "text"
+          },
+          {
+            "id": "fuel",
+            "label": "Fuel / Range Notes",
+            "type": "text"
+          },
+          {
+            "id": "trailer",
+            "label": "Trailer / Load",
+            "type": "text"
+          }
+        ]
+      }
+    ]
+  },
+  "schemaVersion": "1.1.0"
 }
