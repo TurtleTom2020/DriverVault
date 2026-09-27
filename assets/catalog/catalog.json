@@ -12463,11 +12463,27 @@
           "image": null,
           "imageSource": null,
           "imageMatch": "Verified CarX Drift Racing Online official update roster"
+        },
+        {
+          "id": "carx:rz70",
+          "make": "",
+          "model": "RZ70",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified official CarX Drift Racing Online update 2.28.0 roster"
+        },
+        {
+          "id": "carx:axis-g2",
+          "make": "",
+          "model": "Axis G2",
+          "image": null,
+          "imageSource": null,
+          "imageMatch": "Verified official CarX Drift Racing Online update 2.28.0 roster"
         }
       ],
       "imageCoverage": 27,
       "imageVerifiedAt": "2026-09-27",
-      "official_total": 92,
+      "official_total": 94,
       "catalogVerifiedAt": "2026-09-28"
     },
     {
