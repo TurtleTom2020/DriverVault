@@ -11702,7 +11702,10 @@
           "model": "S20",
           "class": "Drift",
           "drive": "",
-          "id": "carx:wellington-s20"
+          "id": "carx:wellington-s20",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=wellington%20s20",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=wellington%20s20",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Wellington S20; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -11710,7 +11713,10 @@
           "model": "M5 90-s",
           "class": "Drift",
           "drive": "",
-          "id": "carx:panther-m5-90-s"
+          "id": "carx:panther-m5-90-s",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=panther%20m5%2090-s",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=panther%20m5%2090-s",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Panther M5 90-s; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -11718,7 +11724,10 @@
           "model": "G6",
           "class": "Drift",
           "drive": "",
-          "id": "carx:caravan-g6"
+          "id": "carx:caravan-g6",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=caravan%20g6",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=caravan%20g6",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Caravan G6; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -11748,7 +11757,10 @@
           "model": "Sorrow",
           "class": "Drift",
           "drive": "",
-          "id": "carx:sorrow"
+          "id": "carx:sorrow",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=sorrow",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=sorrow",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Sorrow; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -11767,7 +11779,10 @@
           "model": "FC 90-s",
           "class": "Drift",
           "drive": "",
-          "id": "carx:falcon-fc-90-s"
+          "id": "carx:falcon-fc-90-s",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=falcon%20fc%2090-s",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=falcon%20fc%2090-s",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Falcon FC 90-s; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -11786,7 +11801,10 @@
           "model": "Lynx",
           "class": "Drift",
           "drive": "",
-          "id": "carx:lynx"
+          "id": "carx:lynx",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=lynx",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=lynx",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Lynx; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -11794,7 +11812,10 @@
           "model": "210",
           "class": "Drift",
           "drive": "",
-          "id": "carx:vz-210"
+          "id": "carx:vz-210",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=vz%20210",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=vz%20210",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for VZ 210; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -11858,7 +11879,10 @@
           "model": "Corona",
           "class": "Drift",
           "drive": "",
-          "id": "carx:corona"
+          "id": "carx:corona",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=corona",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=corona",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Corona; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -11899,7 +11923,10 @@
           "model": "Fox",
           "class": "Drift",
           "drive": "",
-          "id": "carx:black-fox"
+          "id": "carx:black-fox",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=black%20fox",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=black%20fox",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Black Fox; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -11948,7 +11975,10 @@
           "model": "Solar",
           "class": "Drift",
           "drive": "",
-          "id": "carx:solar"
+          "id": "carx:solar",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=solar",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=solar",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Solar; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -11999,7 +12029,10 @@
           "model": "GT",
           "class": "Drift",
           "drive": "",
-          "id": "carx:atlas-gt"
+          "id": "carx:atlas-gt",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=atlas%20gt",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=atlas%20gt",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Atlas GT; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -12007,7 +12040,10 @@
           "model": "Kitsune",
           "class": "Drift",
           "drive": "",
-          "id": "carx:kitsune"
+          "id": "carx:kitsune",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=kitsune",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=kitsune",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Kitsune; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -12112,7 +12148,10 @@
           "model": "GT",
           "class": "Drift",
           "drive": "",
-          "id": "carx:hornet-gt"
+          "id": "carx:hornet-gt",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=hornet%20gt",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=hornet%20gt",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Hornet GT; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -12131,7 +12170,10 @@
           "model": "Inferno",
           "class": "Drift",
           "drive": "",
-          "id": "carx:inferno"
+          "id": "carx:inferno",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=inferno",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=inferno",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Inferno; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -12163,7 +12205,10 @@
           "model": "Bandit",
           "class": "Drift",
           "drive": "",
-          "id": "carx:bandit"
+          "id": "carx:bandit",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=bandit",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=bandit",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Bandit; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -12179,7 +12224,10 @@
           "model": "RZ",
           "class": "Drift",
           "drive": "",
-          "id": "carx:falcon-rz"
+          "id": "carx:falcon-rz",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=falcon%20rz",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=falcon%20rz",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Falcon RZ; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -12263,7 +12311,10 @@
           "model": "Voodoo",
           "class": "Drift",
           "drive": "",
-          "id": "carx:voodoo"
+          "id": "carx:voodoo",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=voodoo",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=voodoo",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Voodoo; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -12271,7 +12322,10 @@
           "model": "Imperior",
           "class": "Drift",
           "drive": "",
-          "id": "carx:imperior"
+          "id": "carx:imperior",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=imperior",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=imperior",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Imperior; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -12279,7 +12333,10 @@
           "model": "GT",
           "class": "Drift",
           "drive": "",
-          "id": "carx:patron-gt"
+          "id": "carx:patron-gt",
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=patron%20gt",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=patron%20gt",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Patron GT; category page used as game-specific visual source"
         },
         {
           "year": "",
@@ -12484,121 +12541,121 @@
           "id": "carx:mifune",
           "make": "",
           "model": "Mifune",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=mifune",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=mifune",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Mifune; category page used as game-specific visual source"
         },
         {
           "id": "carx:eva-x",
           "make": "",
           "model": "EVA X",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=eva%20x",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=eva%20x",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for EVA X; category page used as game-specific visual source"
         },
         {
           "id": "carx:syberia-swi",
           "make": "",
           "model": "Syberia SWI",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=syberia%20swi",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=syberia%20swi",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Syberia SWI; category page used as game-specific visual source"
         },
         {
           "id": "carx:speedline-gt",
           "make": "",
           "model": "SpeedLine GT",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=speedline%20gt",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=speedline%20gt",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for SpeedLine GT; category page used as game-specific visual source"
         },
         {
           "id": "carx:kanniedood",
           "make": "",
           "model": "Kanniedood",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=kanniedood",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=kanniedood",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Kanniedood; category page used as game-specific visual source"
         },
         {
           "id": "carx:veneom-gt500cr",
           "make": "",
           "model": "Veneom GT500CR",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=veneom%20gt500cr",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=veneom%20gt500cr",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Veneom GT500CR; category page used as game-specific visual source"
         },
         {
           "id": "carx:black-jack-x22",
           "make": "",
           "model": "Black Jack X22",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=black%20jack%20x22",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=black%20jack%20x22",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Black Jack X22; category page used as game-specific visual source"
         },
         {
           "id": "carx:magnum-rt",
           "make": "",
           "model": "Magnum RT",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=magnum%20rt",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=magnum%20rt",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Magnum RT; category page used as game-specific visual source"
         },
         {
           "id": "carx:dakohosu",
           "make": "",
           "model": "Dakohosu",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=dakohosu",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=dakohosu",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Dakohosu; category page used as game-specific visual source"
         },
         {
           "id": "carx:mercher-klc",
           "make": "",
           "model": "Mercher KLC",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=mercher%20klc",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=mercher%20klc",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Mercher KLC; category page used as game-specific visual source"
         },
         {
           "id": "carx:dtm-46",
           "make": "",
           "model": "DTM 46",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=dtm%2046",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=dtm%2046",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for DTM 46; category page used as game-specific visual source"
         },
         {
           "id": "carx:bug-catcher",
           "make": "",
           "model": "Bug Catcher",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=bug%20catcher",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=bug%20catcher",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Bug Catcher; category page used as game-specific visual source"
         },
         {
           "id": "carx:raven-rv8",
           "make": "",
           "model": "Raven RV8",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=raven%20rv8",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=raven%20rv8",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Raven RV8; category page used as game-specific visual source"
         },
         {
           "id": "carx:asura-m1",
           "make": "",
           "model": "Asura M1",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=asura%20m1",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=asura%20m1",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Asura M1; category page used as game-specific visual source"
         },
         {
           "id": "carx:shark-gt",
           "make": "",
           "model": "Shark GT",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Verified base-game car name from official CarX Drift Racing Online Steam Workshop car filter"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=shark%20gt",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=shark%20gt",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Shark GT; category page used as game-specific visual source"
         },
         {
           "id": "carx:general-vx",
@@ -12644,9 +12701,9 @@
           "id": "carx:hummel",
           "make": "",
           "model": "Hummel",
-          "image": null,
-          "imageSource": null,
-          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=hummel",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=hummel",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Hummel; category page used as game-specific visual source"
         },
         {
           "id": "carx:kaiju",
@@ -12660,17 +12717,17 @@
           "id": "carx:betsy",
           "make": "",
           "model": "Betsy",
-          "image": null,
-          "imageSource": null,
-          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=betsy",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=betsy",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Betsy; category page used as game-specific visual source"
         },
         {
           "id": "carx:udm-3",
           "make": "",
           "model": "UDM 3",
-          "image": null,
-          "imageSource": null,
-          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=udm%203",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=udm%203",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for UDM 3; category page used as game-specific visual source"
         },
         {
           "id": "carx:pigeon-iv",
@@ -12700,13 +12757,13 @@
           "id": "carx:interceptor",
           "make": "",
           "model": "Interceptor",
-          "image": null,
-          "imageSource": null,
-          "imageMatch": "Verified CarX Drift Racing Online roster entry from cross-checked game-specific vehicle sources"
+          "image": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=interceptor",
+          "imageSource": "https://steamcommunity.com/workshop/browse/?appid=635260&browsesort=toprated&requiredtags%5B%5D=interceptor",
+          "imageMatch": "Exact CarX Steam Workshop vehicle category for Interceptor; category page used as game-specific visual source"
         }
       ],
-      "imageCoverage": 27,
-      "imageVerifiedAt": "2026-09-27",
+      "imageCoverage": 65,
+      "imageVerifiedAt": "2026-09-28",
       "official_total": 122,
       "catalogVerifiedAt": "2026-09-28"
     },
