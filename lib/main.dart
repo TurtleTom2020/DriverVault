@@ -432,7 +432,35 @@ class _EditSetup extends State<EditSetup>{final name=TextEditingController(text:
  void _checkpoint(){history.add(Map<String,dynamic>.from(values));if(history.length>20)history.removeAt(0);}
  void _undo(){if(history.isEmpty)return;setState((){values..clear()..addAll(history.removeLast());dirty=true;});}
  Future<void> _loadSchema()async{final all=jsonDecode(await rootBundle.loadString('assets/catalog/game_schemas.json')) as Map<String,dynamic>;dynamic s=all[widget.game['id']];if(s is Map&&s['copy']!=null)s=all[s['copy']];final hw=jsonDecode(await rootBundle.loadString('assets/catalog/hardware.json')) as Map<String,dynamic>;final rec=Map<String,dynamic>.from(hw['recommended_profiles']??{});if(mounted)setState((){schema=s;recommended=rec;});}
- void _showPresets(){final gid=widget.game['id'].toString();final matches=<MapEntry<String,dynamic>>[];for(final e in recommended.entries){final m=Map<String,dynamic>.from(e.value);final games=Map<String,dynamic>.from(m['games']??{});if(games[gid]!=null)matches.add(MapEntry(e.key,games[gid]));}showModalBottomSheet(context:context,backgroundColor:const Color(0xff111019),builder:(bc)=>SafeArea(child:Padding(padding:const EdgeInsets.all(18),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.start,children:[const Text('Recommended Baselines',style:TextStyle(fontSize:20,fontWeight:FontWeight.w900)),const SizedBox(height:4),Text(widget.game['name'],style:TextStyle(color:dvSecondary)),const SizedBox(height:12),if(matches.isEmpty)const Text('No verified hardware baseline is bundled for this game yet.',style:TextStyle(color:Colors.white60))else ...matches.map((e){final p=Map<String,dynamic>.from(e.value);return Card(color:dvCard,child:ListTile(leading:Icon(Icons.verified_rounded,color:dvAccent),title:Text(e.key),subtitle:Text('Mode: ${p['compatibilityMode']} • Filter: ${p['filter']} • Damping: ${p['damping']} • Rotation: ${p['rotation']}'),trailing:const Icon(Icons.chevron_right),onTap:(){Navigator.pop(bc);ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text('This is the verified hardware baseline for ${e.key}. Apply it from that hardware profile so setup values are never overwritten silently.')));});})]))));}
+ void _showPresets(){
+  final gid=widget.game['id'].toString();
+  final matches=<MapEntry<String,dynamic>>[];
+  for(final e in recommended.entries){
+   final m=Map<String,dynamic>.from(e.value);
+   final games=Map<String,dynamic>.from(m['games']??{});
+   if(games[gid]!=null)matches.add(MapEntry(e.key,games[gid]));
+  }
+  showModalBottomSheet(context:context,backgroundColor:const Color(0xff111019),builder:(bc)=>SafeArea(child:Padding(
+   padding:const EdgeInsets.all(18),
+   child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.start,children:[
+    const Text('Recommended Baselines',style:TextStyle(fontSize:20,fontWeight:FontWeight.w900)),
+    const SizedBox(height:4),Text(widget.game['name'],style:TextStyle(color:dvSecondary)),const SizedBox(height:12),
+    if(matches.isEmpty)const Text('No verified hardware baseline is bundled for this game yet.',style:TextStyle(color:Colors.white60))
+    else ...matches.map((e){
+     final p=Map<String,dynamic>.from(e.value);
+     return Card(color:dvCard,child:ListTile(
+      leading:Icon(Icons.verified_rounded,color:dvAccent),title:Text(e.key),
+      subtitle:Text("Mode: ${p['compatibilityMode']} • Filter: ${p['filter']} • Damping: ${p['damping']} • Rotation: ${p['rotation']}"),
+      trailing:const Icon(Icons.chevron_right),
+      onTap:(){
+       Navigator.pop(bc);
+       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text('This is the verified hardware baseline for ${e.key}. Apply it from that hardware profile so setup values are never overwritten silently.')));
+      },
+     ));
+    }),
+   ]),
+  )));
+ }
  @override Widget build(BuildContext c)=>PopScope(canPop:!dirty,onPopInvokedWithResult:(didPop,result)async{if(didPop)return;final leave=await showDialog<bool>(context:c,builder:(d)=>AlertDialog(title:const Text('Discard changes?'),content:const Text('You have unsaved setup changes.'),actions:[TextButton(onPressed:()=>Navigator.pop(d,false),child:const Text('Keep editing')),FilledButton(onPressed:()=>Navigator.pop(d,true),child:const Text('Discard'))]))??false;if(leave&&c.mounted){dirty=false;Navigator.pop(c);}},child:Scaffold(appBar:AppBar(title:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[Text(widget.existing==null?'New Setup':'Edit Setup'),Text(widget.vehicle,style:const TextStyle(fontSize:10,color:Colors.white60))]),actions:[IconButton(tooltip:'Recommended baselines',onPressed:_showPresets,icon:const Icon(Icons.auto_awesome_rounded)),IconButton(tooltip:'Undo last settings change',onPressed:history.isEmpty?null:_undo,icon:const Icon(Icons.undo_rounded))]),body:Stack(children:[Positioned.fill(child:Opacity(opacity:.12,child:GameArt(game:widget.game))),Positioned.fill(child:Container(color:bg.withValues(alpha:.78))),ListView(padding:const EdgeInsets.all(16),children:[
   Text(widget.game['name'],style:TextStyle(color:dvSecondary,fontWeight:FontWeight.w900,fontSize:18)),const SizedBox(height:8),_text(name,'Setup Name'),_text(notes,'Notes',3),const SizedBox(height:8),Wrap(spacing:8,children:['Road','Drift','Race','Drag','Rally','Off-road','Cruise'].map((x)=>ChoiceChip(label:Text(x),selected:type==x,onSelected:(_)=>setState((){type=x;dirty=true;}))).toList()),const SizedBox(height:16),
   if(schema==null)const Center(child:CircularProgressIndicator()) else ...(schema!['sections'] as List).map((sec)=>_section(sec)),
