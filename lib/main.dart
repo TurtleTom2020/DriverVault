@@ -501,9 +501,16 @@ class _Hardware extends State<Hardware>{
     ],
     TextField(controller:notes,maxLines:3,decoration:const InputDecoration(labelText:'Notes (optional)'))
    ]))),actions:[TextButton(onPressed:()=>Navigator.pop(dc),child:const Text('Cancel')),FilledButton(onPressed:(){
-    profiles.add({'maker':maker['name'],'device':dev['name'],'platform':platform,'compatibilityMode':compatibilityMode,'rotation':rotation.round(),'strength':strength,'damping':damper.round(),'filter':filter.round(),'friction':friction.round(),'inertia':inertia.round(),'spring':spring.round(),'audio':audio.round(),'brakeForce':brakeForce.round(),'trueforce':trueforce,'centering':centering,'notes':notes.text});Navigator.pop(dc);},child:const Text('Save Profile'))])));
+    final profile={'id':DateTime.now().microsecondsSinceEpoch.toString(),'maker':maker['name'],'device':dev['name'],'platform':platform,'compatibilityMode':compatibilityMode,'rotation':rotation.round(),'strength':strength,'damping':damper.round(),'filter':filter.round(),'friction':friction.round(),'inertia':inertia.round(),'spring':spring.round(),'audio':audio.round(),'brakeForce':brakeForce.round(),'trueforce':trueforce,'centering':centering,'notes':notes.text};profiles.add(profile);Navigator.pop(dc);},child:const Text('Save Profile'))])));
   final p=await SharedPreferences.getInstance(); await p.setString('hw_profiles',jsonEncode(profiles)); if(mounted)setState((){});
  }
+ Future<void> _profileDetails(dynamic x)async{await showModalBottomSheet(context:context,isScrollControlled:true,backgroundColor:const Color(0xff111019),builder:(c)=>SafeArea(child:Padding(padding:const EdgeInsets.all(20),child:SingleChildScrollView(child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
+  Text('${x['maker']} ${x['device']}',style:const TextStyle(fontSize:22,fontWeight:FontWeight.w900)),const SizedBox(height:4),Text((x['platform']??'').toString(),style:const TextStyle(color:gold)),const SizedBox(height:16),
+  _profileRow('Compatibility mode',x['compatibilityMode']),_profileRow('Operating range','${x['rotation']??'—'}°'),_profileRow('Strength',x['strength']),_profileRow('Dampening','${x['damping']??'—'}%'),_profileRow('FFB filter',x['filter']),_profileRow('TRUEFORCE audio','${x['audio']??'—'}%'),
+  if((x['notes']??'').toString().trim().isNotEmpty)...[const SizedBox(height:12),const Label('NOTES'),const SizedBox(height:6),Text(x['notes'].toString())],
+  const SizedBox(height:20),SizedBox(width:double.infinity,child:OutlinedButton.icon(onPressed:()=>Navigator.pop(c),icon:const Icon(Icons.close),label:const Text('Close')))
+ ])))));}
+ Widget _profileRow(String label,dynamic value)=>Padding(padding:const EdgeInsets.symmetric(vertical:5),child:Row(children:[Expanded(child:Text(label,style:const TextStyle(color:Colors.white60))),Text((value??'—').toString(),style:const TextStyle(fontWeight:FontWeight.w800))]));
  Widget _hwSlider(String label,double value,double min,double max,double step,String unit,ValueChanged<double> onChanged){final div=((max-min)/step).round();final shown=step<1?value.toStringAsFixed(1):value.round().toString();return Padding(padding:const EdgeInsets.only(top:10),child:Column(children:[Row(children:[Expanded(child:Text(label,style:const TextStyle(fontSize:12))),Text('$shown$unit',style:const TextStyle(color:gold,fontWeight:FontWeight.bold))]),Slider(value:value.clamp(min,max),min:min,max:max,divisions:div>0?div:null,onChanged:onChanged)]));}
  @override Widget build(BuildContext c){
   final filtered=<Map<String,dynamic>>[];
@@ -514,7 +521,14 @@ class _Hardware extends State<Hardware>{
    const SizedBox(height:14),
    TextField(onChanged:(v)=>setState(()=>q=v),decoration:InputDecoration(prefixIcon:const Icon(Icons.search),hintText:'Search G29, RS50, R12, T300...',filled:true,fillColor:card,border:OutlineInputBorder(borderRadius:BorderRadius.circular(10),borderSide:BorderSide.none))),
    if(profiles.isNotEmpty)...[const SizedBox(height:18),const Label('MY HARDWARE PROFILES'),const SizedBox(height:8),
-    ...profiles.map((x)=>Card(color:card,child:ListTile(leading:const Icon(Icons.sports_esports,color:purple),title:Text('${x['maker']} ${x['device']}'),subtitle:Text('Rotation: ${x['rotation']??'—'}°  •  Strength: ${x['strength']??x['ffb']??'—'}'))))],
+    ...profiles.map((x)=>Card(color:card,child:ListTile(
+     onTap:()=>_profileDetails(x),
+     leading:const Icon(Icons.sports_esports,color:purple),
+     title:Text('${x['maker']} ${x['device']}'),
+     subtitle:Text('Rotation: ${x['rotation']??'—'}°  •  Strength: ${x['strength']??x['ffb']??'—'}'),
+     trailing:PopupMenuButton<String>(onSelected:(v)async{if(v=='duplicate'){final n=Map<String,dynamic>.from(x);n['id']=DateTime.now().microsecondsSinceEpoch.toString();n['notes']='${n['notes']??''} (copy)'.trim();profiles.add(n);}else if(v=='delete'){profiles.remove(x);}final p=await SharedPreferences.getInstance();await p.setString('hw_profiles',jsonEncode(profiles));if(mounted)setState((){});},itemBuilder:(_)=>const[
+      PopupMenuItem(value:'duplicate',child:Text('Duplicate')),PopupMenuItem(value:'delete',child:Text('Delete'))])
+    )))],
    const SizedBox(height:18),const Label('HARDWARE CATALOGUE'),const SizedBox(height:8),
    ...filtered.map((x){final m=x['m'],d=x['d'];return Card(color:card,child:ListTile(
     onTap:()=>saveProfile(m,d),leading:const Icon(Icons.settings_input_component_rounded,color:gold),
