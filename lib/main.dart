@@ -416,12 +416,12 @@ class MySetups extends StatefulWidget {
 class _MySetupsState extends State<MySetups>{
  dynamic _gameFor(dynamic x){for(final g in widget.games){if(g['id']==x['gameId']||g['name']==x['game'])return g;}return null;}
  Future<void> _open(dynamic x)async{final g=_gameFor(x);if(g==null){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('Game catalogue entry not found for this setup.')));return;}await Navigator.push(context,MaterialPageRoute(builder:(_)=>EditSetup(game:g,vehicle:(x['vehicle']??'').toString(),onSave:widget.onSave,existing:Map<String,dynamic>.from(x))));if(mounted)setState((){});}
- void _duplicate(dynamic x){final copy=Map<String,dynamic>.from(x);copy['id']=DateTime.now().microsecondsSinceEpoch.toString();copy['title']='\${x['title']??'Setup'} Copy';copy['savedAt']=DateTime.now().toIso8601String().substring(0,10);widget.onSave(copy);setState((){});}
+ void _duplicate(dynamic x){final copy=Map<String,dynamic>.from(x);copy['id']=DateTime.now().microsecondsSinceEpoch.toString();copy['title']="${x['title']??'Setup'} Copy";copy['savedAt']=DateTime.now().toIso8601String().substring(0,10);widget.onSave(copy);setState((){});}
  @override Widget build(BuildContext context)=>ListView(padding:const EdgeInsets.all(18),children:[
   const Text('My Setups',style:TextStyle(fontSize:28,fontWeight:FontWeight.w900)),const SizedBox(height:4),
-  Text('\${widget.items.length} saved setup\${widget.items.length==1?'':'s'}',style:const TextStyle(color:Colors.white60)),const SizedBox(height:12),
+  Text("${widget.items.length} saved setup${widget.items.length==1?'':'s'}",style:const TextStyle(color:Colors.white60)),const SizedBox(height:12),
   if(widget.items.isEmpty)const Text('No saved setups yet.',style:TextStyle(color:Colors.white60)) else ...widget.items.map((x)=>Card(color:card,child:ListTile(
-   onTap:()=>_open(x),leading:const Icon(Icons.tune,color:purple),title:Text(x['title']??'Setup'),subtitle:Text('\${x['game']??''}\n\${x['vehicle']??''}'),isThreeLine:true,
+   onTap:()=>_open(x),leading:const Icon(Icons.tune,color:purple),title:Text(x['title']??'Setup'),subtitle:Text("${x['game']??''}\n${x['vehicle']??''}"),isThreeLine:true,
    trailing:PopupMenuButton<String>(onSelected:(v){if(v=='edit')_open(x);if(v=='duplicate')_duplicate(x);if(v=='delete')widget.onDelete(x);},itemBuilder:(_)=>const[
     PopupMenuItem(value:'edit',child:Text('Edit')),PopupMenuItem(value:'duplicate',child:Text('Duplicate')),PopupMenuItem(value:'delete',child:Text('Delete'))]))))
  ]);
