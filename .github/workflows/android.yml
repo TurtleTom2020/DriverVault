@@ -13,7 +13,7 @@ jobs:
           channel: stable
           cache: true
       - name: Ensure Flutter platform files
-        run: flutter create --platforms=android,ios .
+       run: flutter create --project-name drivervault --platforms=android,ios .
       - run: flutter pub get
       - run: flutter analyze
       - run: flutter build apk --release
