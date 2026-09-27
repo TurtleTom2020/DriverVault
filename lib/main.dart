@@ -6,21 +6,28 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 const bg=Color(0xff07060b), card=Color(0xff10101a), card2=Color(0xff171724);
 const purple=Color(0xffb115ff), gold=Color(0xffffc438);
+const themePresets=<String,Color>{
+ 'Purple + Gold':Color(0xffb115ff),'Blue':Color(0xff168cff),'Red':Color(0xffff3d5a),'Green':Color(0xff25c96f),'Copper / Orange':Color(0xffd97832)
+};
 
 void main()=>runApp(const DriverVault());
-class DriverVault extends StatelessWidget{
- const DriverVault({super.key});
- @override Widget build(BuildContext c)=>MaterialApp(
-  debugShowCheckedModeBanner:false,title:'DriverVault',
-  theme:ThemeData.dark(useMaterial3:true).copyWith(
-   scaffoldBackgroundColor:bg,
-   colorScheme:ColorScheme.fromSeed(seedColor:purple,brightness:Brightness.dark),
-   appBarTheme:const AppBarTheme(backgroundColor:bg,surfaceTintColor:Colors.transparent)),
-  home:const Shell());
+class DriverVault extends StatefulWidget{const DriverVault({super.key});@override State<DriverVault> createState()=>_DriverVaultState();}
+class _DriverVaultState extends State<DriverVault>{
+ String themeName='Purple + Gold',finish='Metallic';
+ @override void initState(){super.initState();_load();}
+ Future<void> _load()async{final p=await SharedPreferences.getInstance();if(mounted)setState((){themeName=p.getString('theme_name')??'Purple + Gold';finish=p.getString('theme_finish')??'Metallic';});}
+ Future<void> _theme()async{String draft=themeName,draftFinish=finish;await showModalBottomSheet(context:context,isScrollControlled:true,backgroundColor:const Color(0xff111019),builder:(bc)=>StatefulBuilder(builder:(bc,setB)=>SafeArea(child:Padding(padding:const EdgeInsets.all(20),child:Column(mainAxisSize:MainAxisSize.min,crossAxisAlignment:CrossAxisAlignment.start,children:[
+  const Text('DriverVault Theme',style:TextStyle(fontSize:22,fontWeight:FontWeight.w900)),const SizedBox(height:14),
+  const Label('ACCENT'),const SizedBox(height:8),Wrap(spacing:8,runSpacing:8,children:themePresets.entries.map((e)=>ChoiceChip(avatar:CircleAvatar(backgroundColor:e.value),label:Text(e.key),selected:draft==e.key,onSelected:(_)=>setB(()=>draft=e.key))).toList()),
+  const SizedBox(height:16),const Label('FINISH'),const SizedBox(height:8),Wrap(spacing:8,children:['Solid','Matte','Metallic','Pearlescent','Two-tone'].map((x)=>ChoiceChip(label:Text(x),selected:draftFinish==x,onSelected:(_)=>setB(()=>draftFinish=x))).toList()),
+  const SizedBox(height:18),Container(height:72,width:double.infinity,decoration:BoxDecoration(borderRadius:BorderRadius.circular(14),gradient:LinearGradient(colors:[themePresets[draft]!,draftFinish=='Two-tone'?gold:themePresets[draft]!.withValues(alpha:.35)]),border:Border.all(color:gold.withValues(alpha:.7))),child:Center(child:Text('$draft • $draftFinish',style:const TextStyle(fontWeight:FontWeight.w900)))),
+  const SizedBox(height:16),SizedBox(width:double.infinity,child:FilledButton(onPressed:()async{themeName=draft;finish=draftFinish;final p=await SharedPreferences.getInstance();await p.setString('theme_name',themeName);await p.setString('theme_finish',finish);if(mounted)setState((){});if(bc.mounted)Navigator.pop(bc);},child:const Text('Apply Theme')))
+ ])))));if(mounted)setState((){});}
+ @override Widget build(BuildContext c){final accent=themePresets[themeName]??purple;return MaterialApp(debugShowCheckedModeBanner:false,title:'DriverVault',theme:ThemeData.dark(useMaterial3:true).copyWith(scaffoldBackgroundColor:bg,colorScheme:ColorScheme.fromSeed(seedColor:accent,brightness:Brightness.dark),appBarTheme:const AppBarTheme(backgroundColor:bg,surfaceTintColor:Colors.transparent)),home:Shell(onTheme:_theme));}
 }
 
 
-class Shell extends StatefulWidget{const Shell({super.key});@override State<Shell> createState()=>_Shell();}
+class Shell extends StatefulWidget{final VoidCallback onTheme;const Shell({super.key,required this.onTheme});@override State<Shell> createState()=>_Shell();}
 class _Shell extends State<Shell>{
  int tab=0; List<dynamic> games=[]; List<dynamic> setups=[];
  @override void initState(){super.initState();load();}
@@ -34,7 +41,7 @@ class _Shell extends State<Shell>{
  void add(Map<String,dynamic> s){final i=setups.indexWhere((x)=>x['id']==s['id']);if(i>=0){setups[i]=s;}else{setups.add(s);}persist();setState((){});}
  @override Widget build(BuildContext c)=>Scaffold(
   body:SafeArea(child:IndexedStack(index:tab,children:[
-   Home(games:games,setups:setups,onCatalogue:()=>setState(()=>tab=1),onSetups:()=>setState(()=>tab=2)),
+   Home(games:games,setups:setups,onCatalogue:()=>setState(()=>tab=1),onSetups:()=>setState(()=>tab=2),onTheme:widget.onTheme),
    Catalogue(games:games,onSave:add),
    MySetups(items:setups,games:games,onSave:add,onDelete:(x){setups.remove(x);persist();setState((){});}),
    const Hardware(),
@@ -48,8 +55,8 @@ class _Shell extends State<Shell>{
 }
 
 class Home extends StatelessWidget{
- final List games,setups; final VoidCallback onCatalogue,onSetups;
- const Home({super.key,required this.games,required this.setups,required this.onCatalogue,required this.onSetups});
+ final List games,setups; final VoidCallback onCatalogue,onSetups,onTheme;
+ const Home({super.key,required this.games,required this.setups,required this.onCatalogue,required this.onSetups,required this.onTheme});
  @override Widget build(BuildContext c)=>ListView(padding:const EdgeInsets.fromLTRB(18,12,18,28),children:[
   Row(children:[
    Image.asset('assets/branding/drivervault_icon.png',width:82,height:82),
@@ -58,7 +65,7 @@ class Home extends StatelessWidget{
     Text.rich(TextSpan(children:[TextSpan(text:'Driver',style:TextStyle(color:Colors.white)),TextSpan(text:'Vault',style:TextStyle(color:gold))]),
      style:TextStyle(fontSize:30,fontWeight:FontWeight.w900,letterSpacing:-1)),
     Text('YOUR GAMES • YOUR SETUPS • ONE VAULT',style:TextStyle(fontSize:8.5,color:Colors.white60,letterSpacing:.8))])),
-   IconButton.filledTonal(onPressed:(){},icon:const Icon(Icons.settings_rounded))]),
+   IconButton.filledTonal(onPressed:onTheme,icon:const Icon(Icons.settings_rounded))]),
   const SizedBox(height:22),
   Row(mainAxisAlignment:MainAxisAlignment.spaceBetween,children:[const Label('YOUR GAMES'),TextButton(onPressed:onCatalogue,child:const Text('VIEW ALL ›'))]),
   if(games.isNotEmpty) HeroGame(game:games[0],onTap:onCatalogue),
