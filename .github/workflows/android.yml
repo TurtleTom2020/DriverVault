@@ -19,6 +19,7 @@ jobs:
         run: |
           ZIP=$(ls DriverVault-source-v*.zip | sort -V | tail -n 1)
           echo "Building $ZIP"
+          rm -rf build-project
           mkdir build-project
           unzip -q "$ZIP" -d build-project
           cd build-project
@@ -26,7 +27,15 @@ jobs:
           rm -f test/widget_test.dart
           flutter pub get
           dart run flutter_launcher_icons
-          sed -i 's/android:label="drivervault"/android:label="DriverVault"/' android/app/src/main/AndroidManifest.xml
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path("android/app/src/main/AndroidManifest.xml")
+          s=p.read_text()
+          import re
+          s=re.sub(r'android:label="[^"]*"', 'android:label="DriverVault"', s, count=1)
+          p.write_text(s)
+          print("Android label:", re.search(r'android:label="[^"]*"', s).group(0))
+          PY
       - name: Analyze
         working-directory: build-project
         run: flutter analyze --no-fatal-infos
@@ -36,5 +45,5 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-v0.5-debug
+          name: DriverVault-v0.7-debug
           path: build-project/build/app/outputs/flutter-apk/app-debug.apk
