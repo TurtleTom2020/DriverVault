@@ -36,7 +36,7 @@ class _Shell extends State<Shell>{
   body:SafeArea(child:IndexedStack(index:tab,children:[
    Home(games:games,setups:setups,onCatalogue:()=>setState(()=>tab=1),onSetups:()=>setState(()=>tab=2)),
    Catalogue(games:games,onSave:add),
-   MySetups(items:setups,onDelete:(x){setups.remove(x);persist();setState((){});}),
+   MySetups(items:setups,games:games,onSave:add,onDelete:(x){setups.remove(x);persist();setState((){});}),
    const Hardware(),
   ])),
   bottomNavigationBar:NavigationBar(height:72,backgroundColor:const Color(0xff0b0910),indicatorColor:const Color(0xff65209a),
@@ -328,7 +328,7 @@ class VehicleImage extends StatelessWidget {
   @override Widget build(BuildContext context) {
     final url=VehicleImageResolver.url(v);
     if(url.isEmpty) return fallback();
-    return ClipRect(child:Padding(padding:const EdgeInsets.all(4),child:Transform.translate(offset:const Offset(9,0),child:Transform.scale(scale:1.10,child:Image.network(url,fit:fit,alignment:Alignment.center,filterQuality:FilterQuality.high,loadingBuilder:(c,child,p)=>p==null?child:Container(color:const Color(0xff12111a),child:const Center(child:CircularProgressIndicator(strokeWidth:2))),errorBuilder:(_,__,___)=>fallback())))));
+    return Container(decoration:const BoxDecoration(gradient:LinearGradient(begin:Alignment.topCenter,end:Alignment.bottomCenter,colors:[Color(0xff171622),Color(0xff09090f)])),padding:const EdgeInsets.all(8),alignment:Alignment.center,child:Image.network(url,fit:fit,alignment:Alignment.center,filterQuality:FilterQuality.high,loadingBuilder:(c,child,p)=>p==null?child:const Center(child:CircularProgressIndicator(strokeWidth:2)),errorBuilder:(_,__,___)=>fallback()));
   }
 }
 
@@ -408,52 +408,23 @@ class _EditSetup extends State<EditSetup>{final name=TextEditingController(text:
  Widget _text(TextEditingController c,String l,[int lines=1])=>Padding(padding:const EdgeInsets.symmetric(vertical:6),child:TextField(controller:c,maxLines:lines,decoration:InputDecoration(labelText:l,filled:true,fillColor:card.withValues(alpha:.95),border:OutlineInputBorder(borderRadius:BorderRadius.circular(8)))));
 }
 
-class MySetups extends StatelessWidget {
-  final List items;
-  final ValueChanged<dynamic> onDelete;
-
-  const MySetups({
-    super.key,
-    required this.items,
-    required this.onDelete,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.all(18),
-      children: [
-        const Text(
-          'My Setups',
-          style: TextStyle(fontSize: 28, fontWeight: FontWeight.w900),
-        ),
-        const SizedBox(height: 12),
-        if (items.isEmpty)
-          const Text(
-            'No saved setups yet.',
-            style: TextStyle(color: Colors.white60),
-          )
-        else
-          ...items.map(
-            (setup) => Card(
-              color: card,
-              child: ListTile(
-                leading: const Icon(Icons.tune, color: purple),
-                title: Text(setup['title'] ?? 'Setup'),
-                subtitle: Text(
-                  '${setup['game'] ?? ''}\n${setup['vehicle'] ?? ''}',
-                ),
-                isThreeLine: true,
-                trailing: IconButton(
-                  icon: const Icon(Icons.delete_outline),
-                  onPressed: () => onDelete(setup),
-                ),
-              ),
-            ),
-          ),
-      ],
-    );
-  }
+class MySetups extends StatefulWidget {
+ final List items,games; final ValueChanged<dynamic> onDelete; final ValueChanged<Map<String,dynamic>> onSave;
+ const MySetups({super.key,required this.items,required this.games,required this.onSave,required this.onDelete});
+ @override State<MySetups> createState()=>_MySetupsState();
+}
+class _MySetupsState extends State<MySetups>{
+ dynamic _gameFor(dynamic x){for(final g in widget.games){if(g['id']==x['gameId']||g['name']==x['game'])return g;}return null;}
+ Future<void> _open(dynamic x)async{final g=_gameFor(x);if(g==null){if(mounted)ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content:Text('Game catalogue entry not found for this setup.')));return;}await Navigator.push(context,MaterialPageRoute(builder:(_)=>EditSetup(game:g,vehicle:(x['vehicle']??'').toString(),onSave:widget.onSave,existing:Map<String,dynamic>.from(x))));if(mounted)setState((){});}
+ void _duplicate(dynamic x){final copy=Map<String,dynamic>.from(x);copy['id']=DateTime.now().microsecondsSinceEpoch.toString();copy['title']='\${x['title']??'Setup'} Copy';copy['savedAt']=DateTime.now().toIso8601String().substring(0,10);widget.onSave(copy);setState((){});}
+ @override Widget build(BuildContext context)=>ListView(padding:const EdgeInsets.all(18),children:[
+  const Text('My Setups',style:TextStyle(fontSize:28,fontWeight:FontWeight.w900)),const SizedBox(height:4),
+  Text('\${widget.items.length} saved setup\${widget.items.length==1?'':'s'}',style:const TextStyle(color:Colors.white60)),const SizedBox(height:12),
+  if(widget.items.isEmpty)const Text('No saved setups yet.',style:TextStyle(color:Colors.white60)) else ...widget.items.map((x)=>Card(color:card,child:ListTile(
+   onTap:()=>_open(x),leading:const Icon(Icons.tune,color:purple),title:Text(x['title']??'Setup'),subtitle:Text('\${x['game']??''}\n\${x['vehicle']??''}'),isThreeLine:true,
+   trailing:PopupMenuButton<String>(onSelected:(v){if(v=='edit')_open(x);if(v=='duplicate')_duplicate(x);if(v=='delete')widget.onDelete(x);},itemBuilder:(_)=>const[
+    PopupMenuItem(value:'edit',child:Text('Edit')),PopupMenuItem(value:'duplicate',child:Text('Duplicate')),PopupMenuItem(value:'delete',child:Text('Delete'))]))))
+ ]);
 }
 class Hardware extends StatefulWidget{const Hardware({super.key});@override State<Hardware> createState()=>_Hardware();}
 class _Hardware extends State<Hardware>{
