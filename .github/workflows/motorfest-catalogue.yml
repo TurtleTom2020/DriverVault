@@ -2,12 +2,7 @@ name: Update Motorfest catalogue
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - 'scripts/update_motorfest_catalogue.py'
-      - '.github/workflows/motorfest-catalogue.yml'
+
 
 permissions:
   contents: write
