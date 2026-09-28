@@ -19,7 +19,18 @@ flutter:
     - assets/branding/
     - assets/games/
     - assets/catalog/
-    - assets/vehicles/
+    - assets/vehicles/fh5/
+    - assets/vehicles/beamng/
+    - assets/vehicles/ets2/
+    - assets/vehicles/ats/
+    - assets/vehicles/assetto/
+    - assets/vehicles/wrc/
+    - assets/vehicles/alaskan/
+    - assets/vehicles/mudrunner/
+    - assets/vehicles/snowrunner/
+    - assets/vehicles/gt7/
+    - assets/vehicles/carx/
+    - assets/vehicles/crew/
 flutter_launcher_icons:
   android: true
   ios: true
