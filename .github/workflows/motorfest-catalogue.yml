@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Build official Motorfest roster
+      # Runs strict completeness and duplicate guards before writing catalogue.\n      - name: Build official Motorfest roster
         run: python3 scripts/update_motorfest_catalogue.py
       - name: Commit catalogue
         run: |
