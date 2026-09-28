@@ -3,7 +3,7 @@
 import html,json,re,urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
-BASE="https://www.onlineracedriver.com/2023/09/01/the-crew-motorfest-full-vehicle-list/"
+BASE="https://www.onlineracedriver.com/2023/09/01/the-crew-motorfest-full-vehicle-list/"\nBASE2="https://www.thesixthaxis.com/2023/08/02/the-crew-motorfest-all-cars-bikes-boats-planes/"
 UBI="https://www.ubisoft.com/en-gb/game/the-crew/motorfest/news-updates/6eTRFZ2OQC9SAC1Psddaqg"
 SEASONS=[
 ("Season 7","https://www.ubisoft.com/en-gb/game/the-crew/motorfest/news-updates/4zdveUCcdcqpIglTtV4iys"),
@@ -29,7 +29,7 @@ def add(make,model,year,discipline,source):
  seen.add(key);vehicles.append({"id":"crew:"+slug(f"{discipline}-{make}-{model}-{year}"),"make":make,"model":model,"year":int(year),"discipline":discipline,"image":"","imageSource":"","imageMatch":"","catalogueSource":source})
 
 # Complete 600+ launch roster: list items under discipline headings.
-raw=get(BASE); section="Motorfest"
+raw=get(BASE)+"\\n"+get(BASE2); section="Motorfest"
 for token in re.split(r'(<h[23][^>]*>.*?</h[23]>|<li[^>]*>.*?</li>)',raw,flags=re.I|re.S):
  if re.match(r"<h[23]",token,re.I):
   h=txt(token)
@@ -68,12 +68,12 @@ def overlay(url,source):
 launch=len(vehicles);print("COMPLETE LAUNCH ROSTER",launch)
 overlay(UBI,"Ubisoft master list")
 for name,url in SEASONS:overlay(url,"Ubisoft "+name)
-if launch<580:raise SystemExit(f"Refusing incomplete launch roster: {launch}")
+if launch<600:raise SystemExit(f"Refusing incomplete launch roster: {launch}")
 if len(vehicles)<600:
  raise SystemExit(f"Refusing incomplete merged roster: {len(vehicles)}")
 if len(vehicles)>800:
  raise SystemExit(f"Refusing duplicate-inflated merged roster: {len(vehicles)}")
 d=json.loads(OUT.read_text(encoding="utf-8"));g=next(x for x in d["games"] if x["id"]=="crew")
-g.update({"source":"Complete launch roster cross-checked and extended with Ubisoft official lists","sourceUrl":UBI,"secondarySourceUrl":BASE,"vehicles":vehicles,"catalogueCount":len(vehicles),"imageCoverage":0,"catalogueVerifiedAt":"2026-09-28"})
+g.update({"source":"Complete launch roster cross-checked and extended with Ubisoft official lists","sourceUrl":UBI,"secondarySourceUrl":BASE,"launchCrossCheckUrl":BASE2,"vehicles":vehicles,"catalogueCount":len(vehicles),"imageCoverage":0,"catalogueVerifiedAt":"2026-09-28"})
 OUT.write_text(json.dumps(d,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 print("MOTORFEST MERGED CATALOGUE",len(vehicles))
