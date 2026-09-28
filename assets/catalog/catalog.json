@@ -921,8 +921,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Audi quattro",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/c/c3/FH5_Audi_Sport_quattro_Small.png/revision/latest?cb=20211123222431",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/b/b0/FH_Audi_Sport_quattro_LCE.png/revision/latest?cb=20260926013515",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Audi Sport quattro: LCE"
         },
         {
           "id": "fh5:1574",
@@ -1169,8 +1170,9 @@
           "collect": "Autoshow DLC",
           "added": "Car Pass",
           "nickname": "BMW M8 Comp",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/0/01/FH5_BMW_M8_Competition_Coupe_Small.png/revision/latest?cb=20260329192511",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/7/7d/FM23_BMW_M8_Competition_Coupe.png/revision/latest?cb=20250519045224",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FM23 BMW M8 Competition Coupe.png"
         },
         {
           "id": "fh5:3173",
@@ -1535,8 +1537,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "BMW M1",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/1/1b/FH5_BMW_M1_Small.png/revision/latest?cb=20240608144521",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/c/c6/FM23_BMW_6_BMW_Motorsport_M1_Procar.png/revision/latest?cb=20250519042623",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "BMW 6 BMW Motorsport M1 Procar"
         },
         {
           "id": "fh5:1269",
@@ -1796,8 +1799,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Caterham R500",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/f/f9/FH5_Caterham_Superlight_R500_Small.png/revision/latest?cb=20240222185457",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/7/71/FH5_Caterham_Superlight_R500.png/revision/latest/scale-to-width-down/1200?cb=20250706235048",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Caterham Superlight R500"
         },
         {
           "id": "fh5:3771",
@@ -1953,8 +1957,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Corvette '15",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/4/4f/FH5_Chevrolet_Corvette_Z06_2015_Small.png/revision/latest?cb=20231130183050",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/2/22/FM23_Chevrolet_Corvette_Z06_2015.png/revision/latest?cb=20250520035720",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FM23 Chevrolet Corvette Z06 2015.png"
         },
         {
           "id": "fh5:2130",
@@ -2137,8 +2142,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Chevy Camaro '69",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/9/9b/FH5_Chevrolet_Camaro_Super_Sport_Coupe_Small.png/revision/latest?cb=20231130181845",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/8/8f/Hor_che_camaro_69_he.png/revision/latest/scale-to-width-down/1200?cb=20190803103935",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Chevrolet Camaro Super Sport Coupe Horizon Edition"
         },
         {
           "id": "fh5:1429",
@@ -2296,8 +2302,9 @@
           "collect": "Autoshow",
           "added": "Series 21",
           "nickname": "Formentor '22",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/b/b3/FH5_Cupra_Formentor_VZ5_Small.png/revision/latest?cb=20240114212647",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/2/20/FH5_Cupra_Formentor_VZ5_Large.png/revision/latest/scale-to-width-down/1200?cb=20240114212632",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "CUPRA Formentor VZ5"
         },
         {
           "id": "fh5:3747",
@@ -2376,7 +2383,8 @@
           "added": "Launch",
           "nickname": "DD Tacoma TRD",
           "image": "https://static.wikia.nocookie.net/forzamotorsport/images/7/74/FH5_DeBerti_Toyota_Tacoma_TRD_The_Performance_Truck_Small.png/revision/latest?cb=20211110163346",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FH5 DeBerti Toyota Tacoma TRD The Performance Truck Small.png"
         },
         {
           "id": "fh5:3088",
@@ -2653,7 +2661,8 @@
           "added": "Series 9",
           "nickname": "Dodge Super Bee",
           "image": "https://static.wikia.nocookie.net/forzamotorsport/images/1/1a/FH5_Dodge_Coronet_Super_Bee_1970_Small.png/revision/latest?cb=20220626003849",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FH5 Dodge Coronet Super Bee 1970 Small.png"
         },
         {
           "id": "fh5:1063",
@@ -2877,8 +2886,9 @@
           "collect": "Backstage, Seasonal",
           "added": "Series 10",
           "nickname": "#55 Extreme E",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/3/38/FH5_Extreme_E_55_Acciona_Sainz_XE_Team_Small.png/revision/latest?cb=20260328215026",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/a/ad/Icon_Make_ExtremeE.png/revision/latest?cb=20250627032642",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Extreme E"
         },
         {
           "id": "fh5:3727",
@@ -2904,8 +2914,9 @@
           "collect": "Backstage, Seasonal",
           "added": "Series 10",
           "nickname": "#6 Extreme E",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/9/96/FH5_Extreme_E_6_Rosberg_X_Racing_Small.png/revision/latest?cb=20260328214919",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/a/ad/Icon_Make_ExtremeE.png/revision/latest?cb=20250627032642",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Extreme E"
         },
         {
           "id": "fh5:3733",
@@ -3066,8 +3077,9 @@
           "collect": "Backstage, Seasonal",
           "added": "Series 7",
           "nickname": "F8 Tributo '19",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/2/26/FH5_Ferrari_F8_Tributo_2020_Small.png/revision/latest?cb=20220510163754",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/d/d0/FM23_Ferrari_F8_Tributo.png/revision/latest?cb=20250521044740",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FM23 Ferrari F8 Tributo.png"
         },
         {
           "id": "fh5:3312",
@@ -3262,8 +3274,9 @@
           "collect": "Backstage, Seasonal",
           "added": "Series 2",
           "nickname": "Ferrari 599 GTO",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/1/12/FH5_Ferrari_599_GTO.png/revision/latest/scale-to-width-down/800?cb=20250710010435",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/1/12/FH5_Ferrari_599_GTO.png/revision/latest/scale-to-width-down/1200?cb=20250710010435",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Ferrari 599 GTO"
         },
         {
           "id": "fh5:1171",
@@ -3510,8 +3523,9 @@
           "collect": "Autoshow",
           "added": "Series 7",
           "nickname": "Ferrari 250 GT",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/b/ba/FH5_Ferrari_250_GT_Berlinetta_Lusso_Small.png/revision/latest?cb=20260329201503",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/3/37/FH5_Ferrari_250_GT_Berlinetta_Lusso_1962_Small.png/revision/latest?cb=20220510163420",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FH5 Ferrari 250 GT Berlinetta Lusso 1962 Small.png"
         },
         {
           "id": "fh5:249",
@@ -3745,8 +3759,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Ford GT500 '20",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/5/50/FH5_Ford_Mustang_Shelby_GT500_Small.png/revision/latest?cb=20241012185318",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/9/91/FM23_Ford_Mustang_Shelby_GT500_2020_Promo.jpg/revision/latest/scale-to-width-down/1000?cb=20240226185441",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FM23 Ford Mustang Shelby GT500 2020 Promo.jpg"
         },
         {
           "id": "fh5:3476",
@@ -3941,8 +3956,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Ford Mustang '16",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/f/f2/FH5_Ford_Shelby_GT350R.png/revision/latest/scale-to-width-down/800?cb=20250710185654",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/d/d1/FH3_Ford_Shelby_GT350R_Preorder_Car.png/revision/latest?cb=20260103014423",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Ford Shelby GT350R Preorder Car"
         },
         {
           "id": "fh5:2580",
@@ -4347,8 +4363,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Ford Escort '77",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/3/33/FH5_Ford_Escort_RS1800_Small.png/revision/latest?cb=20231116154339",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/e/e8/FH5_Ford_Escort_RS1800.png/revision/latest/scale-to-width-down/1200?cb=20250710212656",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Ford Escort RS1800"
         },
         {
           "id": "fh5:2187",
@@ -4504,8 +4521,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Ford Cortina",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/b/bd/FH5_Ford_Lotus_Cortina_Small.png/revision/latest?cb=20231130185333",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/1/1c/FH5_Ford_Lotus_Cortina.png/revision/latest/scale-to-width-down/1200?cb=20250710224922",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Ford Lotus Cortina"
         },
         {
           "id": "fh5:1355",
@@ -4649,8 +4667,9 @@
           "collect": "Autoshow DLC",
           "added": "Formula Drift Car Pack",
           "nickname": "#151 FD Supra",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/9/96/FH5_Formula_Drift_151_Toyota_GR_Supra_Small.png/revision/latest?cb=20211106024828",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/f/f4/Icon_Make_Formula_Drift_FH5.png/revision/latest?cb=20250627034931",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Formula Drift"
         },
         {
           "id": "fh5:3551",
@@ -4767,8 +4786,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Formula D 599",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/d/db/FH5_Formula_Drift_117_599_GTB_Fiorano_Small.png/revision/latest?cb=20240202053151",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/f/f4/Icon_Make_Formula_Drift_FH5.png/revision/latest?cb=20250627034931",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Formula Drift"
         },
         {
           "id": "fh5:3003",
@@ -4820,8 +4840,9 @@
           "collect": "Autoshow DLC",
           "added": "Formula Drift Car Pack",
           "nickname": "#34 Toyota Supra",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/1/16/FH5_Formula_Drift_34_Toyota_Supra_MkIV_Small.png/revision/latest?cb=20211106022700",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/f/f4/Icon_Make_Formula_Drift_FH5.png/revision/latest?cb=20250627034931",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Formula Drift"
         },
         {
           "id": "fh5:3037",
@@ -4953,8 +4974,9 @@
           "collect": "Backstage, Seasonal",
           "added": "Series 22",
           "nickname": "GMC Typhoon",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/c/c5/FH5_GMC_Typhoon_Small.png/revision/latest?cb=20241012181331",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/8/8e/FH5_GMC_Typhoon.png/revision/latest/scale-to-width-down/1000?cb=20241227125552",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FH5 GMC Typhoon.png"
         },
         {
           "id": "fh5:1294",
@@ -5632,8 +5654,7 @@
           "collect": "Backstage, Wheelspin, Seasonal",
           "added": "Launch",
           "nickname": "Twin Mill",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/3/33/FH5_Hot_Wheels_Twin_Mill_Small.png/revision/latest?cb=20240915171751",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": ""
         },
         {
           "id": "fh5:3407",
@@ -5775,8 +5796,9 @@
           "collect": "Backstage, Seasonal",
           "added": "Series 30",
           "nickname": "Hyundai i30 N",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/a/a5/FH5_Hyundai_i30_N_Small.png/revision/latest?cb=20240216001901",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/2/2b/FM23_Hyundai_i30_N.png/revision/latest?cb=20250524160407",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FM23 Hyundai i30 N.png"
         },
         {
           "id": "fh5:2872",
@@ -6948,8 +6970,9 @@
           "collect": "Autoshow DLC",
           "added": "Apex Allstars Car Pack",
           "nickname": "Lexus #14 RC F",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/f/f1/FH5_Lexus_14_VASSER_SULLIVAN_RC_F_GT3_Small.png/revision/latest?cb=20260329191559",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/4/41/MainLogo_Lexus.png/revision/latest/scale-to-width-down/1200?cb=20200627211019",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Lexus"
         },
         {
           "id": "fh5:3546",
@@ -6975,8 +6998,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Lexus RC F",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/1/15/FH5_Lexus_RC_F_Small.png/revision/latest?cb=20240709201526",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/5/52/FM23_Lexus_14_RC_F_GT3.png/revision/latest?cb=20240423194817",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Lexus 14 VASSER SULLIVAN RC F GT3"
         },
         {
           "id": "fh5:1260",
@@ -7171,8 +7195,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Lotus Elise GT1",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/e/ef/FH5_Lotus_Elise_GT1_Small.png/revision/latest?cb=20240608144354",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/1/14/FM7_Lotus_Elise_GT1.png/revision/latest?cb=20241015040733",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FM7 Lotus Elise GT1.png"
         },
         {
           "id": "fh5:1334",
@@ -7330,8 +7355,9 @@
           "collect": "Backstage, Seasonal",
           "added": "Series 2",
           "nickname": "Maserati 8CTF",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/f/f2/FH5_Maserati_8CTF.png/revision/latest/scale-to-width-down/800?cb=20250716173335",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/f/f2/FH5_Maserati_8CTF.png/revision/latest/scale-to-width-down/1200?cb=20250716173335",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Maserati 8CTF"
         },
         {
           "id": "fh5:3823",
@@ -7852,8 +7878,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "M-B G 63 6x6",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/7/7f/FH5_Mercedes-Benz_G_63_AMG_6x6_Small.png/revision/latest?cb=20211223200418",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/d/d5/FH5_Mercedes-Benz_G_63_AMG_6x6.png/revision/latest/scale-to-width-down/1000?cb=20250716225119",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FH5 Mercedes-Benz G 63 AMG 6x6.png"
         },
         {
           "id": "fh5:2986",
@@ -7931,8 +7958,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "M-B SLK",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/7/7c/FH5_Mercedes-Benz_SLK_55_AMG_Small.png/revision/latest?cb=20231214194219",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/f/f6/FH5_Mercedes-Benz_SLK_55_AMG_2012.png/revision/latest/scale-to-width-down/1200?cb=20250716232411",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Mercedes-Benz SLK 55 AMG (2012)"
         },
         {
           "id": "fh5:1202",
@@ -8430,8 +8458,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Lancer MR '04",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/0/07/FH5_Mitsubishi_Lancer_Evolution_VIII_MR_Small.png/revision/latest?cb=20231207221450",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/0/07/FM23_Mitsubishi_Lancer_Evolution_VIII_MR.png/revision/latest?cb=20250525040745",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FM23 Mitsubishi Lancer Evolution VIII MR.png"
         },
         {
           "id": "fh5:375",
@@ -8522,8 +8551,9 @@
           "collect": "Backstage, Seasonal",
           "added": "Series 17",
           "nickname": "Galant VR-4",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/1/10/FH5_Mitsubishi_Galant_VR-4_Small.png/revision/latest?cb=20240120044152",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/1/13/FM23_Mitsubishi_Galant_VR-4.png/revision/latest?cb=20250525040532",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FM23 Mitsubishi Galant VR-4.png"
         },
         {
           "id": "fh5:1297",
@@ -8719,8 +8749,9 @@
           "collect": "Autoshow DLC",
           "added": "Car Pass",
           "nickname": "Nissan 370Z '19",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/6/67/FH5_Nissan_370Z_Nismo_2019_Large.png/revision/latest/scale-to-width-down/800?cb=20220626004259",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/9/9f/FH5_Nissan_370Z_Nismo_2019_Small.png/revision/latest?cb=20220626004415",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FH5 Nissan 370Z Nismo 2019 Small.png"
         },
         {
           "id": "fh5:2874",
@@ -8955,8 +8986,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Nissan GT-R '95",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/0/06/FH5_Nissan_Nismo_GT-R_LM_Small.png/revision/latest?cb=20211223194911",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/8/88/HOR_XB1_Nissan_GT-R_95_FE.png/revision/latest/scale-to-width-down/1200?cb=20190807135938",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Nissan NISMO GT-R LM Forza Edition"
         },
         {
           "id": "fh5:345",
@@ -9125,9 +9157,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Nissan GT-R '73",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/a/a0/FH6_Nissan_Skyline_HT_2000GT-R.png/revision/latest/scale-to-width-down/1200?cb=20260516180651",
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/4/4f/FM23_Nissan_Skyline_H-T_2000GT-R.png/revision/latest?cb=20250525042815",
           "imageSource": "https://forza.fandom.com/api.php",
-          "imageMatch": "Nissan Skyline H/T 2000GT-R"
+          "imageMatch": "File:FM23 Nissan Skyline H-T 2000GT-R.png"
         },
         {
           "id": "fh5:1042",
@@ -9139,8 +9171,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Nissan GT-R '71",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/e/e0/FH5_Nissan_Skyline_2000GT-R_Small.png/revision/latest?cb=20240608144826",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/c/c9/FM23_Nissan_Skyline_2000GT-R.png/revision/latest?cb=20250525042738",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FM23 Nissan Skyline 2000GT-R.png"
         },
         {
           "id": "fh5:343",
@@ -9415,8 +9448,9 @@
           "collect": "Backstage, Seasonal",
           "added": "Series 27",
           "nickname": "Belvedere '64",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/2/25/FH5_Plymouth_Belvedere_Small.png/revision/latest?cb=20231116153657",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/7/75/FH5_Plymouth_Belvedere_1964.png/revision/latest/scale-to-width-down/1000?cb=20231107204755",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FH5 Plymouth Belvedere 1964.png"
         },
         {
           "id": "fh5:2216",
@@ -9455,9 +9489,9 @@
           "collect": "Backstage, Seasonal",
           "added": "Series 18",
           "nickname": "Polaris RZR Pro",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/2/2b/FH6_Polaris_RZR_Pro_XP_Ultimate.png/revision/latest/scale-to-width-down/1200?cb=20260516180838",
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/a/ac/FH5_Polaris_RZR_XP_1000_EPS.png/revision/latest/scale-to-width-down/1200?cb=20250720020421",
           "imageSource": "https://forza.fandom.com/api.php",
-          "imageMatch": "Polaris RZR Pro XP Ultimate"
+          "imageMatch": "Polaris RZR XP 1000 EPS"
         },
         {
           "id": "fh5:2521",
@@ -9469,8 +9503,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "RZR 1000",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/a/ac/FH5_Polaris_RZR_XP_1000_EPS.png/revision/latest/scale-to-width-down/800?cb=20250720020421",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/a/ac/FH5_Polaris_RZR_XP_1000_EPS.png/revision/latest/scale-to-width-down/1200?cb=20250720020421",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Polaris RZR XP 1000 EPS"
         },
         {
           "id": "fh5:1045",
@@ -9864,8 +9899,9 @@
           "collect": "Autoshow, Wheelspin",
           "added": "Launch",
           "nickname": "Porsche Panamera",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/b/b3/FH5_Porsche_Panamera_Turbo_2017_Small.png/revision/latest?cb=20211223180930",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/5/55/FH5_Porsche_Panamera_Turbo_2017.png/revision/latest/scale-to-width-down/1200?cb=20250720034709",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Porsche Panamera Turbo (2017)"
         },
         {
           "id": "fh5:2528",
@@ -10959,8 +10995,9 @@
           "collect": "Backstage, Seasonal",
           "added": "Series 3",
           "nickname": "Toyota AT37",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/0/0c/FH5_Toyota_Land_Cruiser_Arctic_Trucks_AT37.png/revision/latest/scale-to-width-down/800?cb=20240802023047",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/8/86/FH5_Toyota_Land_Cruiser_Arctic_Trucks_AT37_2016_Small.png/revision/latest?cb=20211204235233",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "File:FH5 Toyota Land Cruiser Arctic Trucks AT37 2016 Small.png"
         },
         {
           "id": "fh5:2007",
@@ -11012,8 +11049,9 @@
           "collect": "Autoshow",
           "added": "Launch",
           "nickname": "Toyota Supra '98",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/3/3f/FH5_Toyota_Supra_RZ_Small.png/revision/latest?cb=20240512185604",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/8/86/HOR_XB1_Toyota_Supra_98_HE.png/revision/latest/scale-to-width-down/1200?cb=20190803105350",
+          "imageSource": "https://forza.fandom.com/api.php",
+          "imageMatch": "Toyota Supra RZ Horizon Edition"
         },
         {
           "id": "fh5:3681",
@@ -11832,7 +11870,7 @@
         }
       ],
       "verifiedAt": "2026-09-27",
-      "imageCoverage": 901,
+      "imageCoverage": 900,
       "imageVerifiedAt": "2026-09-27"
     },
     {
