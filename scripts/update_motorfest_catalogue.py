@@ -24,7 +24,7 @@ def split_name(name):
 vehicles=[];seen=set()
 def add(make,model,year,discipline,source):
  if not make or not model:return
- key=(make.casefold(),model.casefold(),int(year),discipline.casefold())
+ key=(re.sub(r"[^a-z0-9]+","",make.casefold()),re.sub(r"[^a-z0-9]+","",model.casefold()),int(year))
  if key in seen:return
  seen.add(key);vehicles.append({"id":"crew:"+slug(f"{discipline}-{make}-{model}-{year}"),"make":make,"model":model,"year":int(year),"discipline":discipline,"image":"","imageSource":"","imageMatch":"","catalogueSource":source})
 
@@ -63,13 +63,13 @@ def overlay(url,source):
   if not ym or make.lower()=="brand" or not model or "to be revealed" in make.lower():continue
   discipline=re.sub(r"[^A-Za-z0-9 &/-]+","",heading).strip() or "Motorfest"
   add(make.replace("®","").strip(),model,int(ym.group(1)),discipline,source)
- print(source,"ADDED",len(vehicles)-before)
+ print(source,"NEW VEHICLES",len(vehicles)-before)
 
 launch=len(vehicles);print("COMPLETE LAUNCH ROSTER",launch)
 overlay(UBI,"Ubisoft master list")
 for name,url in SEASONS:overlay(url,"Ubisoft "+name)
 if launch<580:raise SystemExit(f"Refusing incomplete launch roster: {launch}")
-if len(vehicles)<600:raise SystemExit(f"Refusing incomplete merged roster: {len(vehicles)}")
+if len(vehicles)<600:raise SystemExit(f"Refusing incomplete merged roster: {len(vehicles)}")\nif len(vehicles)>800:raise SystemExit(f"Refusing duplicate-inflated merged roster: {len(vehicles)}")
 d=json.loads(OUT.read_text(encoding="utf-8"));g=next(x for x in d["games"] if x["id"]=="crew")
 g.update({"source":"Complete launch roster cross-checked and extended with Ubisoft official lists","sourceUrl":UBI,"secondarySourceUrl":BASE,"vehicles":vehicles,"catalogueCount":len(vehicles),"imageCoverage":0,"catalogueVerifiedAt":"2026-09-28"})
 OUT.write_text(json.dumps(d,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
