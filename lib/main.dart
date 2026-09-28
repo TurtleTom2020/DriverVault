@@ -349,6 +349,7 @@ class _VehicleCatalogue extends State<VehicleCatalogue> {
 
 class VehicleImageResolver {
   static String url(dynamic v) => (v['image'] ?? '').toString().trim();
+  static String local(dynamic v) => (v['local_image'] ?? '').toString().trim();
 }
 
 class VehicleImage extends StatelessWidget {
@@ -356,9 +357,11 @@ class VehicleImage extends StatelessWidget {
   const VehicleImage({super.key,required this.game,required this.v,this.fit=BoxFit.contain});
   Widget fallback()=>Container(color:const Color(0xff0b0c12),child:Stack(fit:StackFit.expand,children:[Opacity(opacity:.38,child:GameArt(game:game,fit:BoxFit.cover)),Container(color:Colors.black.withValues(alpha:.28))]));
   @override Widget build(BuildContext context) {
+    final local=VehicleImageResolver.local(v);
     final url=VehicleImageResolver.url(v);
-    if(url.isEmpty) return fallback();
-    return Container(decoration:const BoxDecoration(gradient:LinearGradient(begin:Alignment.topCenter,end:Alignment.bottomCenter,colors:[Color(0xff171622),Color(0xff09090f)])),alignment:Alignment.center,child:LayoutBuilder(builder:(c,b)=>Image.network(url,width:b.maxWidth,height:b.maxHeight,fit:fit,alignment:Alignment.center,filterQuality:FilterQuality.high,gaplessPlayback:true,frameBuilder:(c,child,frame,sync)=>AnimatedOpacity(opacity:sync||frame!=null?1:0,duration:const Duration(milliseconds:180),child:child),loadingBuilder:(c,child,p)=>p==null?child:Stack(fit:StackFit.expand,children:[child,const Center(child:CircularProgressIndicator(strokeWidth:2))]),errorBuilder:(_,__,___)=>fallback())));
+    Widget remote()=>url.isEmpty?fallback():Image.network(url,fit:fit,alignment:Alignment.center,filterQuality:FilterQuality.high,gaplessPlayback:true,errorBuilder:(_,__,___)=>fallback());
+    if(local.isNotEmpty) return Image.asset(local,fit:fit,alignment:Alignment.center,filterQuality:FilterQuality.high,errorBuilder:(_,__,___)=>remote());
+    return remote();
   }
 }
 
