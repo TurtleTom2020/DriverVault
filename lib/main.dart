@@ -352,7 +352,14 @@ class _VehicleCatalogue extends State<VehicleCatalogue> {
 class VehicleImageResolver {
   static String url(dynamic v) => (v['image'] ?? '').toString().trim();
   static Map<String,String> localImages={};
-  static String local(dynamic v) => localImages[url(v)] ?? '';
+  static String local(dynamic v) {
+    final id=(v['id'] ?? '').toString().trim();
+    if(id.isNotEmpty){
+      final byId=localImages[id];
+      if(byId!=null && byId.isNotEmpty) return byId;
+    }
+    return localImages[url(v)] ?? '';
+  }
 }
 
 class VehicleImage extends StatelessWidget {
