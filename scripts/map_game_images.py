@@ -154,6 +154,36 @@ def igcd_assetto_entries():
 
 IGCD_ASSETTO=None
 IGCD_WRC=None
+IGCD_CARX=None
+
+def carx_igcd_image(v):
+ global IGCD_CARX
+ # IGCD's original CarX Drift Racing Online catalogue. Match the fictional
+ # in-game name, not the real-world car it resembles.
+ if IGCD_CARX is None: IGCD_CARX=igcd_game_entries('1000010726')
+ label=vehicle_label(v)
+ ranked=[]
+ q=set(norm(label).split())
+ for e in IGCD_CARX:
+  t=set(norm(e['text']).split())
+  # Require every meaningful fictional-name token. This deliberately rejects
+  # donor/real-car matches and near-name variants (R2/R3, Hachi-Go/Roku etc.).
+  meaningful={x for x in q if len(x)>1}
+  if meaningful and not meaningful.issubset(t): continue
+  sc=score(e['text'],label,'carx')+40*len(meaningful)
+  ranked.append((sc,e))
+ ranked.sort(key=lambda x:x[0],reverse=True)
+ for sc,e in ranked[:8]:
+  html=request_html(e['page'],attempts=2); urls=[]
+  if html:
+   for pat in (r'<meta[^>]+(?:property|name)=[\"\'](?:og:image|twitter:image)[\"\'][^>]+content=[\"\']([^\"\']+)',r'<img[^>]+(?:src|data-src)=[\"\']([^\"\']+)'):
+    urls += [abs_url(e['page'],x) for x in re.findall(pat,html,re.I)]
+  urls += e['imgs']
+  for u in dict.fromkeys(urls):
+   low=u.lower()
+   if u.startswith('http') and not any(x in low for x in ('logo','flag','icon','avatar','favicon','banner','stub','wip')) and image_ok(u):
+    return u,e['page'],'Exact CarX fictional-name match: '+label+'; direct IGCD game screenshot',sc
+ return None
 
 def igcd_game_entries(game_id):
  base='https://www.igcd.net/'
@@ -252,6 +282,9 @@ def fh5_variant_ok(v,title,url=''):
 
 def map_one(gid,v):
  label=vehicle_label(v)
+ if gid=='carx':
+  hit=carx_igcd_image(v)
+  if hit:return hit
  if gid=='assetto':
   hit=assetto_igcd_image(v)
   if hit:return hit
