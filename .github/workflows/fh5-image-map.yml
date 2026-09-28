@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Remove known false-positive FH5 mappings
+        run: python3 scripts/clean_bad_fh5_images.py
       - name: Resolve and verify exact FH5 image URLs
         run: python3 scripts/map_game_images.py
       - name: Commit verified catalogue mappings
