@@ -3,7 +3,8 @@
 import html,json,re,urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
-BASE="https://www.onlineracedriver.com/2023/09/01/the-crew-motorfest-full-vehicle-list/"\nBASE2="https://www.thesixthaxis.com/2023/08/02/the-crew-motorfest-all-cars-bikes-boats-planes/"
+BASE="https://www.onlineracedriver.com/2023/09/01/the-crew-motorfest-full-vehicle-list/"
+BASE2="https://www.thesixthaxis.com/2023/08/02/the-crew-motorfest-all-cars-bikes-boats-planes/"
 UBI="https://www.ubisoft.com/en-gb/game/the-crew/motorfest/news-updates/6eTRFZ2OQC9SAC1Psddaqg"
 SEASONS=[
 ("Season 7","https://www.ubisoft.com/en-gb/game/the-crew/motorfest/news-updates/4zdveUCcdcqpIglTtV4iys"),
