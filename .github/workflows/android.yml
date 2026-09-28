@@ -113,7 +113,26 @@ jobs:
           COUNT=$(unzip -l build/app/outputs/flutter-apk/app-release.apk | grep -c 'assets/flutter_assets/assets/vehicles/')
           echo "Bundled vehicle files in APK: $COUNT"
           test "$COUNT" -ge 1500
-          unzip -p build/app/outputs/flutter-apk/app-release.apk assets/flutter_assets/assets/catalog/vehicle_images.json | grep -q 'assets/vehicles/fh5/'\n          python3 - <<'PY'\n          import json, zipfile\n          apk='build/app/outputs/flutter-apk/app-release.apk'\n          with zipfile.ZipFile(apk) as z:\n            cat=json.loads(z.read('assets/flutter_assets/assets/catalog/catalog.json'))\n            mp=json.loads(z.read('assets/flutter_assets/assets/catalog/vehicle_images.json'))\n            fh=next(g for g in cat['games'] if g['id']=='fh5')\n            checked=0\n            for v in fh['vehicles']:\n              if not v.get('image'): continue\n              vid=str(v.get('id') or '')\n              assert vid in mp, f'missing FH5 ID mapping: {vid}'\n              asset='assets/flutter_assets/'+mp[vid]\n              assert asset in z.namelist(), f'missing APK asset: {asset}'\n              checked+=1\n            print('FH5 runtime ID mappings verified in APK:',checked)\n            assert checked >= 800\n          PY
+          unzip -p build/app/outputs/flutter-apk/app-release.apk assets/flutter_assets/assets/catalog/vehicle_images.json | grep -q 'assets/vehicles/fh5/'
+          python3 - <<'PY'
+          import json, zipfile
+          apk='build/app/outputs/flutter-apk/app-release.apk'
+          with zipfile.ZipFile(apk) as z:
+            cat=json.loads(z.read('assets/flutter_assets/assets/catalog/catalog.json'))
+            mp=json.loads(z.read('assets/flutter_assets/assets/catalog/vehicle_images.json'))
+            fh=next(g for g in cat['games'] if g['id']=='fh5')
+            checked=0
+            for v in fh['vehicles']:
+              if not v.get('image'):
+                continue
+              vid=str(v.get('id') or '')
+              assert vid in mp, f'missing FH5 ID mapping: {vid}'
+              asset='assets/flutter_assets/'+mp[vid]
+              assert asset in z.namelist(), f'missing APK asset: {asset}'
+              checked+=1
+            print('FH5 runtime ID mappings verified in APK:',checked)
+            assert checked >= 800
+          PY
 
       - name: Upload verified APK
         uses: actions/upload-artifact@v4
