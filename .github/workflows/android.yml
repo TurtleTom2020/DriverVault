@@ -88,6 +88,9 @@ jobs:
           if [ ! -f android/app/build.gradle.kts ] && [ ! -f android/app/build.gradle ]; then
             flutter create --project-name drivervault --platforms=android,ios .
           fi
+          sed -i 's/android:label="drivervault"/android:label="DriverVault"/' android/app/src/main/AndroidManifest.xml
+          test -s assets/branding/drivervault_icon.png
+          dart run flutter_launcher_icons
 
       - name: Dependencies
         run: flutter pub get
@@ -103,6 +106,10 @@ jobs:
           test -s build/app/outputs/flutter-apk/app-release.apk
           ls -lh build/app/outputs/flutter-apk/app-release.apk
           sha256sum build/app/outputs/flutter-apk/app-release.apk
+          COUNT=$(unzip -l build/app/outputs/flutter-apk/app-release.apk | grep -c 'assets/flutter_assets/assets/vehicles/')
+          echo "Bundled vehicle files in APK: $COUNT"
+          test "$COUNT" -ge 1500
+          unzip -p build/app/outputs/flutter-apk/app-release.apk assets/flutter_assets/assets/catalog/vehicle_images.json | grep -q 'assets/vehicles/fh5/'
 
       - name: Upload verified APK
         uses: actions/upload-artifact@v4
