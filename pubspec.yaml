@@ -19,6 +19,7 @@ flutter:
     - assets/branding/
     - assets/games/
     - assets/catalog/
+    - assets/vehicles/
 flutter_launcher_icons:
   android: true
   ios: true
