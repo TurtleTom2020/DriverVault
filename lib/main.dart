@@ -132,7 +132,7 @@ class _FavouriteVehiclesState extends State<FavouriteVehicles>{
   for(final g in widget.games){for(final v in (g['vehicles'] as List)){if(widget.favourites.contains(keyFor(g,v)))rows.add({'g':g,'v':v});}}
   return Scaffold(appBar:AppBar(title:const Text('Favourites')),body:rows.isEmpty?const Center(child:Text('No favourite vehicles yet.',style:TextStyle(color:Colors.white60))):GridView.builder(
    padding:const EdgeInsets.all(14),itemCount:rows.length,gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2,childAspectRatio:.88,crossAxisSpacing:10,mainAxisSpacing:10),
-   itemBuilder:(c,i){final g=rows[i]['g'],v=rows[i]['v'],k=keyFor(g,v);return VehicleCard(gameId:g['id'].toString(),v:v,favourite:true,onFavourite:(){widget.onFavourite(k);setState((){});},tap:()=>Navigator.push(c,MaterialPageRoute(builder:(_)=>VehiclePage(game:g,v:v,onSave:widget.onSave))));}));
+   itemBuilder:(c,i){final g=rows[i]['g'],v=rows[i]['v'],k=keyFor(g,v);return VehicleCard(game:g,v:v,favourite:true,onFavourite:(){widget.onFavourite(k);setState((){});},tap:()=>Navigator.push(c,MaterialPageRoute(builder:(_)=>VehiclePage(game:g,v:v,onSave:widget.onSave))));}));
  }
 }
 class Catalogue extends StatefulWidget{final List games;final ValueChanged<Map<String,dynamic>> onSave;final Set<String> favourites;final ValueChanged<String> onFavourite;const Catalogue({super.key,required this.games,required this.onSave,required this.favourites,required this.onFavourite});@override State<Catalogue> createState()=>_Catalogue();}
