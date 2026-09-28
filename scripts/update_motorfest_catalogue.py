@@ -1,67 +1,76 @@
 #!/usr/bin/env python3
-"""Build DriverVault's Crew Motorfest catalogue from Ubisoft's official roster."""
-import html, json, re, urllib.request
+"""Build Motorfest catalogue: complete launch roster + Ubisoft current additions."""
+import html,json,re,urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
-
-URL="https://www.ubisoft.com/en-gb/game/the-crew/motorfest/news-updates/6eTRFZ2OQC9SAC1Psddaqg"
+BASE="https://www.onlineracedriver.com/2023/09/01/the-crew-motorfest-full-vehicle-list/"
+UBI="https://www.ubisoft.com/en-gb/game/the-crew/motorfest/news-updates/6eTRFZ2OQC9SAC1Psddaqg"
+SEASONS=[
+("Season 7","https://www.ubisoft.com/en-gb/game/the-crew/motorfest/news-updates/4zdveUCcdcqpIglTtV4iys"),
+("Season 9","https://www.ubisoft.com/en-gb/game/the-crew/motorfest/news-updates/4Srr3M0u5VudAA41aIJIfh"),
+("Season 10","https://www.ubisoft.com/en-us/game/the-crew/motorfest/news-updates/4TJ7qt604DHgSsCMc5qsKr"),
+]
 OUT=Path("assets/catalog/catalog.json")
+UA={"User-Agent":"Mozilla/5.0 DriverVault catalogue builder"}
+
+def get(u):return urllib.request.urlopen(urllib.request.Request(u,headers=UA),timeout=60).read().decode("utf-8","replace")
+def txt(x):return html.unescape(" ".join(re.sub(r"<[^>]+>"," ",x).split()))
+def slug(s):return re.sub(r"[^a-z0-9]+","-",html.unescape(s).lower().replace("®","")).strip("-")
+def split_name(name):
+ makes=("Aston Martin","Alfa Romeo","Land Rover","Mercedes-AMG","Mercedes-Benz","Red Bull","North American","Northrop Grumman","Granville Brothers Aircraft","Waco Aircraft Corp.","Extra Aerobatic Planes","Ivory Tower","Forsberg Racing","Harley-Davidson","Genty Automobile","W Motors","PHAZR RC")
+ make=next((x for x in makes if name.casefold().startswith(x.casefold()+" ")),name.split()[0])
+ return make,name[len(make):].strip()
+
+vehicles=[];seen=set()
+def add(make,model,year,discipline,source):
+ if not make or not model:return
+ key=(make.casefold(),model.casefold(),int(year),discipline.casefold())
+ if key in seen:return
+ seen.add(key);vehicles.append({"id":"crew:"+slug(f"{discipline}-{make}-{model}-{year}"),"make":make,"model":model,"year":int(year),"discipline":discipline,"image":"","imageSource":"","imageMatch":"","catalogueSource":source})
+
+# Complete 600+ launch roster: list items under discipline headings.
+raw=get(BASE); section="Motorfest"
+for token in re.split(r'(<h[23][^>]*>.*?</h[23]>|<li[^>]*>.*?</li>)',raw,flags=re.I|re.S):
+ if re.match(r"<h[23]",token,re.I):
+  h=txt(token)
+  if h and "vehicle list" not in h.lower():section=h
+ elif re.match(r"<li",token,re.I):
+  line=txt(token);m=re.match(r"^(19\d{2}|20\d{2})\s+(.+)$",line)
+  if m:
+   make,model=split_name(m.group(2));add(make,model,int(m.group(1)),section,"Complete launch roster")
 
 class Tables(HTMLParser):
- def __init__(self):
-  super().__init__(); self.rows=[]; self.row=None; self.cell=None; self.heading=None; self.current_heading=""
- def handle_starttag(self,tag,attrs):
-  if tag in ("h1","h2","h3","h4","h5"): self.heading=[]
-  elif tag=="tr": self.row=[]
-  elif tag in ("td","th") and self.row is not None:self.cell=[]
- def handle_data(self,data):
-  if self.heading is not None:self.heading.append(data)
-  if self.cell is not None:self.cell.append(data)
- def handle_endtag(self,tag):
-  if tag in ("h1","h2","h3","h4","h5") and self.heading is not None:
-   x=" ".join("".join(self.heading).split())
-   if x:self.current_heading=x
-   self.heading=None
-  elif tag in ("td","th") and self.cell is not None:
-   self.row.append(" ".join("".join(self.cell).split()));self.cell=None
-  elif tag=="tr" and self.row is not None:
-   if len(self.row)>=3:self.rows.append((self.current_heading,self.row))
+ def __init__(self):super().__init__();self.rows=[];self.row=None;self.cell=None;self.head=None;self.heading=""
+ def handle_starttag(self,t,a):
+  if t in ("h1","h2","h3","h4","h5"):self.head=[]
+  elif t=="tr":self.row=[]
+  elif t in ("td","th") and self.row is not None:self.cell=[]
+ def handle_data(self,d):
+  if self.head is not None:self.head.append(d)
+  if self.cell is not None:self.cell.append(d)
+ def handle_endtag(self,t):
+  if t in ("h1","h2","h3","h4","h5") and self.head is not None:self.heading=" ".join("".join(self.head).split()) or self.heading;self.head=None
+  elif t in ("td","th") and self.cell is not None:self.row.append(" ".join("".join(self.cell).split()));self.cell=None
+  elif t=="tr" and self.row is not None:
+   if len(self.row)>=3:self.rows.append((self.heading,self.row))
    self.row=None
+def overlay(url,source):
+ p=Tables();p.feed(get(url));before=len(vehicles)
+ for heading,row in p.rows:
+  c=[x.strip() for x in row if x.strip()];yi=next((i for i,x in enumerate(c) if re.match(r"^(?:19|20)\d{2}",x)),None)
+  if yi is None or yi<2:continue
+  make,model=c[yi-2],c[yi-1];ym=re.match(r"((?:19|20)\d{2})",c[yi])
+  if not ym or make.lower()=="brand" or not model or "to be revealed" in make.lower():continue
+  discipline=re.sub(r"[^A-Za-z0-9 &/-]+","",heading).strip() or "Motorfest"
+  add(make.replace("®","").strip(),model,int(ym.group(1)),discipline,source)
+ print(source,"ADDED",len(vehicles)-before)
 
-def slug(s):
- s=html.unescape(s).lower().replace("®","")
- return re.sub(r"[^a-z0-9]+","-",s).strip("-")
-
-req=urllib.request.Request(URL,headers={"User-Agent":"Mozilla/5.0 DriverVault catalogue builder"})
-raw=urllib.request.urlopen(req,timeout=60).read().decode("utf-8","replace")
-p=Tables();p.feed(raw)
-vehicles=[];seen=set()
-for heading,row in p.rows:
- clean=[x.strip() for x in row if x.strip()]
- yi=next((i for i,x in enumerate(clean) if re.fullmatch(r"(?:19|20)\d{2}",x)),None)
- if yi is None or yi<2:continue
- brand,model,year=clean[yi-2],clean[yi-1],clean[yi]
- if brand.upper() in {"BRAND","MAKE"} or model.upper()=="MODEL":continue
- yr=int(year)
- discipline=re.sub(r"[^A-Za-z0-9 &/-]+","",heading).strip() or "Motorfest"
- key=(brand.casefold(),model.casefold(),yr,discipline.casefold())
- if key in seen:continue
- seen.add(key)
- vehicles.append({"id":"crew:"+slug(f"{discipline}-{brand}-{model}-{yr}"),
-  "make":brand.replace("®","").strip(),"model":model.strip(),"year":yr,
-  "discipline":discipline,"image":"","imageSource":"","imageMatch":"","catalogueSource":"Ubisoft official"})
-
-print("UBISOFT TABLE ROWS",len(p.rows),"UNIQUE VEHICLES",len(vehicles))
-if len(vehicles)<500:
- raise SystemExit(f"Refusing suspicious Ubisoft parse: only {len(vehicles)} vehicles")
-
-d=json.loads(OUT.read_text(encoding="utf-8"))
-g=next(x for x in d["games"] if x["id"]=="crew")
-g["source"]="Ubisoft official The Crew Motorfest vehicle list"
-g["sourceUrl"]=URL
-g["vehicles"]=vehicles
-g["catalogueCount"]=len(vehicles)
-g["imageCoverage"]=0
-g["catalogueVerifiedAt"]="2026-09-28"
+launch=len(vehicles);print("COMPLETE LAUNCH ROSTER",launch)
+overlay(UBI,"Ubisoft master list")
+for name,url in SEASONS:overlay(url,"Ubisoft "+name)
+if launch<580:raise SystemExit(f"Refusing incomplete launch roster: {launch}")
+if len(vehicles)<600:raise SystemExit(f"Refusing incomplete merged roster: {len(vehicles)}")
+d=json.loads(OUT.read_text(encoding="utf-8"));g=next(x for x in d["games"] if x["id"]=="crew")
+g.update({"source":"Complete launch roster cross-checked and extended with Ubisoft official lists","sourceUrl":UBI,"secondarySourceUrl":BASE,"vehicles":vehicles,"catalogueCount":len(vehicles),"imageCoverage":0,"catalogueVerifiedAt":"2026-09-28"})
 OUT.write_text(json.dumps(d,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-print("MOTORFEST OFFICIAL CATALOGUE",len(vehicles),"vehicles")
+print("MOTORFEST MERGED CATALOGUE",len(vehicles))
