@@ -12,31 +12,43 @@ jobs:
   verify-and-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout real source
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Verify DriverVault source before Flutter touches anything
+      - name: Validate DriverVault data
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          root=pathlib.Path('.')
+          cat=json.load(open(root/'assets/catalog/catalog.json',encoding='utf-8'))
+          schemas=json.load(open(root/'assets/catalog/game_schemas.json',encoding='utf-8'))
+          hw=json.load(open(root/'assets/catalog/hardware.json',encoding='utf-8'))
+          games=cat['games']
+          assert games, 'no games'
+          ids=[g['id'] for g in games]
+          assert len(ids)==len(set(ids)), 'duplicate game ids'
+          total=0
+          for g in games:
+              assert g.get('name') and isinstance(g.get('vehicles'),list), f"bad game {g.get('id')}"
+              seen=set()
+              for v in g['vehicles']:
+                  assert v.get('make') is not None and v.get('model'), f"bad vehicle in {g['id']}"
+                  k=(str(v.get('make','')).strip().lower(),str(v.get('model','')).strip().lower(),str(v.get('year','')),str(v.get('class','')).strip().lower())
+                  assert k not in seen, f"duplicate vehicle {g['id']} {k}"
+                  seen.add(k); total+=1
+          assert isinstance(schemas,dict) and schemas, 'no schemas'
+          assert hw.get('manufacturers'), 'no hardware manufacturers'
+          print(f'validated {len(games)} games / {total} vehicles / {len(hw["manufacturers"])} hardware manufacturers')
+          PY
+
+      - name: Verify source and assets
         run: |
           set -euxo pipefail
           test -s lib/main.dart
           test -s pubspec.yaml
-          test -s assets/catalog/catalog.json
-          test -s assets/catalog/game_schemas.json
-          test -s assets/catalog/hardware.json
+          test -s assets/branding/drivervault_icon.png
           grep -q "DriverVault" lib/main.dart
-          if grep -q "Flutter Demo Home Page" lib/main.dart; then
-            echo "Flutter demo source detected - refusing build"
-            exit 1
-          fi
-
-      - name: Validate JSON catalogues
-        run: |
-          python3 - <<'PY'
-          import json
-          for p in ['assets/catalog/catalog.json','assets/catalog/game_schemas.json','assets/catalog/hardware.json']:
-              with open(p,encoding='utf-8') as f: json.load(f)
-              print('valid:',p)
-          PY
+          grep -q "shared_preferences" pubspec.yaml
+          for f in assets/games/*.jpg; do test -s "$f"; done
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -44,11 +56,17 @@ jobs:
           channel: stable
           cache: true
 
-      - name: Create only missing platform scaffolding
-        run: flutter create --project-name drivervault --platforms=android,ios .
+      - name: Ensure platform scaffolding exists
+        run: |
+          if [ ! -f android/app/build.gradle.kts ] && [ ! -f android/app/build.gradle ]; then
+            flutter create --project-name drivervault --platforms=android,ios .
+          fi
 
       - name: Dependencies
         run: flutter pub get
+
+      - name: Format check
+        run: dart format --output=none --set-exit-if-changed lib
 
       - name: Static analysis
         run: flutter analyze lib
@@ -65,5 +83,6 @@ jobs:
       - name: Upload verified APK
         uses: actions/upload-artifact@v4
         with:
-          name: DriverVault-CI-APK
+          name: DriverVault-release-APK
           path: build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 14
