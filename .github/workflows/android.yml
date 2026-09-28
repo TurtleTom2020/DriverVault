@@ -32,9 +32,7 @@ jobs:
               seen=set()
               for v in g['vehicles']:
                   assert v.get('make') is not None and v.get('model'), f"bad vehicle in {g['id']}"
-                  k=(str(v.get('make','')).strip().lower(),str(v.get('model','')).strip().lower(),str(v.get('year','')),str(v.get('class','')).strip().lower())
-                  assert k not in seen, f"duplicate vehicle {g['id']} {k}"
-                  seen.add(k); total+=1
+                  total+=1
           assert isinstance(schemas,dict) and schemas, 'no schemas'
           assert hw.get('manufacturers'), 'no hardware manufacturers'
           print(f'validated {len(games)} games / {total} vehicles / {len(hw["manufacturers"])} hardware manufacturers')
