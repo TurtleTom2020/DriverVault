@@ -33,10 +33,12 @@ class _DriverVaultState extends State<DriverVault>{
 
 class Shell extends StatefulWidget{final VoidCallback onTheme;const Shell({super.key,required this.onTheme});@override State<Shell> createState()=>_Shell();}
 class _Shell extends State<Shell>{
- int tab=0; List<dynamic> games=[]; List<dynamic> setups=[]; Set<String> favourites={};
+ int tab=0; List<dynamic> games=[]; List<dynamic> setups=[]; Set<String> favourites={}; Map<String,String> vehicleImages={};
  @override void initState(){super.initState();load();}
  Future<void> load()async{
   final data=jsonDecode(await rootBundle.loadString('assets/catalog/catalog.json'));
+  try{vehicleImages=Map<String,String>.from(jsonDecode(await rootBundle.loadString('assets/catalog/vehicle_images.json')));}catch(_){vehicleImages={};}
+  VehicleImageResolver.localImages=vehicleImages;
   final p=await SharedPreferences.getInstance();
   games=data['games']; setups=jsonDecode(p.getString('setups')??'[]'); favourites=(p.getStringList('favourites')??[]).toSet();
   if(mounted)setState((){});
@@ -349,7 +351,8 @@ class _VehicleCatalogue extends State<VehicleCatalogue> {
 
 class VehicleImageResolver {
   static String url(dynamic v) => (v['image'] ?? '').toString().trim();
-  static String local(dynamic v) => (v['local_image'] ?? '').toString().trim();
+  static Map<String,String> localImages={};
+  static String local(dynamic v) => localImages[url(v)] ?? '';
 }
 
 class VehicleImage extends StatelessWidget {
