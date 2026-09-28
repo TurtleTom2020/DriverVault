@@ -316,7 +316,7 @@ class _VehicleCatalogue extends State<VehicleCatalogue> {
             padding: const EdgeInsets.fromLTRB(14,0,14,24),
             sliver: SliverGrid(
               delegate: SliverChildBuilderDelegate(
-                (c,i) => VehicleCard(gameId:widget.game['id'].toString(),v:vs[i],favourite:widget.favourites.contains(vehicleKey(vs[i])),onFavourite:()=>setState(()=>widget.onFavourite(vehicleKey(vs[i]))),tap:()=>openVehicle(c,vs[i])),
+                (c,i) => VehicleCard(game:widget.game,v:vs[i],favourite:widget.favourites.contains(vehicleKey(vs[i])),onFavourite:()=>setState(()=>widget.onFavourite(vehicleKey(vs[i]))),tap:()=>openVehicle(c,vs[i])),
                 childCount: vs.length,
               ),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -328,7 +328,7 @@ class _VehicleCatalogue extends State<VehicleCatalogue> {
           SliverList(delegate: SliverChildBuilderDelegate((c,i) {
             final v=vs[i];
             return ListTile(
-              leading: SizedBox(width:78,height:54,child:VehicleImage(gameId:widget.game['id'].toString(),v:v)),
+              leading: SizedBox(width:78,height:54,child:VehicleImage(game:widget.game,v:v)),
               title: Text('${v['make']} ${v['model']}'.trim()),
               subtitle: Text('${v['year']}  ${v['class'] ?? ''}'.trim()),
               trailing: const Icon(Icons.chevron_right),
@@ -352,9 +352,9 @@ class VehicleImageResolver {
 }
 
 class VehicleImage extends StatelessWidget {
-  final String gameId; final dynamic v; final BoxFit fit;
-  const VehicleImage({super.key,required this.gameId,required this.v,this.fit=BoxFit.contain});
-  Widget fallback()=>Container(decoration:const BoxDecoration(gradient:LinearGradient(colors:[Color(0xff1d2335),Color(0xff351447)])),child:const Center(child:Icon(Icons.directions_car_filled_rounded,size:42,color:Colors.white38)));
+  final dynamic game,v; final BoxFit fit;
+  const VehicleImage({super.key,required this.game,required this.v,this.fit=BoxFit.contain});
+  Widget fallback()=>Container(color:const Color(0xff0b0c12),child:Stack(fit:StackFit.expand,children:[Opacity(opacity:.38,child:GameArt(game:game,fit:BoxFit.cover)),Container(color:Colors.black.withValues(alpha:.28))]));
   @override Widget build(BuildContext context) {
     final url=VehicleImageResolver.url(v);
     if(url.isEmpty) return fallback();
@@ -363,10 +363,10 @@ class VehicleImage extends StatelessWidget {
 }
 
 class VehicleCard extends StatelessWidget {
-  final String gameId;
+  final dynamic game;
   final dynamic v;
   final VoidCallback tap,onFavourite; final bool favourite;
-  const VehicleCard({super.key,required this.gameId,required this.v,required this.tap,required this.favourite,required this.onFavourite});
+  const VehicleCard({super.key,required this.game,required this.v,required this.tap,required this.favourite,required this.onFavourite});
 
   @override
   Widget build(BuildContext c) => InkWell(
@@ -379,7 +379,7 @@ class VehicleCard extends StatelessWidget {
         borderRadius:BorderRadius.circular(14),
         border:Border.all(color:dvAccent.withValues(alpha:.20))),
       child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
-        Expanded(child:Stack(children:[Positioned.fill(child:VehicleImage(gameId:gameId,v:v)),Positioned(top:5,right:5,child:IconButton.filledTonal(onPressed:onFavourite,tooltip:favourite?'Remove favourite':'Add favourite',icon:Icon(favourite?Icons.star_rounded:Icons.star_border_rounded,color:favourite?gold:Colors.white70)))])),
+        Expanded(child:Stack(children:[Positioned.fill(child:VehicleImage(game:game,v:v)),Positioned(top:5,right:5,child:IconButton.filledTonal(onPressed:onFavourite,tooltip:favourite?'Remove favourite':'Add favourite',icon:Icon(favourite?Icons.star_rounded:Icons.star_border_rounded,color:favourite?gold:Colors.white70)))])),
         Padding(
           padding:const EdgeInsets.fromLTRB(10,9,10,10),
           child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
@@ -418,7 +418,7 @@ class _VehiclePage extends State<VehiclePage>{List<dynamic> saved=[];int pageTab
  void _duplicate(dynamic x){final copy=Map<String,dynamic>.from(x);copy['id']=DateTime.now().microsecondsSinceEpoch.toString();copy['title']="${x['title']??'Setup'} Copy";copy['savedAt']=DateTime.now().toIso8601String().substring(0,10);widget.onSave(copy);_load();}
  Future<void> _delete(dynamic x)async{final ok=await showDialog<bool>(context:context,builder:(d)=>AlertDialog(title:const Text('Delete setup?'),content:Text('Delete "${x['title']??'Setup'}"? This cannot be undone.'),actions:[TextButton(onPressed:()=>Navigator.pop(d,false),child:const Text('Cancel')),FilledButton(onPressed:()=>Navigator.pop(d,true),child:const Text('Delete'))]))??false;if(!ok)return;final p=await SharedPreferences.getInstance();final all=jsonDecode(p.getString('setups')??'[]') as List;all.removeWhere((e)=>e['id']==x['id']);await p.setString('setups',jsonEncode(all));await _load();}
  @override Widget build(BuildContext c)=>Scaffold(appBar:AppBar(title:Text('${widget.v['make']} ${widget.v['model']}'.trim())),body:ListView(children:[
-  Container(height:280,color:card,child:VehicleImage(gameId:widget.game['id'].toString(),v:widget.v,fit:BoxFit.contain)),
+  Container(height:280,color:card,child:VehicleImage(game:widget.game,v:widget.v,fit:BoxFit.contain)),
   Padding(padding:const EdgeInsets.all(18),child:Column(crossAxisAlignment:CrossAxisAlignment.start,children:[
    Text('${widget.v['make']} ${widget.v['model']}'.trim(),style:const TextStyle(fontSize:26,fontWeight:FontWeight.w900)),Text('${widget.v['year']??''}',style:const TextStyle(color:Colors.white60)),const SizedBox(height:20),
    SegmentedButton<int>(segments:const[ButtonSegment(value:0,label:Text('Overview')),ButtonSegment(value:1,label:Text('My Setups')),ButtonSegment(value:2,label:Text('Details'))],selected:{pageTab},showSelectedIcon:false,onSelectionChanged:(x)=>setState(()=>pageTab=x.first)),const SizedBox(height:10),
