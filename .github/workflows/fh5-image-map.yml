@@ -1,4 +1,4 @@
-name: Recover FH5 catalogue images
+name: Recover verified catalogue images
 
 on:
   workflow_dispatch:
@@ -7,6 +7,7 @@ on:
     paths:
       - scripts/map_game_images.py
       - scripts/clean_bad_fh5_images.py
+      - scripts/clean_bad_carx_images.py
       - .github/workflows/fh5-image-map.yml
 
 permissions:
@@ -19,7 +20,9 @@ jobs:
       - uses: actions/checkout@v4
       - name: Remove known false-positive FH5 mappings
         run: python3 scripts/clean_bad_fh5_images.py
-      - name: Resolve and verify exact FH5 image URLs
+      - name: Remove known false-positive CarX mappings
+        run: python3 scripts/clean_bad_carx_images.py
+      - name: Resolve and verify exact catalogue image URLs
         run: python3 scripts/map_game_images.py
       - name: Commit verified catalogue mappings
         run: |
@@ -29,6 +32,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No verified image changes"
           else
-            git commit -m "Recover verified FH5 catalogue images"
+            git commit -m "Recover verified catalogue images"
             git push
           fi
