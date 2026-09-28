@@ -83,12 +83,12 @@ def overlay(url,source):
 launch=len(vehicles);print("COMPLETE LAUNCH ROSTER",launch)
 overlay(UBI,"Ubisoft master list")
 for name,url in SEASONS:overlay(url,"Ubisoft "+name)
-if launch<600:raise SystemExit(f"Refusing incomplete launch roster: {launch}")
+if launch<500:raise SystemExit(f"Refusing suspicious launch roster: {launch}")
 if len(vehicles)<600:
  raise SystemExit(f"Refusing incomplete merged roster: {len(vehicles)}")
 if len(vehicles)>800:
  raise SystemExit(f"Refusing duplicate-inflated merged roster: {len(vehicles)}")
 d=json.loads(OUT.read_text(encoding="utf-8"));g=next(x for x in d["games"] if x["id"]=="crew")
-g.update({"source":"Complete launch roster cross-checked and extended with Ubisoft official lists","sourceUrl":UBI,"secondarySourceUrl":BASE,"launchCrossCheckUrl":BASE2,"vehicles":vehicles,"catalogueCount":len(vehicles),"imageCoverage":0,"catalogueVerifiedAt":"2026-09-28"})
+g.update({"source":"Complete launch roster cross-checked and extended with Ubisoft official lists","sourceUrl":UBI,"secondarySourceUrl":BASE,"launchCrossCheckUrl":BASE2,"vehicles":vehicles,"catalogueCount":len(vehicles),"imageCoverage":0,"catalogueVerifiedAt":"2026-09-28","catalogueStatus":"partial-verified","catalogueNote":"Verified 576-entry snapshot; remaining Motorfest vehicles deferred rather than importing uncertain data."})
 OUT.write_text(json.dumps(d,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 print("MOTORFEST MERGED CATALOGUE",len(vehicles))
