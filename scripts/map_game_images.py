@@ -13,6 +13,7 @@ data=json.loads(CAT.read_text(encoding='utf-8'))
 UA='DriverVault/2.0 (+https://github.com/TurtleTom2020/DriverVault)'
 
 SOURCES={
+ 'fh5':['https://forza.fandom.com/api.php'],
  'carx':['https://carx.fandom.com/api.php'],
  'beamng':['https://beamng.fandom.com/api.php'],
  'ets2':['https://truck-simulator.fandom.com/api.php'],
@@ -24,7 +25,7 @@ SOURCES={
  'snowrunner':['https://spintires.fandom.com/api.php'],
  'gt7':['https://gran-turismo.fandom.com/api.php'],
 }
-GAME_TERMS={'carx':'CarX','beamng':'BeamNG','ets2':'Euro Truck Simulator 2','ats':'American Truck Simulator','assetto':'Assetto Corsa','wrc':'EA SPORTS WRC','alaskan':'Alaskan Road Truckers','mudrunner':'MudRunner','snowrunner':'SnowRunner','gt7':'Gran Turismo 7'}
+GAME_TERMS={'fh5':'Forza Horizon 5','carx':'CarX','beamng':'BeamNG','ets2':'Euro Truck Simulator 2','ats':'American Truck Simulator','assetto':'Assetto Corsa','wrc':'EA SPORTS WRC','alaskan':'Alaskan Road Truckers','mudrunner':'MudRunner','snowrunner':'SnowRunner','gt7':'Gran Turismo 7'}
 
 def norm(s):
  s=unicodedata.normalize('NFKD',str(s)).encode('ascii','ignore').decode().lower()
@@ -225,6 +226,21 @@ def assetto_igcd_image(v):
    if image_ok(u):return u,e['page'],e['text'][:180],sc
  return None
 
+def fh5_variant_ok(v,title):
+ # FH5 must never collapse special variants into their ordinary donor cars.
+ need=norm(str(v.get('model','')))
+ got=norm(title)
+ checks=[]
+ if 'forza edition' in need: checks.append(('forza edition' in got) or re.search(r'\\bfe\\b',got))
+ if 'welcome pack' in need: checks.append(('welcome pack' in got) or re.search(r'\\bwp\\b',got))
+ if 'oreo edition' in need: checks.append('oreo' in got)
+ if 'barbie movie' in need: checks.append('barbie' in got)
+ if 'fast x' in need: checks.append(('fast x' in got) or ('fast and furious' in got))
+ if 'jurassic park' in need: checks.append('jurassic' in got)
+ if 'back to the future' in need: checks.append(('back to the future' in got) or ('bttf' in got))
+ if 'k i t t' in norm(vehicle_label(v)): checks.append(('k i t t' in got) or ('kitt' in got))
+ return all(checks)
+
 def map_one(gid,v):
  label=vehicle_label(v)
  if gid=='assetto':
@@ -268,6 +284,7 @@ def map_one(gid,v):
    cs=sorted(cs,reverse=True)
    for sc,title,u,w,h in cs[:8]:
     if sc<55:continue
+    if gid=='fh5' and not fh5_variant_ok(v,title):continue
     if w and h and max(w,h)<300:continue
     if image_ok(u):return u,api,title,sc
   except Exception:continue
