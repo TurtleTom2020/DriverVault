@@ -14,14 +14,14 @@ class Tables(HTMLParser):
  def __init__(self):
   super().__init__(); self.rows=[]; self.row=None; self.cell=None; self.heading=None; self.current_heading=""
  def handle_starttag(self,tag,attrs):
-  if tag in ("h2","h3","h4"): self.heading=[]
+  if tag in ("h1","h2","h3","h4","h5"): self.heading=[]
   elif tag=="tr": self.row=[]
   elif tag in ("td","th") and self.row is not None:self.cell=[]
  def handle_data(self,data):
   if self.heading is not None:self.heading.append(data)
   if self.cell is not None:self.cell.append(data)
  def handle_endtag(self,tag):
-  if tag in ("h2","h3","h4") and self.heading is not None:
+  if tag in ("h1","h2","h3","h4","h5") and self.heading is not None:
    x=" ".join("".join(self.heading).split())
    if x:self.current_heading=x
    self.heading=None
