@@ -4988,8 +4988,9 @@
           "collect": "Backstage, Seasonal",
           "added": "Series 22",
           "nickname": "GMC Syclone",
-          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/c/c5/FH5_GMC_Syclone_Small.png/revision/latest?cb=20240616153012",
-          "imageSource": "Forza Wiki FH5 image catalogue"
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/3/33/FH5_Hot_Wheels_Twin_Mill_Small.png/revision/latest?cb=20240915171751",
+          "imageSource": "Forza Wiki FH5 image catalogue",
+          "imageMatch": "FH5 Hot Wheels Twin Mill"
         },
         {
           "id": "fh5:1531",
