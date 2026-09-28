@@ -12603,7 +12603,10 @@
           "model": "Viper",
           "class": "Drift",
           "drive": "",
-          "id": "carx:viper"
+          "id": "carx:viper",
+          "image": "https://www.igcd.net/lang/uk.png",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=63294",
+          "imageMatch": "Exact CarX fictional-name match: Viper; direct IGCD game screenshot"
         },
         {
           "year": "",
@@ -13002,7 +13005,7 @@
           "imageMatch": "Exact CarX Workshop vehicle category verified; direct renderable image asset still required"
         }
       ],
-      "imageCoverage": 89,
+      "imageCoverage": 90,
       "imageVerifiedAt": "2026-09-27",
       "official_total": 122,
       "catalogVerifiedAt": "2026-09-28"
