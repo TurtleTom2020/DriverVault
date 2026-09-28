@@ -24,7 +24,7 @@ SOURCES={
  'mudrunner':['https://spintires.fandom.com/api.php'],
  'snowrunner':['https://spintires.fandom.com/api.php'],
  'gt7':['https://gran-turismo.fandom.com/api.php'],
- 'crew':[],
+ 'crew':['https://thecrew.fandom.com/api.php'],
 }
 GAME_TERMS={'fh5':'Forza Horizon 5','carx':'CarX','beamng':'BeamNG','ets2':'Euro Truck Simulator 2','ats':'American Truck Simulator','assetto':'Assetto Corsa','wrc':'EA SPORTS WRC','alaskan':'Alaskan Road Truckers','mudrunner':'MudRunner','snowrunner':'SnowRunner','gt7':'Gran Turismo 7'}
 
@@ -159,28 +159,31 @@ IGCD_CARX=None
 IGCD_CREW=None
 
 def crew_igcd_image(v):
- global IGCD_CREW
- if IGCD_CREW is None: IGCD_CREW=igcd_game_entries('1000011473')
+ # The Crew Wiki has a Motorfest-specific vehicle table and TCM-prefixed
+ # screenshots. Search the exact catalogue label in the file namespace and
+ # article/page-image namespace; only accept TCM/Motorfest-labelled assets.
  label=vehicle_label(v)
- q=set(norm(label).split())
+ api='https://thecrew.fandom.com/api.php'
+ queries=[label, ' '.join(x for x in [str(v.get('make','')),str(v.get('model',''))] if x).strip()]
  ranked=[]
- for e in IGCD_CREW:
-  t=set(norm(e['text']).split())
-  meaningful={x for x in q if len(x)>1}
-  if meaningful and not meaningful.issubset(t): continue
-  sc=score(e['text'],label,'crew')+40*len(meaningful)
-  ranked.append((sc,e))
- ranked.sort(key=lambda x:x[0],reverse=True)
- for sc,e in ranked[:6]:
-  html=request_html(e['page'],attempts=2); urls=[]
-  if html:
-   urls += [abs_url(e['page'],x) for x in re.findall(r'<meta[^>]+content=["]([^"]+)["][^>]*(?:og:image|twitter:image)',html,re.I)]
-   urls += [abs_url(e['page'],x) for x in re.findall(r'<img[^>]+(?:src|data-src)=["]([^"]+)["]',html,re.I)]
-  urls += e['imgs']
-  for u in dict.fromkeys(urls):
-   low=u.lower()
-   if u.startswith('http') and not any(x in low for x in ('logo','flag','icon','avatar','favicon','banner','stub','wip')) and image_ok(u):
-    return u,e['page'],'Exact Motorfest catalogue match: '+label,sc
+ for q in dict.fromkeys(queries):
+  try:
+   ranked += candidates(api,q,'crew')
+   ranked += page_candidates(api,q,'crew')
+  except Exception:
+   pass
+ ranked.sort(reverse=True)
+ need=set(norm(str(v.get('make',''))+' '+str(v.get('model',''))).split())
+ for sc,title,u,w,h in ranked[:30]:
+  hay=norm(title+' '+urllib.parse.unquote(u))
+  # Motorfest wiki files conventionally carry TCM in the filename. Requiring
+  # TCM/Motorfest prevents accidental Crew 1/2 screenshots.
+  low=(title+' '+urllib.parse.unquote(u)).lower()
+  if 'tcm' not in low and 'motorfest' not in low: continue
+  meaningful={x for x in need if len(x)>1 and x not in {'edition','the','and'}}
+  overlap=sum(1 for x in meaningful if x in set(hay.split()))
+  if meaningful and overlap < max(1,min(2,len(meaningful))): continue
+  if image_ok(u): return u,api,title,sc
  return None
 
 def carx_igcd_image(v):
