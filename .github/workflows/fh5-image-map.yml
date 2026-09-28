@@ -6,6 +6,7 @@ on:
     branches: [ main ]
     paths:
       - scripts/map_game_images.py
+      - scripts/clean_bad_fh5_images.py
       - .github/workflows/fh5-image-map.yml
 
 permissions:
