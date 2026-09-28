@@ -56,6 +56,7 @@ jobs:
           data=json.loads(p.read_text(encoding='utf-8'))
           out=pathlib.Path('assets/vehicles'); out.mkdir(parents=True,exist_ok=True)
           ok=fail=0
+          image_map={}
           for g in data['games']:
             gd=out/g['id']; gd.mkdir(exist_ok=True)
             for v in g['vehicles']:
@@ -68,10 +69,10 @@ jobs:
                 req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0','Referer':'https://www.fandom.com/'})
                 with urllib.request.urlopen(req,timeout=20) as r: dest.write_bytes(r.read())
                 if dest.stat().st_size<1000: raise ValueError('tiny image')
-                v['local_image']=dest.as_posix(); ok+=1
+                image_map[url]=dest.as_posix(); ok+=1
               except Exception as e:
                 dest.unlink(missing_ok=True); fail+=1
-          p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
+          pathlib.Path('assets/catalog/vehicle_images.json').write_text(json.dumps(image_map,ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
           print('bundled vehicle images:',ok,'failed:',fail)
           if ok < 1500: raise SystemExit(f'Too few vehicle images bundled: {ok}')
           PY
