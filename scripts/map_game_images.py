@@ -226,10 +226,19 @@ def assetto_igcd_image(v):
    if image_ok(u):return u,e['page'],e['text'][:180],sc
  return None
 
-def fh5_variant_ok(v,title):
- # FH5 must never collapse special variants into their ordinary donor cars.
- need=norm(str(v.get('model','')))
- got=norm(title)
+def fh5_variant_ok(v,title,url=''):
+ # FH5 mappings must be an actual FH5 vehicle asset, never a make icon,
+ # an older/newer Forza render, or a vaguely related donor car.
+ need=norm(vehicle_label(v)); got=norm(title); low=(title+' '+url).lower()
+ if any(x in low for x in ('icon make','icon_make','logo','badge','fh6_','fh6 ','fm4_','fm4 ','mot_')):
+  return False
+ # Make alone is never enough. Require at least two meaningful model tokens.
+ stop={'the','and','forza','edition','welcome','pack','movie','studios','racing','motorsports','motorsport'}
+ make=set(norm(str(v.get('make',''))).split())
+ model=[x for x in norm(str(v.get('model',''))).split() if x not in stop and x not in make and len(x)>1]
+ overlap=sum(1 for x in set(model) if x in set(got.split()))
+ if len(set(model))>=2 and overlap<2:return False
+ if len(set(model))==1 and overlap<1:return False
  checks=[]
  if 'forza edition' in need: checks.append(('forza edition' in got) or re.search(r'\\bfe\\b',got))
  if 'welcome pack' in need: checks.append(('welcome pack' in got) or re.search(r'\\bwp\\b',got))
@@ -238,7 +247,7 @@ def fh5_variant_ok(v,title):
  if 'fast x' in need: checks.append(('fast x' in got) or ('fast and furious' in got))
  if 'jurassic park' in need: checks.append('jurassic' in got)
  if 'back to the future' in need: checks.append(('back to the future' in got) or ('bttf' in got))
- if 'k i t t' in norm(vehicle_label(v)): checks.append(('k i t t' in got) or ('kitt' in got))
+ if 'k i t t' in need: checks.append(('k i t t' in got) or ('kitt' in got))
  return all(checks)
 
 def map_one(gid,v):
@@ -284,7 +293,7 @@ def map_one(gid,v):
    cs=sorted(cs,reverse=True)
    for sc,title,u,w,h in cs[:8]:
     if sc<55:continue
-    if gid=='fh5' and not fh5_variant_ok(v,title):continue
+    if gid=='fh5' and not fh5_variant_ok(v,title,u):continue
     if w and h and max(w,h)<300:continue
     if image_ok(u):return u,api,title,sc
   except Exception:continue
