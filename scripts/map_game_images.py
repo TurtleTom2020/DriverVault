@@ -24,6 +24,7 @@ SOURCES={
  'mudrunner':['https://spintires.fandom.com/api.php'],
  'snowrunner':['https://spintires.fandom.com/api.php'],
  'gt7':['https://gran-turismo.fandom.com/api.php'],
+ 'crew':[],
 }
 GAME_TERMS={'fh5':'Forza Horizon 5','carx':'CarX','beamng':'BeamNG','ets2':'Euro Truck Simulator 2','ats':'American Truck Simulator','assetto':'Assetto Corsa','wrc':'EA SPORTS WRC','alaskan':'Alaskan Road Truckers','mudrunner':'MudRunner','snowrunner':'SnowRunner','gt7':'Gran Turismo 7'}
 
@@ -155,6 +156,35 @@ def igcd_assetto_entries():
 IGCD_ASSETTO=None
 IGCD_WRC=None
 IGCD_CARX=None
+IGCD_CREW=None
+
+def crew_igcd_image(v):
+ global IGCD_CREW
+ # The Crew Motorfest IGCD catalogue. Exact catalogue names are required;
+ # no donor/model-family substitutions are accepted.
+ if IGCD_CREW is None: IGCD_CREW=igcd_game_entries('1000011473')
+ label=vehicle_label(v)
+ q=set(norm(label).split())
+ ranked=[]
+ for e in IGCD_CREW:
+  t=set(norm(e['text']).split())
+  meaningful={x for x in q if len(x)>1}
+  # Require make/model/year tokens where present. Edition tokens must also match.
+  if meaningful and not meaningful.issubset(t): continue
+  sc=score(e['text'],label,'crew')+40*len(meaningful)
+  ranked.append((sc,e))
+ ranked.sort(key=lambda x:x[0],reverse=True)
+ for sc,e in ranked[:6]:
+  html=request_html(e['page'],attempts=2); urls=[]
+  if html:
+   for pat in (r'<meta[^>]+(?:property|name)=[\"\\'](?:og:image|twitter:image)[\"\\'][^>]+content=[\"\\']([^\"\\']+)',r'<img[^>]+(?:src|data-src)=[\"\\']([^\"\\']+)'):
+    urls += [abs_url(e['page'],x) for x in re.findall(pat,html,re.I)]
+  urls += e['imgs']
+  for u in dict.fromkeys(urls):
+   low=u.lower()
+   if u.startswith('http') and not any(x in low for x in ('logo','flag','icon','avatar','favicon','banner','stub','wip')) and image_ok(u):
+    return u,e['page'],'Exact Motorfest catalogue match: '+label,sc
+ return None
 
 def carx_igcd_image(v):
  global IGCD_CARX
@@ -282,6 +312,9 @@ def fh5_variant_ok(v,title,url=''):
 
 def map_one(gid,v):
  label=vehicle_label(v)
+ if gid=='crew':
+  hit=crew_igcd_image(v)
+  if hit:return hit
  if gid=='carx':
   hit=carx_igcd_image(v)
   if hit:return hit
