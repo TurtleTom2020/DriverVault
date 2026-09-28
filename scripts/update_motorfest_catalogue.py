@@ -30,7 +30,7 @@ def add(make,model,year,discipline,source):
  seen.add(key);vehicles.append({"id":"crew:"+slug(f"{discipline}-{make}-{model}-{year}"),"make":make,"model":model,"year":int(year),"discipline":discipline,"image":"","imageSource":"","imageMatch":"","catalogueSource":source})
 
 # Complete 600+ launch roster: list items under discipline headings.
-raw=get(BASE)+"\\n"+get(BASE2); section="Motorfest"
+raw=get(BASE); section="Motorfest"
 for token in re.split(r'(<h[23][^>]*>.*?</h[23]>|<li[^>]*>.*?</li>)',raw,flags=re.I|re.S):
  if re.match(r"<h[23]",token,re.I):
   h=txt(token)
@@ -39,6 +39,20 @@ for token in re.split(r'(<h[23][^>]*>.*?</h[23]>|<li[^>]*>.*?</li>)',raw,flags=r
   line=txt(token);m=re.match(r"^(19\d{2}|20\d{2})\s+(.+)$",line)
   if m:
    make,model=split_name(m.group(2));add(make,model,int(m.group(1)),section,"Complete launch roster")
+
+# Second launch source is plain text grouped by uppercase discipline headings.
+# Lines look like: "Acura NSX 2017 (U.S. Spec) 2017 D1".
+raw2=get(BASE2)
+plain=html.unescape(re.sub(r"<[^>]+>","\\n",raw2))
+section2="Motorfest"
+for line in (" ".join(x.split()) for x in plain.splitlines()):
+ if not line:continue
+ if line.upper()==line and 2<=len(line)<=40 and re.search(r"[A-Z]",line):
+  section2=line;continue
+ m=re.match(r"^(.+?)\\s+((?:19|20)\\d{2})(?:\\s+(?:D1|Season\\s+\\d+|September|October|November|December).*)?$",line,re.I)
+ if not m:continue
+ name=m.group(1).strip();yr=int(m.group(2))
+ make,model=split_name(name);add(make,model,yr,section2,"Complete launch cross-check")
 
 class Tables(HTMLParser):
  def __init__(self):super().__init__();self.rows=[];self.row=None;self.cell=None;self.head=None;self.heading=""
