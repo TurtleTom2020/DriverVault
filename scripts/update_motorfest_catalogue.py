@@ -65,4 +65,4 @@ g["catalogueCount"]=len(vehicles)
 g["imageCoverage"]=0
 g["catalogueVerifiedAt"]="2026-09-28"
 OUT.write_text(json.dumps(d,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-print("MOTORFEST OFFICIAL CATALOGUE",len(vehicles),"vehicles")
+print("MOTORFEST OFFICIAL CATALOGUE",len(vehicles),"vehicles from Ubisoft")
