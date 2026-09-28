@@ -1,0 +1,28 @@
+name: Update Motorfest catalogue
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - scripts/update_motorfest_catalogue.py
+      - .github/workflows/motorfest-catalogue.yml
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build official Motorfest roster
+        run: python3 scripts/update_motorfest_catalogue.py
+      - name: Commit catalogue
+        run: |
+          git config user.name "DriverVault Catalogue Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/catalog/catalog.json
+          if git diff --cached --quiet; then
+            echo "No Motorfest catalogue changes"
+          else
+            git commit -m "Build official Motorfest vehicle catalogue"
+            git push
+          fi
