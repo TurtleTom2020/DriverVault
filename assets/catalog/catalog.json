@@ -5655,7 +5655,9 @@
           "collect": "Backstage, Wheelspin, Seasonal",
           "added": "Launch",
           "nickname": "Twin Mill",
-          "image": ""
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/3/33/FH5_Hot_Wheels_Twin_Mill_Small.png/revision/latest?cb=20240915171751",
+          "imageSource": "Forza Wiki FH5 image catalogue",
+          "imageMatch": "FH5 Hot Wheels Twin Mill"
         },
         {
           "id": "fh5:3407",
@@ -5680,7 +5682,9 @@
           "collect": "Backstage, Wheelspin, Seasonal",
           "added": "Series 9",
           "nickname": "HW Dually '49",
-          "image": ""
+          "image": "https://static.wikia.nocookie.net/forzamotorsport/images/0/00/FH5_Hot_Wheels_Ford_F5_Dually_Custom_Hot_Rod_1949_Large.png/revision/latest",
+          "imageSource": "Forza Horizon Wiki FH5 image catalogue",
+          "imageMatch": "FH5 Hot Wheels Ford F5 Dually Custom Hot Rod 1949 Large"
         },
         {
           "id": "fh5:2131",
@@ -11871,7 +11875,7 @@
         }
       ],
       "verifiedAt": "2026-09-27",
-      "imageCoverage": 900,
+      "imageCoverage": 902,
       "imageVerifiedAt": "2026-09-27"
     },
     {
