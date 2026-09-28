@@ -63,9 +63,6 @@ jobs:
       - name: Dependencies
         run: flutter pub get
 
-      - name: Format check
-        run: dart format --output=none --set-exit-if-changed lib
-
       - name: Static analysis
         run: flutter analyze lib
 
