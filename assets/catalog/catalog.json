@@ -11653,7 +11653,10 @@
           "model": "Zismo",
           "class": "Drift",
           "drive": "",
-          "id": "carx:zismo"
+          "id": "carx:zismo",
+          "image": "https://www.igcd.net/images/204/065.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=204065",
+          "imageMatch": "Exact CarX fictional-name match: Zismo; direct IGCD CarX Drift Racing 2 screenshot"
         },
         {
           "year": "",
@@ -12469,9 +12472,9 @@
           "id": "carx:glider",
           "make": "",
           "model": "Glider",
-          "image": null,
-          "imageSource": null,
-          "imageMatch": "Verified official CarX Drift Racing Online update roster"
+          "image": "https://www.igcd.net/images/388/099.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=388099",
+          "imageMatch": "Exact CarX fictional-name match: Glider; direct IGCD CarX Drift Racing 2 screenshot"
         },
         {
           "id": "carx:proton-gt",
@@ -12533,9 +12536,9 @@
           "id": "carx:axis-g2",
           "make": "",
           "model": "Axis G2",
-          "image": null,
-          "imageSource": null,
-          "imageMatch": "Verified official CarX Drift Racing Online update 2.28.0 roster"
+          "image": "https://www.igcd.net/images/388/258.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=388258",
+          "imageMatch": "Exact CarX fictional-name match: Axis G2; direct IGCD CarX Drift Racing 2 screenshot"
         },
         {
           "id": "carx:mifune",
@@ -12762,7 +12765,7 @@
           "imageMatch": "Exact CarX Workshop vehicle category verified; direct renderable image asset still required"
         }
       ],
-      "imageCoverage": 32,
+      "imageCoverage": 35,
       "imageVerifiedAt": "2026-09-28",
       "official_total": 122,
       "catalogVerifiedAt": "2026-09-28"
