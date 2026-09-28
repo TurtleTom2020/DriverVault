@@ -160,8 +160,6 @@ IGCD_CREW=None
 
 def crew_igcd_image(v):
  global IGCD_CREW
- # The Crew Motorfest IGCD catalogue. Exact catalogue names are required;
- # no donor/model-family substitutions are accepted.
  if IGCD_CREW is None: IGCD_CREW=igcd_game_entries('1000011473')
  label=vehicle_label(v)
  q=set(norm(label).split())
@@ -169,7 +167,6 @@ def crew_igcd_image(v):
  for e in IGCD_CREW:
   t=set(norm(e['text']).split())
   meaningful={x for x in q if len(x)>1}
-  # Require make/model/year tokens where present. Edition tokens must also match.
   if meaningful and not meaningful.issubset(t): continue
   sc=score(e['text'],label,'crew')+40*len(meaningful)
   ranked.append((sc,e))
@@ -177,8 +174,8 @@ def crew_igcd_image(v):
  for sc,e in ranked[:6]:
   html=request_html(e['page'],attempts=2); urls=[]
   if html:
-   for pat in (r'<meta[^>]+(?:property|name)=[\"\\'](?:og:image|twitter:image)[\"\\'][^>]+content=[\"\\']([^\"\\']+)',r'<img[^>]+(?:src|data-src)=[\"\\']([^\"\\']+)'):
-    urls += [abs_url(e['page'],x) for x in re.findall(pat,html,re.I)]
+   urls += [abs_url(e['page'],x) for x in re.findall(r'<meta[^>]+content=["]([^"]+)["][^>]*(?:og:image|twitter:image)',html,re.I)]
+   urls += [abs_url(e['page'],x) for x in re.findall(r'<img[^>]+(?:src|data-src)=["]([^"]+)["]',html,re.I)]
   urls += e['imgs']
   for u in dict.fromkeys(urls):
    low=u.lower()
