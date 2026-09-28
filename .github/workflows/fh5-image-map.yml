@@ -1,0 +1,31 @@
+name: Recover FH5 catalogue images
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - scripts/map_game_images.py
+      - .github/workflows/fh5-image-map.yml
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve and verify exact FH5 image URLs
+        run: python3 scripts/map_game_images.py
+      - name: Commit verified catalogue mappings
+        run: |
+          git config user.name "DriverVault Catalogue Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add assets/catalog/catalog.json
+          if git diff --cached --quiet; then
+            echo "No verified image changes"
+          else
+            git commit -m "Recover verified FH5 catalogue images"
+            git push
+          fi
