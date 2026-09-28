@@ -1,21 +1,26 @@
 name: Update Motorfest catalogue
+
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches:
+      - main
     paths:
-      - scripts/update_motorfest_catalogue.py
-      - .github/workflows/motorfest-catalogue.yml
+      - 'scripts/update_motorfest_catalogue.py'
+      - '.github/workflows/motorfest-catalogue.yml'
+
 permissions:
   contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # Runs strict completeness and duplicate guards before writing catalogue.\n      - name: Build official Motorfest roster
+      - name: Build Motorfest roster
         run: python3 scripts/update_motorfest_catalogue.py
       - name: Commit catalogue
+        shell: bash
         run: |
           git config user.name "DriverVault Catalogue Bot"
           git config user.email "actions@users.noreply.github.com"
