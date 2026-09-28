@@ -11703,9 +11703,9 @@
           "class": "Drift",
           "drive": "",
           "id": "carx:wellington-s20",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Exact CarX Workshop vehicle category verified; direct renderable image asset still required"
+          "image": "https://www.igcd.net/images/074/340.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=74340",
+          "imageMatch": "Exact CarX fictional-name match: Wellington S20; direct IGCD game screenshot"
         },
         {
           "year": "",
@@ -11758,9 +11758,9 @@
           "class": "Drift",
           "drive": "",
           "id": "carx:sorrow",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Exact CarX Workshop vehicle category verified; direct renderable image asset still required"
+          "image": "https://www.igcd.net/images/197/003.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=197003",
+          "imageMatch": "Exact CarX fictional-name match: Sorrow; direct IGCD game screenshot"
         },
         {
           "year": "",
@@ -12225,9 +12225,9 @@
           "class": "Drift",
           "drive": "",
           "id": "carx:falcon-rz",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Exact CarX Workshop vehicle category verified; direct renderable image asset still required"
+          "image": "https://www.igcd.net/images/074/339.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=74339",
+          "imageMatch": "Exact CarX fictional-name match: Falcon RZ; direct IGCD game screenshot"
         },
         {
           "year": "",
@@ -12541,9 +12541,9 @@
           "id": "carx:mifune",
           "make": "",
           "model": "Mifune",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Exact CarX Workshop vehicle category verified; direct renderable image asset still required"
+          "image": "https://www.igcd.net/images/145/555.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=145555",
+          "imageMatch": "Exact CarX fictional-name match: Mifune; direct IGCD game screenshot"
         },
         {
           "id": "carx:eva-x",
@@ -12621,9 +12621,9 @@
           "id": "carx:dtm-46",
           "make": "",
           "model": "DTM 46",
-          "image": null,
-          "imageSource": "https://steamcommunity.com/workshop/browse?appid=635260",
-          "imageMatch": "Exact CarX Workshop vehicle category verified; direct renderable image asset still required"
+          "image": "https://www.igcd.net/images/094/064.jpg",
+          "imageSource": "https://www.igcd.net/vehicle.php?id=94064",
+          "imageMatch": "Exact CarX fictional-name match: DTM 46; direct IGCD game screenshot"
         },
         {
           "id": "carx:bug-catcher",
@@ -12762,7 +12762,7 @@
           "imageMatch": "Exact CarX Workshop vehicle category verified; direct renderable image asset still required"
         }
       ],
-      "imageCoverage": 27,
+      "imageCoverage": 32,
       "imageVerifiedAt": "2026-09-28",
       "official_total": 122,
       "catalogVerifiedAt": "2026-09-28"
