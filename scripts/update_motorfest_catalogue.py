@@ -7,7 +7,8 @@ import html, json, re, urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 
-URL="https://www.ubisoft.com/en-gb/game/the-crew/motorfest/news-updates/6eTRFZ2OQC9SAC1Psddaqg"\nBASE_URL="https://www.onlineracedriver.com/2023/09/01/the-crew-motorfest-full-vehicle-list/"
+URL="https://www.ubisoft.com/en-gb/game/the-crew/motorfest/news-updates/6eTRFZ2OQC9SAC1Psddaqg"
+BASE_URL="https://www.onlineracedriver.com/2023/09/01/the-crew-motorfest-full-vehicle-list/"
 OUT=Path("assets/catalog/catalog.json")
 
 class Tables(HTMLParser):
