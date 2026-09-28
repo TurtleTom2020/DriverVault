@@ -69,7 +69,11 @@ jobs:
                 req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0','Referer':'https://www.fandom.com/'})
                 with urllib.request.urlopen(req,timeout=20) as r: dest.write_bytes(r.read())
                 if dest.stat().st_size<1000: raise ValueError('tiny image')
-                image_map[url]=dest.as_posix()\n                vid=str(v.get('id') or '').strip()\n                if vid: image_map[vid]=dest.as_posix()\n                ok+=1
+                image_map[url]=dest.as_posix()
+                vid=str(v.get('id') or '').strip()
+                if vid:
+                  image_map[vid]=dest.as_posix()
+                ok+=1
               except Exception as e:
                 dest.unlink(missing_ok=True); fail+=1
           pathlib.Path('assets/catalog/vehicle_images.json').write_text(json.dumps(image_map,ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
