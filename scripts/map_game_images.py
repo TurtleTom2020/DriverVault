@@ -26,7 +26,7 @@ SOURCES={
  'gt7':['https://gran-turismo.fandom.com/api.php'],
  'crew':['https://thecrew.fandom.com/api.php'],
 }
-GAME_TERMS={'fh5':'Forza Horizon 5','carx':'CarX','beamng':'BeamNG','ets2':'Euro Truck Simulator 2','ats':'American Truck Simulator','assetto':'Assetto Corsa','wrc':'EA SPORTS WRC','alaskan':'Alaskan Road Truckers','mudrunner':'MudRunner','snowrunner':'SnowRunner','gt7':'Gran Turismo 7'}
+GAME_TERMS={'fh5':'Forza Horizon 5','carx':'CarX','beamng':'BeamNG','ets2':'Euro Truck Simulator 2','ats':'American Truck Simulator','assetto':'Assetto Corsa','wrc':'EA SPORTS WRC','alaskan':'Alaskan Road Truckers','mudrunner':'MudRunner','snowrunner':'SnowRunner','gt7':'Gran Turismo 7','crew':'The Crew Motorfest'}
 
 def norm(s):
  s=unicodedata.normalize('NFKD',str(s)).encode('ascii','ignore').decode().lower()
