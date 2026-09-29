@@ -118,20 +118,27 @@ jobs:
           import json, zipfile
           apk='build/app/outputs/flutter-apk/app-release.apk'
           with zipfile.ZipFile(apk) as z:
-            cat=json.loads(z.read('assets/flutter_assets/assets/catalog/catalog.json').decode('utf-8').split('\n}\n',1)[0]+'\n}')
+            cat=json.loads(z.read('assets/flutter_assets/assets/catalog/catalog.json'))
             mp=json.loads(z.read('assets/flutter_assets/assets/catalog/vehicle_images.json'))
-            fh=next(g for g in cat['games'] if g['id']=='fh5')
-            checked=0
-            for v in fh['vehicles']:
-              if not v.get('image'):
-                continue
-              vid=str(v.get('id') or '')
-              assert vid in mp, f'missing FH5 ID mapping: {vid}'
-              asset='assets/flutter_assets/'+mp[vid]
-              assert asset in z.namelist(), f'missing APK asset: {asset}'
-              checked+=1
-            print('FH5 runtime ID mappings verified in APK:',checked)
-            assert checked >= 800
+            names=set(z.namelist())
+            total=checked=0
+            by_game={}
+            for g in cat['games']:
+              mapped=0
+              for v in g.get('vehicles',[]):
+                vid=str(v.get('id') or '').strip()
+                if not vid or vid not in mp:
+                  continue
+                asset='assets/flutter_assets/'+mp[vid]
+                assert asset in names, f'mapped asset missing from APK: {vid} -> {asset}'
+                mapped+=1
+                checked+=1
+              by_game[g['id']]=mapped
+              total+=len(g.get('vehicles',[]))
+            print('Runtime vehicle ID mappings verified in APK:',checked,'of',total)
+            print('Mappings by game:',by_game)
+            assert checked >= 1500, f'Too few verified runtime vehicle mappings: {checked}'
+            assert by_game.get('fh5',0) >= 800, f"Too few FH5 mappings: {by_game.get('fh5',0)}"
           PY
 
       - name: Upload verified APK
