@@ -76,7 +76,7 @@ jobs:
                 ok+=1
               except Exception as e:
                 dest.unlink(missing_ok=True); fail+=1
-          pathlib.Path('assets/catalog/vehicle_images.json').write_text(json.dumps(image_map,ensure_ascii=False,indent=2)+'\\n',encoding='utf-8')
+          pathlib.Path('assets/catalog/vehicle_images.json').write_text(json.dumps(image_map,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
           print('bundled vehicle images:',ok,'failed:',fail)
           if ok < 1500: raise SystemExit(f'Too few vehicle images bundled: {ok}')
           PY
@@ -118,7 +118,7 @@ jobs:
           import json, zipfile
           apk='build/app/outputs/flutter-apk/app-release.apk'
           with zipfile.ZipFile(apk) as z:
-            cat=json.loads(z.read('assets/flutter_assets/assets/catalog/catalog.json').decode('utf-8').split('\\n}\\n',1)[0]+'\\n}')
+            cat=json.loads(z.read('assets/flutter_assets/assets/catalog/catalog.json').decode('utf-8').split('\n}\n',1)[0]+'\n}')
             mp=json.loads(z.read('assets/flutter_assets/assets/catalog/vehicle_images.json'))
             fh=next(g for g in cat['games'] if g['id']=='fh5')
             checked=0
